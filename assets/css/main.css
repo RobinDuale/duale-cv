@@ -158,7 +158,7 @@ body {
 /* ── SIDEBAR COMPONENTS ── */
 .sidebar-section { margin-bottom: 32px; }
 .sidebar-title {
-  font-family: var(--sans); font-size: 12px; letter-spacing: 0.14em;
+  font-family: var(--sans); font-size: 14px; letter-spacing: 0.12em;
   text-transform: uppercase; color: rgba(154,114,40,0.82);
   margin-bottom: 14px; border-bottom: 0.5px solid var(--gold-border);
   padding-bottom: 8px;
@@ -297,7 +297,7 @@ body {
 .edu-year { font-family: var(--sans); font-size: 12px; color: var(--ink-40); }
 .linkedin-btn { width: 100%; padding: 11px; background: transparent; color: var(--gold); border: 0.5px solid var(--gold-mid); border-radius: 1px; font-family: var(--sans); font-size: 12px; letter-spacing: 0.11em; text-transform: uppercase; cursor: pointer; margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; transition: background 0.2s; }
 .linkedin-btn:hover { background: var(--gold-light); }
-.section-rule { font-family: var(--sans); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(154,114,40,0.82); margin-bottom: 28px; display: flex; align-items: center; gap: 12px; }
+.section-rule { font-family: var(--sans); font-size: 15px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(154,114,40,0.82); margin-bottom: 28px; display: flex; align-items: center; gap: 12px; }
 .section-rule::after { content: ''; flex: 1; height: 0.5px; background: var(--gold-border); }
 .early-career { background: var(--cream-dark); border: 0.5px solid var(--gold-border); border-radius: 2px; padding: 22px; }
 .ec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 12px; }
@@ -307,8 +307,8 @@ body {
 .kpi-card { background: var(--cream); border: 0.5px solid var(--gold-border); border-radius: 1px; padding: 16px 18px; margin-bottom: 10px; }
 .kpi-card:last-child { margin-bottom: 0; }
 .kpi-card-num { font-family: var(--serif); font-size: 32px; color: var(--gold); margin-bottom: 3px; }
-.kpi-card-label { font-family: var(--sans); font-size: 14px; color: var(--ink-40); line-height: 1.4; }
-.sector-tag { font-family: var(--sans); font-size: 13px; padding: 8px 12px; border: 0.5px solid var(--gold-border); border-radius: 1px; color: var(--ink-60); background: rgba(247,244,238,0.8); display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.kpi-card-label { font-family: var(--sans); font-size: 16px; color: var(--ink-40); line-height: 1.4; }
+.sector-tag { font-family: var(--sans); font-size: 15px; padding: 8px 12px; border: 0.5px solid var(--gold-border); border-radius: 1px; color: var(--ink-60); background: rgba(247,244,238,0.8); display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
 .anon-notice { display: inline-flex; align-items: center; gap: 7px; margin-top: 16px; font-family: var(--sans); font-size: 12px; letter-spacing: 0.08em; color: var(--ink-40); border: 0.5px solid var(--gold-border); border-radius: 20px; padding: 5px 14px; background: var(--gold-light); }
 
 /* ── HERO ── */
