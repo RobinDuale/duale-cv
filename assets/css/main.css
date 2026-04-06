@@ -289,6 +289,7 @@ body {
 .cta-text span { color: var(--gold); }
 .profile-block { text-align: center; margin-bottom: 32px; }
 .profile-initials { width: 72px; height: 72px; border-radius: 50%; border: 1px solid var(--gold-mid); background: var(--gold-light); display: flex; align-items: center; justify-content: center; font-family: var(--sans); font-size: 20px; color: var(--gold); margin: 0 auto 14px; }
+.profile-photo { width: 110px; height: 110px; border-radius: 50%; object-fit: cover; object-position: center top; border: 2px solid var(--gold-mid); display: block; margin: 0 auto 14px; }
 .profile-name { font-family: var(--serif); font-size: 16px; color: var(--ink); margin-bottom: 4px; }
 .profile-role { font-family: var(--sans); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(154,114,40,0.92); }
 .edu-item { margin-bottom: 16px; }
