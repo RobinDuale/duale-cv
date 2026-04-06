@@ -18,13 +18,16 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; background: var(--cream-darker); }
 
 body {
   font-family: var(--serif);
   background: var(--cream);
   color: var(--ink);
   min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0 0 40px rgba(26,23,18,0.08);
   -webkit-font-smoothing: antialiased;
 }
 
