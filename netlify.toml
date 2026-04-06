@@ -1,0 +1,24 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/"
+  to = "/fr/"
+  status = 302
+
+[[redirects]]
+  from = "/fr"
+  to = "/fr/"
+  status = 301
+
+[[redirects]]
+  from = "/en"
+  to = "/en/"
+  status = 301
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
