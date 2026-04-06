@@ -337,6 +337,19 @@ body {
 .fade-up-2 { animation: fadeUp 0.6s 0.15s ease both; }
 .fade-up-3 { animation: fadeUp 0.6s 0.3s ease both; }
 
+/* ── SIDE COLUMN (+4px) ── */
+.side-col .sidebar-title { font-size: 18px; }
+.side-col .skill-tag { font-size: 16px; }
+.side-col .profile-name { font-size: 20px; }
+.side-col .profile-role { font-size: 16px; }
+.side-col .edu-degree { font-size: 18px; }
+.side-col .edu-school { font-size: 17px; }
+.side-col .edu-year { font-size: 16px; }
+.side-col .geo-item { font-size: 20px; }
+.side-col .contact-label { font-size: 16px; }
+.side-col .contact-value { font-size: 20px; }
+.side-col .linkedin-btn { font-size: 16px; }
+
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   .nav { padding: 16px 24px; }
