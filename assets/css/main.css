@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Jost:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap');
 
 :root {
   --gold: #9a7228;
@@ -12,7 +12,7 @@
   --ink-60: rgba(26,23,18,0.82);
   --ink-40: rgba(26,23,18,0.64);
   --ink-25: rgba(26,23,18,0.48);
-  --serif: 'DM Serif Text', Georgia, serif;
+  --serif: 'Jost', sans-serif;
   --sans: 'Jost', sans-serif;
 }
 
