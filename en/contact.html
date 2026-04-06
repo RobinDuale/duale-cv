@@ -32,9 +32,11 @@
 <div class="two-col">
   <div class="main-col">
     <p class="body-text" style="margin-bottom:36px;">Are you a fund, family office, shareholder or executive search firm? I respond to all enquiries on the same day.</p>
-    <form name="contact-en" method="POST" action="/en/thank-you.html" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="contact-en"/>
-      <p style="display:none"><label>Do not fill: <input name="bot-field"/></label></p>
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="cbcbb302-c4e0-4214-876a-c082ca72c4bb"/>
+      <input type="hidden" name="subject" value="New message CV — Robin Duale"/>
+      <input type="hidden" name="redirect" value="https://cv-robin.duale.fr/en/thank-you.html"/>
+      <input type="checkbox" name="botcheck" style="display:none"/>
       <div class="form-row-2">
         <div><label class="field-label">First name</label><input class="field-input" type="text" name="firstname" placeholder="Marie" required/></div>
         <div><label class="field-label">Last name</label><input class="field-input" type="text" name="lastname" placeholder="Dupont" required/></div>

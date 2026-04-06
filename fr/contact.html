@@ -41,9 +41,11 @@
   <div class="main-col">
     <p class="body-text" style="margin-bottom:36px;">Vous êtes un fonds, un family office, un actionnaire ou un chasseur de tête ? Je réponds à toutes les prises de contact dans la journée.</p>
 
-    <form name="contact-fr" method="POST" action="/fr/merci.html" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="contact-fr"/>
-      <p style="display:none"><label>Ne pas remplir : <input name="bot-field"/></label></p>
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="cbcbb302-c4e0-4214-876a-c082ca72c4bb"/>
+      <input type="hidden" name="subject" value="Nouveau message CV — Robin Duale"/>
+      <input type="hidden" name="redirect" value="https://cv-robin.duale.fr/fr/merci.html"/>
+      <input type="checkbox" name="botcheck" style="display:none"/>
       <div class="form-row-2">
         <div>
           <label class="field-label">Prénom</label>
