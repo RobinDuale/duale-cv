@@ -187,12 +187,12 @@ body {
 }
 .tl-dot.filled { background: var(--gold); }
 .tl-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 4px; flex-wrap: wrap; gap: 4px; }
-.tl-role { font-family: var(--serif); font-size: 18px; font-weight: 600; color: var(--ink); }
+.tl-role { font-family: var(--serif); font-size: 22px; font-weight: 600; color: var(--ink); }
 .tl-period {
-  font-family: var(--sans); font-size: 12px; letter-spacing: 0.08em;
+  font-family: var(--sans); font-size: 16px; letter-spacing: 0.08em;
   color: rgba(154,114,40,0.90); text-transform: uppercase;
 }
-.tl-company { font-family: var(--sans); font-size: 13px; color: var(--gold); margin-bottom: 8px; letter-spacing: 0.04em; }
+.tl-company { font-family: var(--sans); font-size: 17px; color: var(--gold); margin-bottom: 8px; letter-spacing: 0.04em; }
 .tl-context { font-family: var(--serif); font-size: 16px; color: var(--ink-60); line-height: 1.65; margin-bottom: 10px; font-style: italic; }
 .tl-points { list-style: none; margin-bottom: 14px; }
 .tl-points li { font-family: var(--serif); font-size: 16px; color: var(--ink-60); line-height: 1.7; padding-left: 16px; position: relative; margin-bottom: 5px; }
