@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Fond circulaire or -->
+  <circle cx="32" cy="32" r="32" fill="#9a7228"/>
+  <!-- Bordure intérieure premium -->
+  <circle cx="32" cy="32" r="28" fill="none" stroke="#f7f4ee" stroke-width="0.8" opacity="0.4"/>
+  <!-- Initiales CV -->
+  <text
+    x="32" y="39"
+    font-family="Jost, Arial, sans-serif"
+    font-size="22"
+    font-weight="500"
+    fill="#f7f4ee"
+    text-anchor="middle"
+    letter-spacing="2"
+  >CV</text>
+</svg>
