@@ -346,10 +346,12 @@ body {
 .side-col .edu-degree { font-size: 18px; }
 .side-col .edu-school { font-size: 17px; }
 .side-col .edu-year { font-size: 16px; }
-.side-col .geo-item { font-size: 20px; }
+.side-col .geo-item { font-size: 15px; }
 .side-col .contact-label { font-size: 16px; }
-.side-col .contact-value { font-size: 20px; }
+.side-col .contact-value { font-size: 15px; }
 .side-col .linkedin-btn { font-size: 16px; }
+.side-col .avail-text { font-size: 15px; }
+.side-col .criteria-value { font-size: 15px; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
