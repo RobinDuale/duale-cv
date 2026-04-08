@@ -353,6 +353,29 @@ body {
 .side-col .avail-text { font-size: 15px; }
 .side-col .criteria-value { font-size: 15px; }
 
+/* ── HAMBURGER ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 101;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--ink);
+  transition: transform 0.25s, opacity 0.25s;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   .nav { padding: 16px 24px; }
@@ -373,6 +396,44 @@ body {
   .cta-band { padding: 28px 24px; flex-direction: column; gap: 16px; align-items: flex-start; }
   .form-row-2 { grid-template-columns: 1fr; }
   .hero-left { padding: 40px 24px; }
+}
+
+@media (max-width: 680px) {
+  .hamburger { display: flex; }
+  .nav { position: relative; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    background: rgba(247,244,238,0.98);
+    border-bottom: 0.5px solid var(--gold-border);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 24px;
+    gap: 16px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 24px rgba(26,23,18,0.08);
+  }
+  .nav-links.open { display: flex; }
+  .nav-divider { display: none; }
+  .lang-switcher { margin-top: 4px; }
+}
+
+@media (max-width: 480px) {
+  .hero-title { font-size: 32px; }
+  .hero-sub { font-size: 16px; }
+  .hero-eyebrow { font-size: 13px; }
+  .hero-ctas { flex-direction: column; gap: 10px; }
+  .kpi-bar { grid-template-columns: 1fr; }
+  .kpi-number { font-size: 36px; }
+  .section-nav { grid-template-columns: 1fr; }
+  .page-title { font-size: 28px; }
+  .cta-band-title { font-size: 22px; }
+  .footer { flex-direction: column; gap: 6px; text-align: center; }
+  .cookie-banner { padding: 16px 16px; gap: 14px; }
+  .cookie-actions { flex-direction: column; width: 100%; }
+  .cookie-btn-accept, .cookie-btn-refuse { width: 100%; text-align: center; }
 }
 
 /* ── COOKIE BANNER ── */

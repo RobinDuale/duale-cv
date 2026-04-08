@@ -55,3 +55,25 @@ function refuseCookies() {
   localStorage.setItem('cookie_consent', 'refused');
   document.getElementById('cookie-banner').style.display = 'none';
 }
+
+// ── HAMBURGER MENU ──
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  if (!hamburger || !navLinks) return;
+
+  hamburger.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    hamburger.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', open);
+  });
+
+  // Fermer au clic sur un lien
+  navLinks.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+});
