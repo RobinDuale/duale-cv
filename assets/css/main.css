@@ -321,6 +321,7 @@ body {
 .hero-title em { font-style: italic; color: var(--gold); }
 .hero-sub { font-family: var(--serif); font-size: 18px; color: var(--ink-60); line-height: 1.8; margin-bottom: 32px; max-width: 400px; }
 .hero-sub a { color: inherit; border-bottom: 1px solid currentColor; text-decoration: none; }
+.hero-sub a.no-underline { border-bottom: none; }
 .body-text a { color: inherit; border-bottom: 1px solid currentColor; text-decoration: none; }
 .hero-ctas { display: flex; gap: 12px; }
 .hero-right { position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; min-height: 520px; background: var(--cream-dark); }
