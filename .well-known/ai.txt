@@ -1,0 +1,46 @@
+# AI Bot Policy for cv-robin.duale.fr
+# This file allows AI/ML crawlers to index the content for training and search
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OpenAI-Gpt4
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Allow all other AI bots
+User-agent: *
+Allow: /
+
+# Contact for AI-related queries
+Contact: robin@duale.fr
+
+# Website Information
+Website-Title: Robin Duale - CEO / Directeur Général
+Website-Description: 18 years of CEO experience in B2B SaaS & Data transformation, PE-backed environments
+Primary-Language: French
+Secondary-Language: English
+Updated: 2026-04-10

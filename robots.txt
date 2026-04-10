@@ -1,0 +1,60 @@
+# robots.txt for cv-robin.duale.fr
+# Allow all bots to crawl the site
+
+User-agent: *
+Allow: /
+Allow: /fr/
+Allow: /en/
+Allow: /assets/
+Disallow: /assets/*.mp4
+Crawl-delay: 0
+Request-rate: 30/60
+
+# Specific for Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# AI/ML Crawlers - ALLOW all
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OpenAI-Gpt4
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Sitemap
+Sitemap: https://cv-robin.duale.fr/sitemap.xml
