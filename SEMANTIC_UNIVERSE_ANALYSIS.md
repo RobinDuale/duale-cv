@@ -1,5 +1,5 @@
 # SEMANTIC UNIVERSE ANALYSIS
-## SEO Positioning Strategy for Robin Duale CV Resume Site
+## SEO Positioning Strategy for Robin Dualé CV Resume Site
 
 **Analysis Date:** April 10, 2026  
 **Objective:** Achieve top rankings for CEO/DG/MD job search queries in PE-backed contexts with AI transformation expertise
@@ -8,7 +8,7 @@
 
 ## EXECUTIVE SUMMARY
 
-This analysis identifies the complete semantic universe required for optimal SEO positioning of Robin Duale's professional profile. The goal is to rank for active CEO/Director General/Managing Director job-seeking queries, particularly in contexts involving:
+This analysis identifies the complete semantic universe required for optimal SEO positioning of Robin Dualé's professional profile. The goal is to rank for active CEO/Director General/Managing Director job-seeking queries, particularly in contexts involving:
 - Private Equity (PE) / Family Office environments
 - B2B SaaS & Data platforms
 - Digital transformation & subscription model evolution
@@ -1205,7 +1205,7 @@ Every semantic claim should have supporting proof:
 
 ## CONCLUSION
 
-The semantic universe analysis reveals that Robin Duale's professional profile has **strong foundational coverage (65%)** but significant opportunity gaps in:
+The semantic universe analysis reveals that Robin Dualé's professional profile has **strong foundational coverage (65%)** but significant opportunity gaps in:
 
 1. **AI Transformation (5% → Target: 40%)** - Highest priority, trending value
 2. **Transformation Methodology (40% → Target: 75%)** - Core PE search intent
