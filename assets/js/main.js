@@ -29,21 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const consent = localStorage.getItem('cookie_consent');
   if (consent === 'accepted') {
     loadGA();
-    loadLinkedInBadge();
   } else if (consent === null) {
     showCookieBanner();
   }
 });
-
-function loadLinkedInBadge() {
-  if (window.linkedInBadgeLoaded) return;
-  window.linkedInBadgeLoaded = true;
-  const s = document.createElement("script");
-  s.src = "https://platform.linkedin.com/badges/js/profile.js";
-  s.async = true;
-  s.defer = true;
-  document.body.appendChild(s);
-}
 
 function loadGA() {
   if (window.gtagLoaded) return;
@@ -68,7 +57,6 @@ function acceptCookies() {
   localStorage.setItem('cookie_consent', 'accepted');
   document.getElementById('cookie-banner').style.display = 'none';
   loadGA();
-  loadLinkedInBadge();
 }
 
 function refuseCookies() {

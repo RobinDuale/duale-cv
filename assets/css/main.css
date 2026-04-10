@@ -298,10 +298,6 @@ body {
 .edu-year { font-family: var(--sans); font-size: 12px; color: var(--ink-40); }
 .linkedin-btn { width: 100%; padding: 11px; background: transparent; color: var(--gold); border: 0.5px solid var(--gold-mid); border-radius: 1px; font-family: var(--sans); font-size: 12px; letter-spacing: 0.11em; text-transform: uppercase; cursor: pointer; margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; transition: background 0.2s; }
 
-/* ── LINKEDIN BADGE ── */
-.linkedin-badge-wrap { margin-top: 16px; text-align: center; }
-.linkedin-badge-wrap .LI-profile-badge { display: inline-block; margin: 0 auto; max-width: 100%; }
-.linkedin-badge-wrap .LI-simple-link { display: none; }
 .linkedin-btn:hover { background: var(--gold-light); }
 .section-rule { font-family: var(--sans); font-size: 15px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(154,114,40,0.82); margin-bottom: 28px; display: flex; align-items: center; gap: 12px; }
 .section-rule::after { content: ''; flex: 1; height: 0.5px; background: var(--gold-border); }
