@@ -2,8 +2,16 @@
 document.addEventListener('DOMContentLoaded', () => {
   const path = window.location.pathname;
   document.querySelectorAll('.nav-link').forEach(link => {
-    if (link.getAttribute('href') && path.includes(link.getAttribute('href'))) {
-      link.classList.add('active');
+    const href = link.getAttribute('href');
+    if (!href) return;
+    if (href === '/fr/' || href === '/en/') {
+      if (path === href || path === href.slice(0, -1)) {
+        link.classList.add('active');
+      }
+    } else {
+      if (path.includes(href)) {
+        link.classList.add('active');
+      }
     }
   });
   document.querySelectorAll('.lang-item').forEach(item => {
