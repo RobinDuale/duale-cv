@@ -52,6 +52,29 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- French Perspectives -->
+  <url>
+    <loc>https://cv-robin.duale.fr/fr/perspectives/</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/perspectives/" />
+  </url>
+  <url>
+    <loc>https://cv-robin.duale.fr/fr/perspectives/je-suis-le-produit.html</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/perspectives/i-am-the-product.html" />
+  </url>
+  <url>
+    <loc>https://cv-robin.duale.fr/fr/perspectives/ia-accelerateur-organisationnel.html</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/perspectives/ai-organizational-accelerator.html" />
+  </url>
+
   <!-- English Pages -->
   <url>
     <loc>https://cv-robin.duale.fr/en/</loc>
@@ -93,5 +116,28 @@
     <lastmod>2026-04-10</lastmod>
     <changefreq>never</changefreq>
     <priority>0.5</priority>
+  </url>
+
+  <!-- English Perspectives -->
+  <url>
+    <loc>https://cv-robin.duale.fr/en/perspectives/</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/perspectives/" />
+  </url>
+  <url>
+    <loc>https://cv-robin.duale.fr/en/perspectives/i-am-the-product.html</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/perspectives/je-suis-le-produit.html" />
+  </url>
+  <url>
+    <loc>https://cv-robin.duale.fr/en/perspectives/ai-organizational-accelerator.html</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/perspectives/ia-accelerateur-organisationnel.html" />
   </url>
 </urlset>

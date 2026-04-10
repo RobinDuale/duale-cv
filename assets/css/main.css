@@ -471,6 +471,118 @@ body {
   cursor: pointer; transition: color 0.2s, border-color 0.2s;
 }
 .cookie-btn-refuse:hover { color: var(--cream); border-color: rgba(247,244,238,0.5); }
+/* ── PERSPECTIVES TEASER (homepage) ── */
+.persp-teaser {
+  border-top: 0.5px solid var(--gold-border);
+  padding: 56px;
+  max-width: 1200px; margin: 0 auto;
+}
+.persp-teaser-inner { max-width: 860px; }
+.persp-teaser-header {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin-bottom: 32px;
+}
+.persp-teaser-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+}
+.persp-teaser-card {
+  display: block; text-decoration: none; color: inherit;
+  border: 0.5px solid var(--gold-border); padding: 24px;
+  transition: border-color 0.2s;
+}
+.persp-teaser-card:hover { border-color: var(--gold); }
+.persp-teaser-card .persp-card-title { font-size: 17px; margin-bottom: 8px; }
+.persp-teaser-card .persp-card-excerpt { font-size: 14px; margin-bottom: 0; }
+@media (max-width: 680px) {
+  .persp-teaser { padding: 32px 24px; }
+  .persp-teaser-grid { grid-template-columns: 1fr; gap: 16px; }
+}
+
+/* ── PERSPECTIVES ── */
+.persp-grid { display: flex; flex-direction: column; gap: 0; }
+.persp-card {
+  padding: 32px 0; border-bottom: 0.5px solid var(--gold-border);
+  display: grid; grid-template-columns: 100px 1fr; gap: 24px; align-items: start;
+}
+.persp-card:first-child { padding-top: 0; }
+.persp-card-date {
+  font-family: var(--sans); font-size: 12px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--gold); padding-top: 4px;
+}
+.persp-card-tag {
+  display: inline-block; font-family: var(--sans); font-size: 11px;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold);
+  border: 0.5px solid var(--gold-border); padding: 2px 8px;
+  margin-bottom: 10px;
+}
+.persp-card-title {
+  font-family: var(--serif); font-size: 20px; font-weight: 400;
+  color: var(--ink); line-height: 1.4; margin-bottom: 10px;
+}
+.persp-card-excerpt {
+  font-family: var(--serif); font-size: 15px; color: var(--ink-60);
+  line-height: 1.7; margin-bottom: 14px;
+}
+.persp-card-link {
+  font-family: var(--sans); font-size: 12px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--gold); text-decoration: none;
+  border-bottom: 0.5px solid var(--gold-border); padding-bottom: 1px;
+  transition: border-color 0.2s;
+}
+.persp-card-link:hover { border-color: var(--gold); }
+.article-meta {
+  font-family: var(--sans); font-size: 12px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 28px;
+  display: flex; gap: 20px; align-items: center;
+}
+.article-meta-sep { color: var(--gold-border); }
+.article-body h2 {
+  font-family: var(--sans); font-size: 13px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--gold); margin: 36px 0 16px;
+}
+.article-back {
+  font-family: var(--sans); font-size: 12px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--ink-60); text-decoration: none;
+  display: block; margin-bottom: 20px;
+  border-bottom: 0.5px solid transparent; padding-bottom: 1px;
+  transition: color 0.2s;
+}
+.article-back:hover { color: var(--gold); }
+.article-cta {
+  margin-top: 40px; padding: 28px; background: var(--cream);
+  border: 0.5px solid var(--gold-border);
+}
+.article-cta-title {
+  font-family: var(--sans); font-size: 13px; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
+}
+.article-cta-text {
+  font-family: var(--serif); font-size: 15px; color: var(--ink-60);
+  line-height: 1.7; margin-bottom: 16px;
+}
+.article-cta-links { display: flex; gap: 16px; flex-wrap: wrap; }
+.sidebar-back {
+  display: block; font-family: var(--sans); font-size: 11px;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-60);
+  text-decoration: none; margin-bottom: 24px;
+  transition: color 0.2s;
+}
+.sidebar-back:hover { color: var(--gold); }
+.sidebar-article-date {
+  font-family: var(--sans); font-size: 12px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 6px;
+}
+.sidebar-article-tag {
+  display: inline-block; font-family: var(--sans); font-size: 11px;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold);
+  border: 0.5px solid var(--gold-border); padding: 2px 8px;
+  margin-bottom: 4px;
+}
+@media (max-width: 600px) {
+  .persp-card { grid-template-columns: 1fr; gap: 4px; }
+  .persp-card-date { padding-top: 0; }
+}
+
 @media (max-width: 900px) {
   .cookie-banner { flex-direction: column; align-items: flex-start; padding: 18px 24px; }
 }
