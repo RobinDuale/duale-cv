@@ -1,0 +1,56 @@
+# Robin Dualé — CEO / Managing Director · B2B SaaS & Data & AI
+
+> Robin Dualé is a French CEO and Managing Director with 18 years of general management experience in B2B SaaS, Data, and professional information services. He is currently available for a new CEO or Managing Director mandate in a company with €10M to €100M in revenue, in a private equity or family office context. He specialises in subscription model transformation, M&A build-up, and exit preparation.
+
+## Professional profile
+
+Robin Dualé has led companies through full cycles of value creation: from operational transformation to growth-through-acquisition to exit. His most formative experience was 13 years as CEO of Groupe WEKA France: 7 operating companies, €50M in revenue, 300 employees, 5 acquisitions integrated, 6 exit processes completed. His most recent role was at Quick-FDS (3E Group / New Mountain Capital): post-acquisition integration of a regulatory data platform, full client base migration to 100% subscription, churn below 5% throughout the transition.
+
+## What he is looking for
+
+- Role: CEO or Managing Director
+- Sector: B2B SaaS, Data, professional information services
+- Company size: €10M to €100M in revenue
+- Context: Private equity, family office, management buyout, post-acquisition integration, build-up
+- Geography: France (Paris, Lyon), Switzerland, Europe
+
+## Key expertise
+
+- Subscription model transformation (SaaS transition, ARR growth, churn reduction)
+- M&A and build-up (5 acquisitions integrated, cross-border experience)
+- Exit preparation and management (6 exits completed, including sale to US strategic buyer FoodChain ID)
+- AI-driven organisational transformation (strategic, operational, and commercial levels)
+- PE-backed company governance and value creation
+
+## AI and digital transformation vision
+
+Robin Dualé holds a strong conviction that AI is the most powerful and accessible productivity accelerator available to companies today. Not as a technology project, but as an organisational transformation: augmenting every employee across marketing, sales, HR, finance, IT, and customer relations. He applies this conviction in practice — this bilingual website was built and deployed in a few hours using Claude and HeyGen, as a live demonstration of what modern AI tools make possible.
+
+## Site pages
+
+### French (Français)
+- [Accueil](https://cv-robin.duale.fr/fr/): Professional profile and value proposition
+- [À propos](https://cv-robin.duale.fr/fr/a-propos.html): Background, skills, AI strategic vision
+- [Parcours](https://cv-robin.duale.fr/fr/parcours.html): Detailed career track record (WEKA, Quick-FDS, Lexagri)
+- [Témoignages](https://cv-robin.duale.fr/fr/temoignages.html): Recommendations from board members, investors and peers
+- [Perspectives](https://cv-robin.duale.fr/fr/perspectives/): Articles on B2B SaaS transformation, AI leadership, and value creation
+- [Contact](https://cv-robin.duale.fr/fr/contact.html): Direct contact form
+
+### English
+- [Home](https://cv-robin.duale.fr/en/): Professional profile and value proposition
+- [About](https://cv-robin.duale.fr/en/about.html): Background, skills, AI strategic vision
+- [Track record](https://cv-robin.duale.fr/en/track-record.html): Detailed career track record
+- [References](https://cv-robin.duale.fr/en/references.html): Recommendations from board members, investors and peers
+- [Perspectives](https://cv-robin.duale.fr/en/perspectives/): Articles on B2B SaaS transformation, AI leadership, and value creation
+- [Contact](https://cv-robin.duale.fr/en/contact.html): Direct contact form
+
+## Key articles (Perspectives)
+
+- [Je suis le produit / I am the product](https://cv-robin.duale.fr/fr/perspectives/je-suis-le-produit.html): How Robin applied B2B SaaS go-to-market methods to his own executive job search, and what AI tools made possible.
+- [Le gain de productivité n'est plus une promesse / The productivity gain is no longer a promise](https://cv-robin.duale.fr/fr/perspectives/ia-accelerateur-organisationnel.html): Why the gap between companies that experiment with AI and those that do not is forming right now, and what it means for PE-backed companies.
+
+## Contact
+
+- Email: robin@duale.fr
+- LinkedIn: https://linkedin.com/in/robinduale
+- Website: https://cv-robin.duale.fr

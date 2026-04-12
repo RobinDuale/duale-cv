@@ -1,14 +1,12 @@
 #!/bin/bash
-# IndexNow — notifie Bing de toutes les pages du site
+# IndexNow — notifie Bing et Yandex de toutes les pages du site
 # Usage : bash indexnow-ping.sh
 # A lancer depuis Git Bash après chaque git push
 
 KEY="A8A911547D7C17BDDBE856B293F83A46"
 HOST="cv-robin.duale.fr"
 
-curl -s -X POST "https://www.bing.com/indexnow" \
-  -H "Content-Type: application/json; charset=utf-8" \
-  -d "{
+PAYLOAD="{
     \"host\": \"${HOST}\",
     \"key\": \"${KEY}\",
     \"keyLocation\": \"https://${HOST}/${KEY}.txt\",
@@ -31,7 +29,19 @@ curl -s -X POST "https://www.bing.com/indexnow" \
       \"https://${HOST}/en/perspectives/i-am-the-product.html\",
       \"https://${HOST}/en/perspectives/ai-organizational-accelerator.html\"
     ]
-  }" \
-  -w "\nStatut HTTP : %{http_code}\n"
+  }"
 
-echo "Ping IndexNow envoyé à Bing pour ${HOST}"
+echo "--- Ping Bing ---"
+curl -s -X POST "https://www.bing.com/indexnow" \
+  -H "Content-Type: application/json; charset=utf-8" \
+  -d "${PAYLOAD}" \
+  -w "Statut HTTP Bing : %{http_code}\n"
+
+echo "--- Ping Yandex ---"
+curl -s -X POST "https://yandex.com/indexnow" \
+  -H "Content-Type: application/json; charset=utf-8" \
+  -d "${PAYLOAD}" \
+  -w "Statut HTTP Yandex : %{http_code}\n"
+
+echo ""
+echo "IndexNow envoyé à Bing + Yandex pour ${HOST}"
