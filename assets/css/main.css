@@ -482,13 +482,13 @@ body {
   padding: 56px;
   max-width: 1200px; margin: 0 auto;
 }
-.persp-teaser-inner { max-width: 860px; }
+.persp-teaser-inner { max-width: 1100px; }
 .persp-teaser-header {
   display: flex; justify-content: space-between; align-items: baseline;
   margin-bottom: 32px;
 }
 .persp-teaser-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px;
 }
 .persp-teaser-card {
   display: block; text-decoration: none; color: inherit;
@@ -496,8 +496,11 @@ body {
   transition: border-color 0.2s;
 }
 .persp-teaser-card:hover { border-color: var(--gold); }
-.persp-teaser-card .persp-card-title { font-size: 17px; margin-bottom: 8px; }
-.persp-teaser-card .persp-card-excerpt { font-size: 14px; margin-bottom: 0; }
+.persp-teaser-card .persp-card-title { font-size: 16px; margin-bottom: 8px; }
+.persp-teaser-card .persp-card-excerpt { font-size: 13px; margin-bottom: 0; }
+@media (max-width: 900px) {
+  .persp-teaser-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+}
 @media (max-width: 680px) {
   .persp-teaser { padding: 32px 24px; }
   .persp-teaser-grid { grid-template-columns: 1fr; gap: 16px; }
