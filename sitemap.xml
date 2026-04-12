@@ -74,6 +74,13 @@
     <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/perspectives/ai-organizational-accelerator.html" />
   </url>
+  <url>
+    <loc>https://cv-robin.duale.fr/fr/perspectives/avantage-competitif-humain.html</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/perspectives/competitive-edge-is-human.html" />
+  </url>
 
   <!-- English Pages -->
   <url>
@@ -139,5 +146,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/perspectives/ia-accelerateur-organisationnel.html" />
+  </url>
+  <url>
+    <loc>https://cv-robin.duale.fr/en/perspectives/competitive-edge-is-human.html</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/perspectives/avantage-competitif-humain.html" />
   </url>
 </urlset>
