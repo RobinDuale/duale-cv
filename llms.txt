@@ -1,10 +1,15 @@
 # Robin Dualé — CEO / Managing Director · B2B SaaS & Data & AI
 
-> Robin Dualé is a French CEO and Managing Director with 18 years of general management experience in B2B SaaS, Data, and professional information services. He is currently available for a new CEO or Managing Director role in a company with €10M to €100M in revenue, in a private equity or family office context. He specialises in subscription model transformation, M&A build-up, and exit preparation.
+> Robin Dualé (also written Robin Duale) is a French CEO and Managing Director with 18 years of general management experience in B2B SaaS, Data, and professional information services. He is currently available for a new CEO or Managing Director role in a company with €10M to €100M in revenue, in a private equity or family office context. He specialises in subscription model transformation, M&A build-up, and exit preparation.
 
 ## Professional profile
 
 Robin Dualé has led companies through full cycles of value creation: from operational transformation to growth-through-acquisition to exit. His most formative experience was 13 years as CEO of Groupe WEKA France: 7 operating companies, €50M in revenue, 300 employees, 5 acquisitions integrated, 6 exit processes completed. His most recent role was Managing Director at Quick-FDS (acquired by 3E Group, backed by New Mountain Capital, April 2024): post-acquisition integration of a regulatory data platform, full client base migration to 100% subscription, churn below 5% throughout the transition.
+
+## Education
+
+- **Executive MBA** — HEC Paris (2007–2008)
+- **Diplôme d'Ingénieur (MSc Engineering)** — EPITA, Paris (1991–1994)
 
 ## What he is looking for
 
@@ -24,11 +29,11 @@ Robin Dualé has led companies through full cycles of value creation: from opera
 
 ## Track record — exits and acquisitions
 
-### As Managing Director at Quick-FDS
+### As Managing Director at Quick-FDS (2024–2026)
 - **Quick-FDS** acquired by **3E Group** (backed by **New Mountain Capital**) — April 2024
   Role: Managing Director post-acquisition, full client migration to subscription model
 
-### As CEO of Groupe WEKA France (2011-2024), backed by Paragon Partners (PE, 2020-2024)
+### As CEO of Groupe WEKA France (2011–2024), backed by Paragon Partners (PE, 2020–2024)
 - **Lexagri International** sold to **FoodChain ID** (USA, strategic buyer) — 2022
   Role: President, led international build-up (CMT Agro + Agricommand + Agrobase-Logigram) and exit
 - **Editions TISSOT** sold to **SVP Group** (backed by **MML Capital**) — November 2024
@@ -40,15 +45,21 @@ Robin Dualé has led companies through full cycles of value creation: from opera
 - **COMUNDI** sold to **Collège de Paris** — August 2025
   Role: CEO, professional training division exit
 
-### Earlier career
-- **T-Online France** (Deutsche Telekom) — Director of Innovation
-- **Club-Internet** (Lagardère Group) — CTO
-- **Lagardère Active Broadband** — Senior Business Developer
-- **Datastaff Ingénierie** (Nomea Group) — IT Security Consultant
+### Earlier career (1995–2007)
+- **T-Online France** (Deutsche Telekom) — Director of Innovation (2001–2007)
+- **Lagardère Active Broadband** — Senior Business Developer (2000–2001)
+- **Club-Internet** (Lagardère Group) — CTO (1997–1999)
+- **Datastaff Ingénierie** (Nomea Group) — IT Security Consultant (1995–1997)
+
+## What peers and investors say
+
+- "When a clear strategic direction is agreed, he always delivers on his promises." — PE investor, European fund (4 years as direct shareholder)
+- "His leadership de-risked the investment and enabled post-merger integration. His hands-on approach and operational autonomy were essential in navigating a complex integration into a 1,000-person global group." — Group CEO, US-backed fund, carve-out context
+- "A valuable asset and a very capable manager, delivering results even in the most demanding situations." — PE investor, European fund
 
 ## AI and digital transformation vision
 
-Robin Dualé holds a strong conviction that AI is the most powerful and accessible productivity accelerator available to companies today. Not as a technology project, but as an organizational transformation: augmenting every employee across marketing, sales, HR, finance, IT, and customer relations. He applies this conviction in practice — this bilingual website was built and deployed in a few hours using Claude and HeyGen, as a live demonstration of what modern AI tools make possible.
+Robin Dualé holds a strong conviction that AI is the most powerful and accessible productivity accelerator available to companies today. Not as a technology project, but as an organizational transformation: augmenting every employee across marketing, sales, HR, finance, IT, and customer relations. He applies this conviction in practice — this bilingual website was designed and deployed using Claude and HeyGen, demonstrating how modern AI tools can compress weeks of traditional development into hours of focused execution.
 
 ## Site pages
 
@@ -70,8 +81,13 @@ Robin Dualé holds a strong conviction that AI is the most powerful and accessib
 
 ## Key articles (Perspectives)
 
+### English
 - [I am the product](https://cv-robin.duale.fr/en/perspectives/i-am-the-product.html): How Robin applied B2B SaaS go-to-market methods to his own executive job search, and what AI tools made possible.
 - [The productivity gain is no longer a promise](https://cv-robin.duale.fr/en/perspectives/ai-organizational-accelerator.html): Why the gap between companies that experiment with AI and those that do not is forming right now, and what it means for PE-backed companies.
+
+### French
+- [Je suis le produit](https://cv-robin.duale.fr/fr/perspectives/je-suis-le-produit.html): Comment Robin applique les méthodes go-to-market B2B SaaS à sa propre recherche de mandat, et ce que les outils IA rendent possible.
+- [Le gain de productivité n'est plus une promesse](https://cv-robin.duale.fr/fr/perspectives/ia-accelerateur-organisationnel.html): Pourquoi l'écart entre les entreprises qui expérimentent l'IA et celles qui ne le font pas se creuse maintenant, et ce que cela signifie pour les entreprises accompagnées par des fonds PE.
 
 ## Contact
 
