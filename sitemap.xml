@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <!-- Root redirect -->
-  <url>
-    <loc>https://cv-robin.duale.fr/</loc>
-    <lastmod>2026-04-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
   <!-- French Pages -->
   <url>
     <loc>https://cv-robin.duale.fr/fr/</loc>
@@ -45,13 +37,6 @@
     <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/contact.html" />
   </url>
-  <url>
-    <loc>https://cv-robin.duale.fr/fr/merci.html</loc>
-    <lastmod>2026-04-10</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.5</priority>
-  </url>
-
   <!-- French Perspectives -->
   <url>
     <loc>https://cv-robin.duale.fr/fr/perspectives/</loc>
@@ -118,13 +103,6 @@
     <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/contact.html" />
   </url>
-  <url>
-    <loc>https://cv-robin.duale.fr/en/thank-you.html</loc>
-    <lastmod>2026-04-10</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.5</priority>
-  </url>
-
   <!-- English Perspectives -->
   <url>
     <loc>https://cv-robin.duale.fr/en/perspectives/</loc>
