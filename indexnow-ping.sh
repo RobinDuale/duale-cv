@@ -21,13 +21,15 @@ PAYLOAD="{
       \"https://${HOST}/fr/perspectives/\",
       \"https://${HOST}/fr/perspectives/je-suis-le-produit.html\",
       \"https://${HOST}/fr/perspectives/ia-accelerateur-organisationnel.html\",
+      \"https://${HOST}/fr/perspectives/avantage-competitif-humain.html\",
       \"https://${HOST}/en/about.html\",
       \"https://${HOST}/en/track-record.html\",
       \"https://${HOST}/en/references.html\",
       \"https://${HOST}/en/contact.html\",
       \"https://${HOST}/en/perspectives/\",
       \"https://${HOST}/en/perspectives/i-am-the-product.html\",
-      \"https://${HOST}/en/perspectives/ai-organizational-accelerator.html\"
+      \"https://${HOST}/en/perspectives/ai-organizational-accelerator.html\",
+      \"https://${HOST}/en/perspectives/competitive-edge-is-human.html\"
     ]
   }"
 
