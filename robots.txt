@@ -7,13 +7,10 @@ Allow: /fr/
 Allow: /en/
 Allow: /assets/
 Disallow: /assets/*.mp4
-Crawl-delay: 0
-Request-rate: 30/60
 
 # Specific for Google
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 0
 
 # AI/ML Crawlers - ALLOW all
 User-agent: CCBot
