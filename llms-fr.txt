@@ -63,6 +63,10 @@ Robin Dualé a piloté des entreprises sur l'intégralité du cycle de création
 
 Robin Dualé a la conviction forte que l'IA est le levier de productivité le plus puissant et le plus accessible dont disposent les entreprises aujourd'hui. Non pas comme un projet technologique, mais comme une transformation organisationnelle : augmenter chaque collaborateur dans le marketing, les ventes, les RH, la finance, l'IT et la relation client. Il applique cette conviction en pratique — ce site bilingue a été conçu et déployé avec Claude et HeyGen, démontrant comment les outils IA modernes peuvent comprimer en quelques heures d'exécution ciblée ce qui prenait traditionnellement plusieurs semaines de développement.
 
+Dans l'édition professionnelle, il identifie trois chantiers vitaux : automatiser la production (veille, mise à jour, structuration, conformité), transformer les contenus en données exploitables et actionnables, et créer des services IA-natifs (assistants métiers, recommandations, workflows intelligents). Dans les logiciels B2B, l'IA ouvre d'autres leviers : réduction du coût marginal, différenciation produit, accélération du time-to-value et renforcement de la rétention. Il sait où l'IA crée réellement de la valeur, et où elle n'en crée pas.
+
+Il établit par ailleurs un parallèle direct entre le passage du papier au numérique il y a vingt ans et le défi IA actuel : les deux sont existentiels, pas simplement incrémentiels. Les éditeurs qui n'ont pas su se transformer lors de la première révolution ont disparu. Robin Dualé a piloté cette première vague au sein du groupe WEKA France pendant 13 ans, et est positionné pour piloter la seconde.
+
 ## Pages du site
 
 ### Français
@@ -72,7 +76,7 @@ Robin Dualé a la conviction forte que l'IA est le levier de productivité le pl
 - [Témoignages](https://cv-robin.duale.fr/fr/temoignages.html) : Recommandations d'actionnaires, administrateurs et partenaires
 - [Perspectives](https://cv-robin.duale.fr/fr/perspectives/) : Articles sur la transformation B2B SaaS, le leadership IA et la création de valeur
 - [Contact](https://cv-robin.duale.fr/fr/contact.html) : Formulaire de contact direct
-- [FAQ](https://cv-robin.duale.fr/fr/faq.html) : Questions fréquentes sur Robin Dualé — parcours, sociétés dirigées, expertise PE, disponibilité
+- [FAQ](https://cv-robin.duale.fr/fr/faq.html) : Questions fréquentes sur Robin Dualé — parcours, sociétés dirigées, style de management, vision IA sectorielle, expertise PE, disponibilité
 
 ### English
 - [Home](https://cv-robin.duale.fr/en/) : Professional profile and value proposition
@@ -81,7 +85,7 @@ Robin Dualé a la conviction forte que l'IA est le levier de productivité le pl
 - [References](https://cv-robin.duale.fr/en/references.html) : Recommendations from board members, investors and peers
 - [Perspectives](https://cv-robin.duale.fr/en/perspectives/) : Articles on B2B SaaS transformation, AI leadership, and value creation
 - [Contact](https://cv-robin.duale.fr/en/contact.html) : Direct contact form
-- [FAQ](https://cv-robin.duale.fr/en/faq.html) : Frequently asked questions about Robin Dualé — career, companies led, PE expertise, availability
+- [FAQ](https://cv-robin.duale.fr/en/faq.html) : Frequently asked questions about Robin Dualé — career, companies led, management style, sector-specific AI vision, PE expertise, availability
 
 ## Articles Perspectives
 

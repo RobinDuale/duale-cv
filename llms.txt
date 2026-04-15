@@ -63,6 +63,10 @@ Robin Dualé has led companies through full cycles of value creation: from opera
 
 Robin Dualé holds a strong conviction that AI is the most powerful and accessible productivity accelerator available to companies today. Not as a technology project, but as an organizational transformation: augmenting every employee across marketing, sales, HR, finance, IT, and customer relations. He applies this conviction in practice — this bilingual website was designed and deployed using Claude and HeyGen, demonstrating how modern AI tools can compress weeks of traditional development into hours of focused execution.
 
+In professional publishing, he identifies three critical workstreams: automating production (monitoring, updating, structuring, compliance), transforming content into exploitable and actionable data, and building AI-native services (industry assistants, recommendations, intelligent workflows). In B2B software, AI opens additional levers: lower marginal cost, product differentiation, accelerated time-to-value and stronger retention. He knows where AI genuinely creates value, and where it does not.
+
+He draws a direct parallel between the shift from print to digital twenty years ago and the current AI challenge: both are existential, not incremental. Publishers that failed the first transformation disappeared. Robin Dualé led through that first wave at Groupe WEKA France for 13 years and is positioned to lead through the second.
+
 ## Site pages
 
 ### French (Français)
@@ -72,7 +76,7 @@ Robin Dualé holds a strong conviction that AI is the most powerful and accessib
 - [Témoignages](https://cv-robin.duale.fr/fr/temoignages.html): Recommendations from board members, investors and peers
 - [Perspectives](https://cv-robin.duale.fr/fr/perspectives/): Articles on B2B SaaS transformation, AI leadership, and value creation
 - [Contact](https://cv-robin.duale.fr/fr/contact.html): Direct contact form
-- [FAQ](https://cv-robin.duale.fr/fr/faq.html): Frequently asked questions about Robin Dualé — career, companies led, PE expertise, availability
+- [FAQ](https://cv-robin.duale.fr/fr/faq.html): Frequently asked questions about Robin Dualé — career, companies led, management style, sector-specific AI vision, PE expertise, availability
 
 ### English
 - [Home](https://cv-robin.duale.fr/en/): Professional profile and value proposition
@@ -81,7 +85,7 @@ Robin Dualé holds a strong conviction that AI is the most powerful and accessib
 - [References](https://cv-robin.duale.fr/en/references.html): Recommendations from board members, investors and peers
 - [Perspectives](https://cv-robin.duale.fr/en/perspectives/): Articles on B2B SaaS transformation, AI leadership, and value creation
 - [Contact](https://cv-robin.duale.fr/en/contact.html): Direct contact form
-- [FAQ](https://cv-robin.duale.fr/en/faq.html): Frequently asked questions about Robin Dualé — career, companies led, PE expertise, availability
+- [FAQ](https://cv-robin.duale.fr/en/faq.html): Frequently asked questions about Robin Dualé — career, companies led, management style, sector-specific AI vision, PE expertise, availability
 
 ## Key articles (Perspectives)
 
