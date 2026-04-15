@@ -31,7 +31,9 @@ PAYLOAD="{
       \"https://${HOST}/en/perspectives/ai-organizational-accelerator.html\",
       \"https://${HOST}/en/perspectives/competitive-edge-is-human.html\",
       \"https://${HOST}/fr/faq.html\",
-      \"https://${HOST}/en/faq.html\"
+      \"https://${HOST}/en/faq.html\",
+      \"https://${HOST}/fr/mentions-legales.html\",
+      \"https://${HOST}/en/legal-notice.html\"
     ]
   }"
 
