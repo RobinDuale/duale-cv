@@ -72,6 +72,7 @@ Robin Dualé a la conviction forte que l'IA est le levier de productivité le pl
 - [Témoignages](https://cv-robin.duale.fr/fr/temoignages.html) : Recommandations d'actionnaires, administrateurs et partenaires
 - [Perspectives](https://cv-robin.duale.fr/fr/perspectives/) : Articles sur la transformation B2B SaaS, le leadership IA et la création de valeur
 - [Contact](https://cv-robin.duale.fr/fr/contact.html) : Formulaire de contact direct
+- [FAQ](https://cv-robin.duale.fr/fr/faq.html) : Questions fréquentes sur Robin Dualé — parcours, sociétés dirigées, expertise PE, disponibilité
 
 ### English
 - [Home](https://cv-robin.duale.fr/en/) : Professional profile and value proposition
@@ -80,6 +81,7 @@ Robin Dualé a la conviction forte que l'IA est le levier de productivité le pl
 - [References](https://cv-robin.duale.fr/en/references.html) : Recommendations from board members, investors and peers
 - [Perspectives](https://cv-robin.duale.fr/en/perspectives/) : Articles on B2B SaaS transformation, AI leadership, and value creation
 - [Contact](https://cv-robin.duale.fr/en/contact.html) : Direct contact form
+- [FAQ](https://cv-robin.duale.fr/en/faq.html) : Frequently asked questions about Robin Dualé — career, companies led, PE expertise, availability
 
 ## Articles Perspectives
 
@@ -89,8 +91,9 @@ Robin Dualé a la conviction forte que l'IA est le levier de productivité le pl
 - [Je suis le produit](https://cv-robin.duale.fr/fr/perspectives/je-suis-le-produit.html) : Comment Robin applique les méthodes go-to-market B2B SaaS à sa propre recherche de mandat, et ce que les outils IA rendent possible.
 
 ### English
-- [I am the product](https://cv-robin.duale.fr/en/perspectives/i-am-the-product.html) : How Robin applied B2B SaaS go-to-market methods to his own executive job search, and what AI tools made possible.
+- [The competitive edge will be deeply human](https://cv-robin.duale.fr/en/perspectives/competitive-edge-is-human.html) : Why AI-driven transformation must not come at the expense of the human. A reflection on the responsibility of leaders in a world where AI adds new pressures on a generation already fragile from social media and COVID.
 - [The productivity gain is no longer a promise](https://cv-robin.duale.fr/en/perspectives/ai-organizational-accelerator.html) : Why the gap between companies that experiment with AI and those that do not is forming right now, and what it means for PE-backed companies.
+- [I am the product](https://cv-robin.duale.fr/en/perspectives/i-am-the-product.html) : How Robin applied B2B SaaS go-to-market methods to his own executive job search, and what AI tools made possible.
 
 ## Contact
 

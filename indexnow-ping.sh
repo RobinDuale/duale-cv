@@ -29,7 +29,9 @@ PAYLOAD="{
       \"https://${HOST}/en/perspectives/\",
       \"https://${HOST}/en/perspectives/i-am-the-product.html\",
       \"https://${HOST}/en/perspectives/ai-organizational-accelerator.html\",
-      \"https://${HOST}/en/perspectives/competitive-edge-is-human.html\"
+      \"https://${HOST}/en/perspectives/competitive-edge-is-human.html\",
+      \"https://${HOST}/fr/faq.html\",
+      \"https://${HOST}/en/faq.html\"
     ]
   }"
 

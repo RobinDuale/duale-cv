@@ -67,6 +67,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/perspectives/competitive-edge-is-human.html" />
   </url>
 
+  <!-- French FAQ -->
+  <url>
+    <loc>https://cv-robin.duale.fr/fr/faq.html</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/faq.html" />
+  </url>
+
   <!-- English Pages -->
   <url>
     <loc>https://cv-robin.duale.fr/en/</loc>
@@ -103,6 +112,15 @@
     <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/contact.html" />
   </url>
+  <!-- English FAQ -->
+  <url>
+    <loc>https://cv-robin.duale.fr/en/faq.html</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/faq.html" />
+  </url>
+
   <!-- English Perspectives -->
   <url>
     <loc>https://cv-robin.duale.fr/en/perspectives/</loc>

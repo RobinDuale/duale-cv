@@ -43,4 +43,4 @@ Website-Title: Robin Duale - CEO / Directeur Général
 Website-Description: 18 years of CEO experience in B2B SaaS & Data transformation, PE-backed environments
 Primary-Language: French
 Secondary-Language: English
-Updated: 2026-04-10
+Updated: 2026-04-15
