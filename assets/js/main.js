@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function loadGA() {
   if (window.gtagLoaded) return;
+  if (document.cookie.split(';').some(c => c.trim().startsWith('ga_exclude=1'))) return;
   window.gtagLoaded = true;
   const s = document.createElement('script');
   s.async = true;
