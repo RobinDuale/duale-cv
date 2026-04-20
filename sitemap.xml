@@ -66,6 +66,13 @@
     <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/perspectives/competitive-edge-is-human.html" />
   </url>
+  <url>
+    <loc>https://cv-robin.duale.fr/fr/perspectives/migration-100-abonnement.html</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/perspectives/switching-to-100-percent-subscription.html" />
+  </url>
 
   <!-- French FAQ -->
   <url>
@@ -149,5 +156,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/perspectives/avantage-competitif-humain.html" />
+  </url>
+  <url>
+    <loc>https://cv-robin.duale.fr/en/perspectives/switching-to-100-percent-subscription.html</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/perspectives/migration-100-abonnement.html" />
   </url>
 </urlset>
