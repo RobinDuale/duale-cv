@@ -300,7 +300,7 @@ body {
 .edu-degree { font-family: var(--serif); font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
 .edu-school { font-family: var(--sans); font-size: 13px; color: var(--gold); margin-bottom: 2px; }
 .edu-year { font-family: var(--sans); font-size: 12px; color: var(--ink-40); }
-.edu-logo-card { display: flex; align-items: center; gap: 14px; padding: 12px 14px; background: white; border: 0.5px solid var(--gold-border); border-radius: 2px; margin-bottom: 10px; }
+.edu-logo-card { display: flex; align-items: center; gap: 14px; padding: 12px 14px; background: rgba(247,244,238,0.8); border: 0.5px solid var(--gold-border); border-radius: 1px; margin-bottom: 10px; }
 .edu-logo-img { max-height: 36px; width: auto; max-width: 76px; object-fit: contain; flex-shrink: 0; }
 .linkedin-btn { width: 100%; padding: 11px; background: transparent; color: var(--gold); border: 0.5px solid var(--gold-mid); border-radius: 1px; font-family: var(--sans); font-size: 12px; letter-spacing: 0.11em; text-transform: uppercase; cursor: pointer; margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; transition: background 0.2s; }
 
