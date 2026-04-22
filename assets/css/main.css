@@ -519,7 +519,7 @@ body {
   overflow: hidden; background: var(--cream-dark); transition: border-color 0.2s;
 }
 .persp-card:hover { border-color: rgba(154,114,40,0.55); }
-.persp-card-img { width: 100%; aspect-ratio: 800/420; object-fit: cover; display: block; border-bottom: 0.5px solid var(--gold-border); }
+.persp-card-img { width: 100%; height: auto; display: block; border-bottom: 0.5px solid var(--gold-border); }
 .persp-card-body { padding: 20px 22px; flex: 1; display: flex; flex-direction: column; }
 .article-illus { margin-bottom: 36px; border-radius: 2px; overflow: hidden; border: 0.5px solid var(--gold-border); }
 .article-illus-img { width: 100%; display: block; }
