@@ -616,6 +616,5 @@ body {
 /* ── NAV BRAND + SCHOOL LOGOS ── */
 .nav-brand { display: flex; align-items: center; gap: 16px; }
 .nav-edu-logos { display: flex; align-items: center; gap: 12px; padding-left: 16px; border-left: 0.5px solid var(--gold-border); }
-.nav-edu-logo { max-height: 18px; width: auto; max-width: 56px; object-fit: contain; opacity: 0.6; transition: opacity 0.2s; }
-.nav-edu-logo:hover { opacity: 1; }
+.nav-edu-logo { max-height: 18px; width: auto; max-width: 56px; object-fit: contain; }
 @media (max-width: 900px) { .nav-edu-logos { display: none; } }
