@@ -1,0 +1,40 @@
+<svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="420" fill="#f7f4ee"/>
+
+  <!-- Soft background ellipses -->
+  <ellipse cx="400" cy="210" rx="260" ry="180" fill="#d8c890" opacity="0.10"/>
+  <ellipse cx="400" cy="210" rx="160" ry="110" fill="#c8b870" opacity="0.10"/>
+
+  <!-- Outer orbit ring -->
+  <circle cx="400" cy="210" r="175" fill="none" stroke="#9a7228" stroke-width="0.6" stroke-dasharray="3,6" opacity="0.18"/>
+  <!-- Middle orbit ring -->
+  <circle cx="400" cy="210" r="110" fill="none" stroke="#9a7228" stroke-width="0.6" stroke-dasharray="3,6" opacity="0.14"/>
+
+  <!-- Connection lines: center to satellites -->
+  <line x1="400" y1="210" x2="245" y2="88"  stroke="#9a7228" stroke-width="0.8" opacity="0.18"/>
+  <line x1="400" y1="210" x2="555" y2="88"  stroke="#9a7228" stroke-width="0.8" opacity="0.18"/>
+  <line x1="400" y1="210" x2="210" y2="255" stroke="#9a7228" stroke-width="0.8" opacity="0.18"/>
+  <line x1="400" y1="210" x2="590" y2="255" stroke="#9a7228" stroke-width="0.8" opacity="0.18"/>
+  <line x1="400" y1="210" x2="300" y2="355" stroke="#9a7228" stroke-width="0.8" opacity="0.18"/>
+  <line x1="400" y1="210" x2="500" y2="355" stroke="#9a7228" stroke-width="0.8" opacity="0.18"/>
+
+  <!-- Satellite nodes: geometric (tech/AI) -->
+  <rect x="233" y="76"  width="24" height="24" rx="3" fill="#9a7228" opacity="0.20" transform="rotate(20 245 88)"/>
+  <rect x="543" y="76"  width="24" height="24" rx="3" fill="#9a7228" opacity="0.20" transform="rotate(-20 555 88)"/>
+  <rect x="198" y="243" width="24" height="24" rx="3" fill="#9a7228" opacity="0.17" transform="rotate(10 210 255)"/>
+  <rect x="578" y="243" width="24" height="24" rx="3" fill="#9a7228" opacity="0.17" transform="rotate(-10 590 255)"/>
+  <rect x="288" y="343" width="24" height="24" rx="3" fill="#9a7228" opacity="0.19" transform="rotate(15 300 355)"/>
+  <rect x="488" y="343" width="24" height="24" rx="3" fill="#9a7228" opacity="0.19" transform="rotate(-15 500 355)"/>
+
+  <!-- Center human glow -->
+  <circle cx="400" cy="210" r="52" fill="#9a7228" opacity="0.08"/>
+  <circle cx="400" cy="210" r="36" fill="#9a7228" opacity="0.10"/>
+
+  <!-- Human figure: head -->
+  <circle cx="400" cy="186" r="18" fill="#f7f4ee" stroke="#9a7228" stroke-width="1.8" opacity="0.85"/>
+  <!-- Human figure: shoulders arc -->
+  <path d="M372 234 Q376 214 400 208 Q424 214 428 234" fill="none" stroke="#9a7228" stroke-width="1.8" stroke-linecap="round" opacity="0.80"/>
+
+  <!-- Center dot -->
+  <circle cx="400" cy="210" r="5" fill="#9a7228" opacity="0.35"/>
+</svg>

@@ -1,0 +1,68 @@
+<svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="420" fill="#f7f4ee"/>
+
+  <!-- Background ellipses -->
+  <ellipse cx="400" cy="210" rx="300" ry="190" fill="#d8c890" opacity="0.10"/>
+  <ellipse cx="400" cy="210" rx="180" ry="115" fill="#c8b870" opacity="0.09"/>
+
+  <!-- Positioning axes -->
+  <line x1="80"  y1="210" x2="720" y2="210" stroke="#9a7228" stroke-width="0.7" opacity="0.20"/>
+  <line x1="400" y1="40"  x2="400" y2="380" stroke="#9a7228" stroke-width="0.7" opacity="0.20"/>
+
+  <!-- Target rings -->
+  <circle cx="400" cy="210" r="160" fill="none" stroke="#9a7228" stroke-width="0.8" opacity="0.14"/>
+  <circle cx="400" cy="210" r="100" fill="none" stroke="#9a7228" stroke-width="0.8" opacity="0.18"/>
+  <circle cx="400" cy="210" r="48"  fill="none" stroke="#9a7228" stroke-width="1"   opacity="0.25"/>
+
+  <!-- Channel lines to audience nodes -->
+  <line x1="400" y1="210" x2="400" y2="65"  stroke="#9a7228" stroke-width="1.2" opacity="0.35"/>
+  <line x1="400" y1="210" x2="700" y2="210" stroke="#9a7228" stroke-width="1.2" opacity="0.35"/>
+  <line x1="400" y1="210" x2="400" y2="355" stroke="#9a7228" stroke-width="1.2" opacity="0.35"/>
+  <line x1="400" y1="210" x2="100" y2="210" stroke="#9a7228" stroke-width="1.2" opacity="0.35"/>
+
+  <!-- Diagonal secondary channels -->
+  <line x1="400" y1="210" x2="608" y2="88"  stroke="#9a7228" stroke-width="0.7" opacity="0.20"/>
+  <line x1="400" y1="210" x2="608" y2="332" stroke="#9a7228" stroke-width="0.7" opacity="0.20"/>
+  <line x1="400" y1="210" x2="192" y2="88"  stroke="#9a7228" stroke-width="0.7" opacity="0.20"/>
+  <line x1="400" y1="210" x2="192" y2="332" stroke="#9a7228" stroke-width="0.7" opacity="0.20"/>
+
+  <!-- Audience nodes -->
+  <!-- Top: LinkedIn -->
+  <circle cx="400" cy="65"  r="16" fill="#9a7228" opacity="0.18"/>
+  <circle cx="400" cy="65"  r="16" fill="none" stroke="#9a7228" stroke-width="1" opacity="0.40"/>
+  <text x="400" y="56" font-family="Jost,sans-serif" font-size="9" letter-spacing="1.5" fill="#9a7228" opacity="0.55" text-anchor="middle">LINKEDIN</text>
+
+  <!-- Right: PE Funds -->
+  <circle cx="700" cy="210" r="16" fill="#9a7228" opacity="0.18"/>
+  <circle cx="700" cy="210" r="16" fill="none" stroke="#9a7228" stroke-width="1" opacity="0.40"/>
+  <text x="700" y="206" font-family="Jost,sans-serif" font-size="8" letter-spacing="1" fill="#9a7228" opacity="0.55" text-anchor="middle">FONDS</text>
+  <text x="700" y="218" font-family="Jost,sans-serif" font-size="8" letter-spacing="1" fill="#9a7228" opacity="0.55" text-anchor="middle">PE</text>
+
+  <!-- Bottom: Headhunters -->
+  <circle cx="400" cy="355" r="16" fill="#9a7228" opacity="0.18"/>
+  <circle cx="400" cy="355" r="16" fill="none" stroke="#9a7228" stroke-width="1" opacity="0.40"/>
+  <text x="400" y="351" font-family="Jost,sans-serif" font-size="8" letter-spacing="1" fill="#9a7228" opacity="0.55" text-anchor="middle">CHASSEURS</text>
+  <text x="400" y="362" font-family="Jost,sans-serif" font-size="8" letter-spacing="1" fill="#9a7228" opacity="0.55" text-anchor="middle">DE TÊTES</text>
+
+  <!-- Left: Direct -->
+  <circle cx="100" cy="210" r="16" fill="#9a7228" opacity="0.18"/>
+  <circle cx="100" cy="210" r="16" fill="none" stroke="#9a7228" stroke-width="1" opacity="0.40"/>
+  <text x="100" y="206" font-family="Jost,sans-serif" font-size="8" letter-spacing="1" fill="#9a7228" opacity="0.55" text-anchor="middle">CONTACT</text>
+  <text x="100" y="218" font-family="Jost,sans-serif" font-size="8" letter-spacing="1" fill="#9a7228" opacity="0.55" text-anchor="middle">DIRECT</text>
+
+  <!-- Diagonal nodes (smaller) -->
+  <circle cx="608" cy="88"  r="9" fill="#9a7228" opacity="0.15"/>
+  <circle cx="608" cy="88"  r="9" fill="none" stroke="#9a7228" stroke-width="0.8" opacity="0.28"/>
+  <circle cx="608" cy="332" r="9" fill="#9a7228" opacity="0.15"/>
+  <circle cx="608" cy="332" r="9" fill="none" stroke="#9a7228" stroke-width="0.8" opacity="0.28"/>
+  <circle cx="192" cy="88"  r="9" fill="#9a7228" opacity="0.15"/>
+  <circle cx="192" cy="88"  r="9" fill="none" stroke="#9a7228" stroke-width="0.8" opacity="0.28"/>
+  <circle cx="192" cy="332" r="9" fill="#9a7228" opacity="0.15"/>
+  <circle cx="192" cy="332" r="9" fill="none" stroke="#9a7228" stroke-width="0.8" opacity="0.28"/>
+
+  <!-- Central person (the product) -->
+  <circle cx="400" cy="210" r="26" fill="#9a7228" opacity="0.10"/>
+  <circle cx="400" cy="196" r="12" fill="#f7f4ee" stroke="#9a7228" stroke-width="1.6" opacity="0.88"/>
+  <path d="M380 228 Q383 214 400 210 Q417 214 420 228" fill="none" stroke="#9a7228" stroke-width="1.6" stroke-linecap="round" opacity="0.82"/>
+  <circle cx="400" cy="210" r="4"  fill="#9a7228" opacity="0.30"/>
+</svg>
