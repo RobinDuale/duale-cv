@@ -11,14 +11,14 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/fr/a-propos.html</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/about.html" />
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/fr/parcours.html</loc>
-    <lastmod>2026-04-12</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/track-record.html" />
@@ -40,35 +40,35 @@
   <!-- French Perspectives -->
   <url>
     <loc>https://cv-robin.duale.fr/fr/perspectives/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/perspectives/" />
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/fr/perspectives/je-suis-le-produit.html</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/perspectives/i-am-the-product.html" />
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/fr/perspectives/ia-accelerateur-organisationnel.html</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/perspectives/ai-organizational-accelerator.html" />
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/fr/perspectives/avantage-competitif-humain.html</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/perspectives/competitive-edge-is-human.html" />
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/fr/perspectives/migration-100-abonnement.html</loc>
-    <lastmod>2026-04-17</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/perspectives/switching-to-100-percent-subscription.html" />
@@ -93,14 +93,14 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/en/about.html</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/a-propos.html" />
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/en/track-record.html</loc>
-    <lastmod>2026-04-12</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/parcours.html" />
@@ -131,35 +131,35 @@
   <!-- English Perspectives -->
   <url>
     <loc>https://cv-robin.duale.fr/en/perspectives/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/perspectives/" />
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/en/perspectives/i-am-the-product.html</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/perspectives/je-suis-le-produit.html" />
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/en/perspectives/ai-organizational-accelerator.html</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/perspectives/ia-accelerateur-organisationnel.html" />
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/en/perspectives/competitive-edge-is-human.html</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/perspectives/avantage-competitif-humain.html" />
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/en/perspectives/switching-to-100-percent-subscription.html</loc>
-    <lastmod>2026-04-17</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/perspectives/migration-100-abonnement.html" />
