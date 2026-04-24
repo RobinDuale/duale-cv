@@ -1,0 +1,74 @@
+<svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="420" fill="#f7f4ee"/>
+
+  <!-- Background ellipses -->
+  <ellipse cx="580" cy="160" rx="220" ry="140" fill="#d8c890" opacity="0.12"/>
+  <ellipse cx="180" cy="300" rx="160" ry="100" fill="#c8b870" opacity="0.10"/>
+
+  <!-- Grid lines -->
+  <line x1="60" y1="340" x2="740" y2="340" stroke="#9a7228" stroke-width="0.5" opacity="0.12"/>
+  <line x1="60" y1="270" x2="740" y2="270" stroke="#9a7228" stroke-width="0.5" opacity="0.08"/>
+  <line x1="60" y1="200" x2="740" y2="200" stroke="#9a7228" stroke-width="0.5" opacity="0.08"/>
+  <line x1="60" y1="130" x2="740" y2="130" stroke="#9a7228" stroke-width="0.5" opacity="0.06"/>
+
+  <!-- Vertical axis -->
+  <line x1="80" y1="60" x2="80" y2="345" stroke="#9a7228" stroke-width="0.6" opacity="0.15"/>
+
+  <!-- Signal 1: ARR curve (solid, strongest) -->
+  <path d="M100 330 C200 310 300 270 400 230 C500 190 580 150 660 100" fill="none" stroke="#9a7228" stroke-width="2.8" stroke-linecap="round" opacity="0.75"/>
+  <!-- ARR area fill -->
+  <path d="M100 330 C200 310 300 270 400 230 C500 190 580 150 660 100 L660 345 L100 345 Z" fill="#9a7228" opacity="0.05"/>
+
+  <!-- Signal 2: NRR curve (dashed) -->
+  <path d="M100 340 C200 325 300 295 400 260 C500 225 580 185 660 130" fill="none" stroke="#9a7228" stroke-width="1.8" stroke-dasharray="6,4" stroke-linecap="round" opacity="0.45"/>
+
+  <!-- Data points on ARR -->
+  <circle cx="100" cy="330" r="3.5" fill="#9a7228" opacity="0.50"/>
+  <circle cx="220" cy="305" r="3.5" fill="#9a7228" opacity="0.58"/>
+  <circle cx="340" cy="255" r="3.5" fill="#9a7228" opacity="0.66"/>
+  <circle cx="470" cy="207" r="3.5" fill="#9a7228" opacity="0.74"/>
+  <circle cx="580" cy="158" r="3.5" fill="#9a7228" opacity="0.82"/>
+  <circle cx="660" cy="100" r="5"   fill="#9a7228" opacity="0.90"/>
+  <!-- Halo on exit point -->
+  <circle cx="660" cy="100" r="12"  fill="none" stroke="#9a7228" stroke-width="1" opacity="0.30"/>
+  <circle cx="660" cy="100" r="22"  fill="none" stroke="#9a7228" stroke-width="0.5" opacity="0.14"/>
+
+  <!-- Exit label -->
+  <text x="683" y="96" font-family="Jost,sans-serif" font-size="11" font-weight="600" letter-spacing="1.5" fill="#9a7228" opacity="0.75">EXIT</text>
+
+  <!-- Vertical connector lines at x=660 -->
+  <line x1="660" y1="100" x2="660" y2="130" stroke="#9a7228" stroke-width="0.8" opacity="0.25"/>
+
+  <!-- Year markers on x-axis -->
+  <line x1="100" y1="340" x2="100" y2="350" stroke="#9a7228" stroke-width="0.8" opacity="0.25"/>
+  <line x1="280" y1="340" x2="280" y2="350" stroke="#9a7228" stroke-width="0.8" opacity="0.20"/>
+  <line x1="470" y1="340" x2="470" y2="350" stroke="#9a7228" stroke-width="0.8" opacity="0.20"/>
+  <line x1="660" y1="340" x2="660" y2="350" stroke="#9a7228" stroke-width="0.8" opacity="0.25"/>
+
+  <text x="100" y="365" font-family="Jost,sans-serif" font-size="9" letter-spacing="1" fill="#9a7228" opacity="0.38" text-anchor="middle">J+1</text>
+  <text x="280" y="365" font-family="Jost,sans-serif" font-size="9" letter-spacing="1" fill="#9a7228" opacity="0.35" text-anchor="middle">AN 1</text>
+  <text x="470" y="365" font-family="Jost,sans-serif" font-size="9" letter-spacing="1" fill="#9a7228" opacity="0.35" text-anchor="middle">AN 2</text>
+  <text x="660" y="365" font-family="Jost,sans-serif" font-size="9" letter-spacing="1" fill="#9a7228" opacity="0.42" text-anchor="middle">EXIT</text>
+
+  <!-- ARR / NRR labels (left side) -->
+  <text x="88" y="322" font-family="Jost,sans-serif" font-size="9" font-weight="600" letter-spacing="1.2" fill="#9a7228" opacity="0.55">ARR</text>
+  <text x="88" y="340" font-family="Jost,sans-serif" font-size="9" letter-spacing="1.2" fill="#9a7228" opacity="0.38">NRR</text>
+
+  <!-- Four signal dots (left column) -->
+  <circle cx="36" cy="130" r="3" fill="#9a7228" opacity="0.55"/>
+  <circle cx="36" cy="155" r="3" fill="#9a7228" opacity="0.44"/>
+  <circle cx="36" cy="180" r="3" fill="#9a7228" opacity="0.33"/>
+  <circle cx="36" cy="205" r="3" fill="#9a7228" opacity="0.22"/>
+
+  <!-- Signal labels -->
+  <text x="46" y="133" font-family="Jost,sans-serif" font-size="8.5" letter-spacing="0.8" fill="#9a7228" opacity="0.45">REVENU RÉCURRENT</text>
+  <text x="46" y="158" font-family="Jost,sans-serif" font-size="8.5" letter-spacing="0.8" fill="#9a7228" opacity="0.38">NET REVENUE RETENTION</text>
+  <text x="46" y="183" font-family="Jost,sans-serif" font-size="8.5" letter-spacing="0.8" fill="#9a7228" opacity="0.32">DASHBOARDS VÉRIFIABLES</text>
+  <text x="46" y="208" font-family="Jost,sans-serif" font-size="8.5" letter-spacing="0.8" fill="#9a7228" opacity="0.26">ÉQUIPE DIRIGEANTE</text>
+
+  <!-- Subtle connection lines from labels to curve start -->
+  <line x1="44" y1="130" x2="80" y2="130" stroke="#9a7228" stroke-width="0.5" opacity="0.12"/>
+  <line x1="44" y1="155" x2="80" y2="155" stroke="#9a7228" stroke-width="0.5" opacity="0.10"/>
+  <line x1="44" y1="180" x2="80" y2="180" stroke="#9a7228" stroke-width="0.5" opacity="0.08"/>
+  <line x1="44" y1="205" x2="80" y2="205" stroke="#9a7228" stroke-width="0.5" opacity="0.06"/>
+</svg>

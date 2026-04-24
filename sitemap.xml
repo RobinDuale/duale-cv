@@ -13,7 +13,7 @@
   <!-- French Pages -->
   <url>
     <loc>https://cv-robin.duale.fr/fr/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/" />
@@ -49,7 +49,7 @@
   <!-- French Perspectives -->
   <url>
     <loc>https://cv-robin.duale.fr/fr/perspectives/</loc>
-    <lastmod>2026-04-22</lastmod>
+    <lastmod>2026-04-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/perspectives/" />
@@ -77,10 +77,17 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/fr/perspectives/migration-100-abonnement.html</loc>
-    <lastmod>2026-04-22</lastmod>
+    <lastmod>2026-04-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/perspectives/switching-to-100-percent-subscription.html" />
+  </url>
+  <url>
+    <loc>https://cv-robin.duale.fr/fr/perspectives/exit-reussi-ce-que-lacheteur-regarde-vraiment.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/perspectives/successful-exit-what-buyers-really-look-at.html" />
   </url>
 
   <!-- French FAQ -->
@@ -95,7 +102,7 @@
   <!-- English Pages -->
   <url>
     <loc>https://cv-robin.duale.fr/en/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/" />
@@ -140,7 +147,7 @@
   <!-- English Perspectives -->
   <url>
     <loc>https://cv-robin.duale.fr/en/perspectives/</loc>
-    <lastmod>2026-04-22</lastmod>
+    <lastmod>2026-04-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/perspectives/" />
@@ -168,9 +175,16 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/en/perspectives/switching-to-100-percent-subscription.html</loc>
-    <lastmod>2026-04-22</lastmod>
+    <lastmod>2026-04-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/perspectives/migration-100-abonnement.html" />
+  </url>
+  <url>
+    <loc>https://cv-robin.duale.fr/en/perspectives/successful-exit-what-buyers-really-look-at.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/perspectives/exit-reussi-ce-que-lacheteur-regarde-vraiment.html" />
   </url>
 </urlset>
