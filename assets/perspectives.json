@@ -5,7 +5,15 @@
     "title_fr": "Je suis le produit",
     "title_en": "I am the product",
     "tags_fr": "IA · Personal branding",
-    "tags_en": "AI · Personal branding"
+    "tags_en": "AI · Personal branding",
+    "date_fr": "8 avr. 2026",
+    "date_en": "Apr 8, 2026",
+    "image_fr": "/assets/illus-product.svg",
+    "image_en": "/assets/illus-product.svg",
+    "alt_fr": "Illustration : je suis le produit",
+    "alt_en": "Illustration: I am the product",
+    "excerpt_fr": "Après 18 ans à piloter des go-to-market pour des entreprises B2B, me voilà face à un défi inédit : me positionner moi-même sur le marché des mandats de direction générale.",
+    "excerpt_en": "After 18 years running go-to-market strategies for B2B SaaS companies, I now face an unexpected challenge: positioning myself on the executive mandate market."
   },
   {
     "slug_fr": "ia-accelerateur-organisationnel",
@@ -13,7 +21,15 @@
     "title_fr": "Le gain de productivité n'est plus une promesse",
     "title_en": "The productivity gain is no longer a promise",
     "tags_fr": "IA · Leadership",
-    "tags_en": "AI · Leadership"
+    "tags_en": "AI · Leadership",
+    "date_fr": "10 avr. 2026",
+    "date_en": "Apr 10, 2026",
+    "image_fr": "/assets/illus-productivity.svg",
+    "image_en": "/assets/illus-productivity.svg",
+    "alt_fr": "Illustration : le gain de productivité n'est plus une promesse",
+    "alt_en": "Illustration: the productivity gain is no longer a promise",
+    "excerpt_fr": "6 000 personnes en 24 heures, 37 commentaires, des dizaines de messages privés. Tous posant les mêmes trois questions. Ce que cela révèle sur notre rapport collectif à l'IA.",
+    "excerpt_en": "6,000 people in 24 hours, 37 comments, dozens of private messages. All asking the same three questions. What this reveals about our collective relationship with AI."
   },
   {
     "slug_fr": "avantage-competitif-humain",
@@ -21,7 +37,15 @@
     "title_fr": "L'avantage compétitif sera profondément humain",
     "title_en": "The competitive edge will be deeply human",
     "tags_fr": "IA · Leadership",
-    "tags_en": "AI · Leadership"
+    "tags_en": "AI · Leadership",
+    "date_fr": "13 avr. 2026",
+    "date_en": "Apr 13, 2026",
+    "image_fr": "/assets/illus-human-edge.svg",
+    "image_en": "/assets/illus-human-edge.svg",
+    "alt_fr": "Illustration : l'avantage compétitif profondément humain",
+    "alt_en": "Illustration: the competitive edge will be deeply human",
+    "excerpt_fr": "Le rapport mondial sur le bonheur nous alerte. Alors que l'IA redessine le monde du travail, la conviction est simple : ce qui différenciera demain ne sera pas seulement technologique.",
+    "excerpt_en": "The World Happiness Report gives us pause. As AI reshapes the world of work, the conviction is clear: what will differentiate tomorrow will not be purely technological."
   },
   {
     "slug_fr": "migration-100-abonnement",
@@ -29,7 +53,15 @@
     "title_fr": "Passer au tout-abonnement",
     "title_en": "Switching to all-inclusive subscription",
     "tags_fr": "SaaS · Transformation",
-    "tags_en": "SaaS · Transformation"
+    "tags_en": "SaaS · Transformation",
+    "date_fr": "17 avr. 2026",
+    "date_en": "Apr 17, 2026",
+    "image_fr": "/assets/illus-subscription.svg",
+    "image_en": "/assets/illus-subscription.svg",
+    "alt_fr": "Illustration : passer au modele 100% abonnement",
+    "alt_en": "Illustration: switching to all-inclusive subscription",
+    "excerpt_fr": "Comment migrer d'un modèle mixte vers le 100% abonnement sans perdre sa base clients. Les deux freins que tout client exprime, et ce que les données de consommation révèlent vraiment.",
+    "excerpt_en": "How to migrate from a mixed model to 100% subscription without losing your customer base. The two objections every customer raises, and what consumption data reveals."
   },
   {
     "slug_fr": "exit-reussi-ce-que-lacheteur-regarde-vraiment",
@@ -37,6 +69,14 @@
     "title_fr": "Exit réussi : ce que l'acheteur regarde vraiment",
     "title_en": "Successful exit: what buyers really look at",
     "tags_fr": "M&A · Private equity",
-    "tags_en": "M&A · Private equity"
+    "tags_en": "M&A · Private equity",
+    "date_fr": "24 avr. 2026",
+    "date_en": "Apr 24, 2026",
+    "image_fr": "/assets/illus-exits-steps.jpg",
+    "image_en": "/assets/illus-exits-steps-en.jpg",
+    "alt_fr": "Illustration : exit réussi, ARR et NRR convergent vers une valorisation maximale",
+    "alt_en": "Illustration: ARR and NRR converging toward a successful exit",
+    "excerpt_fr": "Six exits accompagnés, cinq acquisitions réalisées. Ce que l'acheteur vérifie en due diligence : ARR, NRR, dashboards cohérents sur trois ans et engagement de l'équipe dirigeante.",
+    "excerpt_en": "Six exits completed, five acquisitions made. What buyers verify in due diligence: ARR quality, NRR, dashboards consistent over three years, and leadership team commitment."
   }
 ]
