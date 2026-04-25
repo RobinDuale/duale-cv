@@ -1,0 +1,42 @@
+[
+  {
+    "slug_fr": "je-suis-le-produit",
+    "slug_en": "i-am-the-product",
+    "title_fr": "Je suis le produit",
+    "title_en": "I am the product",
+    "tags_fr": "IA · Personal branding",
+    "tags_en": "AI · Personal branding"
+  },
+  {
+    "slug_fr": "ia-accelerateur-organisationnel",
+    "slug_en": "ai-organizational-accelerator",
+    "title_fr": "Le gain de productivité n'est plus une promesse",
+    "title_en": "The productivity gain is no longer a promise",
+    "tags_fr": "IA · Leadership",
+    "tags_en": "AI · Leadership"
+  },
+  {
+    "slug_fr": "avantage-competitif-humain",
+    "slug_en": "competitive-edge-is-human",
+    "title_fr": "L'avantage compétitif sera profondément humain",
+    "title_en": "The competitive edge will be deeply human",
+    "tags_fr": "IA · Leadership",
+    "tags_en": "AI · Leadership"
+  },
+  {
+    "slug_fr": "migration-100-abonnement",
+    "slug_en": "switching-to-100-percent-subscription",
+    "title_fr": "Passer au tout-abonnement",
+    "title_en": "Switching to all-inclusive subscription",
+    "tags_fr": "SaaS · Transformation",
+    "tags_en": "SaaS · Transformation"
+  },
+  {
+    "slug_fr": "exit-reussi-ce-que-lacheteur-regarde-vraiment",
+    "slug_en": "successful-exit-what-buyers-really-look-at",
+    "title_fr": "Exit réussi : ce que l'acheteur regarde vraiment",
+    "title_en": "Successful exit: what buyers really look at",
+    "tags_fr": "M&A · Private equity",
+    "tags_en": "M&A · Private equity"
+  }
+]
