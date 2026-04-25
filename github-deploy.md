@@ -135,7 +135,7 @@ Site statique HTML/CSS/JS **sans framework ni générateur de site statique**.
 - Bilingue : `/fr/` (français) et `/en/` (anglais)
 - `index.html` à la racine redirige vers `/fr/` (langue par défaut)
 - CSS et JS uniques et partagés entre les deux langues (`assets/css/main.css`, `assets/js/main.js`)
-- Navigation inter-articles (suivant / précédent / à lire aussi) générée dynamiquement par `assets/js/persp-nav.js` à partir de `assets/perspectives.json` — **pour ajouter un article, seul ce JSON est à modifier**
+- Navigation inter-articles (suivant / précédent / à lire aussi) **et** page listing `/perspectives/` générées dynamiquement par `assets/js/persp-nav.js` à partir de `assets/perspectives.json` — **pour ajouter un article, seul ce JSON est à modifier**
 
 ---
 
@@ -153,9 +153,19 @@ Site statique HTML/CSS/JS **sans framework ni générateur de site statique**.
   "title_fr": "Titre en français",
   "title_en": "Title in English",
   "tags_fr": "Tag1 · Tag2",
-  "tags_en": "Tag1 · Tag2"
+  "tags_en": "Tag1 · Tag2",
+  "date_fr": "25 avr. 2026",
+  "date_en": "Apr 25, 2026",
+  "image_fr": "/assets/illus-mon-article.svg",
+  "image_en": "/assets/illus-mon-article.svg",
+  "alt_fr": "Illustration : description de l'image",
+  "alt_en": "Illustration: image description",
+  "excerpt_fr": "Résumé de l'article en 2-3 phrases, affiché sur la page listing.",
+  "excerpt_en": "Article summary in 2-3 sentences, displayed on the listing page."
 }
 ```
+
+> Si l'illustration est différente entre FR et EN, renseigner des valeurs distinctes pour `image_fr` et `image_en`.
 
 5. `git push origin main` — tous les articles existants affichent automatiquement le nouveau dans leur navigation.
 
