@@ -1,6 +1,6 @@
 # Dépôt duale-cv — Configuration & Déploiement
 
-> Base de connaissances générée le 2026-04-25.  
+> Base de connaissances générée le 2026-04-25 — mise à jour le 2026-04-25.  
 > À utiliser comme référence pour les sessions Claude Code sur ce projet.
 
 ---
@@ -66,6 +66,8 @@ duale-cv/
 ├── assets/                    # Ressources statiques partagées
 │   ├── css/main.css
 │   ├── js/main.js
+│   ├── js/persp-nav.js        # Navigation dynamique inter-articles (généré côté client)
+│   ├── perspectives.json      # Source de vérité articles (slug, titre, tags — FR + EN)
 │   ├── CV ROBIN DUALE (FR).pdf
 │   ├── CV ROBIN DUALE (EN).pdf
 │   ├── robin-duale.jpg
@@ -133,10 +135,33 @@ Site statique HTML/CSS/JS **sans framework ni générateur de site statique**.
 - Bilingue : `/fr/` (français) et `/en/` (anglais)
 - `index.html` à la racine redirige vers `/fr/` (langue par défaut)
 - CSS et JS uniques et partagés entre les deux langues (`assets/css/main.css`, `assets/js/main.js`)
+- Navigation inter-articles (suivant / précédent / à lire aussi) générée dynamiquement par `assets/js/persp-nav.js` à partir de `assets/perspectives.json` — **pour ajouter un article, seul ce JSON est à modifier**
 
 ---
 
-## 7. Workflow de développement recommandé
+## 7. Ajouter un nouvel article Perspectives
+
+1. Créer le fichier HTML dans `fr/perspectives/[slug-fr].html` et `en/perspectives/[slug-en].html`
+2. Copier le `<div id="persp-nav"></div>` dans la sidebar (à la place des blocs nav hardcodés)
+3. Ajouter `<script src="../../assets/js/persp-nav.js" defer></script>` après `main.js`
+4. **Ajouter une entrée dans `assets/perspectives.json`** (dans l'ordre chronologique) :
+
+```json
+{
+  "slug_fr": "mon-nouvel-article",
+  "slug_en": "my-new-article",
+  "title_fr": "Titre en français",
+  "title_en": "Title in English",
+  "tags_fr": "Tag1 · Tag2",
+  "tags_en": "Tag1 · Tag2"
+}
+```
+
+5. `git push origin main` — tous les articles existants affichent automatiquement le nouveau dans leur navigation.
+
+---
+
+## 8. Workflow de développement recommandé
 
 ```bash
 # Travailler sur une branche feature
