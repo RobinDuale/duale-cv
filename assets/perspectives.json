@@ -64,22 +64,6 @@
     "excerpt_en": "How to migrate from a mixed model to 100% subscription without losing your customer base. The two objections every customer raises, and what consumption data reveals."
   },
   {
-    "slug_fr": "acquisition-ce-que-lacheteur-sous-estime",
-    "slug_en": "acquisition-what-buyers-almost-always-underestimate",
-    "title_fr": "Acquisition : ce que l'acheteur sous-estime presque toujours",
-    "title_en": "Acquisition: what buyers almost always underestimate",
-    "tags_fr": "M&A · Intégration",
-    "tags_en": "M&A · Integration",
-    "date_fr": "26 avr. 2026",
-    "date_en": "Apr 26, 2026",
-    "image_fr": "/assets/illus-acquisition.jpg",
-    "image_en": "/assets/illus-acquisition-en.jpg",
-    "alt_fr": "Illustration : les six points humains d'une intégration post-acquisition réussie",
-    "alt_en": "Illustration: the six human factors of a successful post-acquisition integration",
-    "excerpt_fr": "Cinq acquisitions intégrées, deux rachats vécus. Ce que l'acheteur sous-estime presque toujours : les six points humains qui font basculer l'intégration post-acquisition.",
-    "excerpt_en": "Five acquisitions integrated, two PE buyouts experienced. What buyers almost always underestimate: the six human factors that tip post-acquisition integration."
-  },
-  {
     "slug_fr": "exit-reussi-ce-que-lacheteur-regarde-vraiment",
     "slug_en": "successful-exit-what-buyers-really-look-at",
     "title_fr": "Exit réussi : ce que l'acheteur regarde vraiment",
@@ -94,5 +78,21 @@
     "alt_en": "Illustration: ARR and NRR converging toward a successful exit",
     "excerpt_fr": "Six exits accompagnés, cinq acquisitions réalisées. Ce que l'acheteur vérifie en due diligence : ARR, NRR, dashboards cohérents sur trois ans et engagement de l'équipe dirigeante.",
     "excerpt_en": "Six exits completed, five acquisitions made. What buyers verify in due diligence: ARR quality, NRR, dashboards consistent over three years, and leadership team commitment."
+  },
+  {
+    "slug_fr": "acquisition-ce-que-lacheteur-sous-estime",
+    "slug_en": "acquisition-what-buyers-almost-always-underestimate",
+    "title_fr": "Acquisition : ce que l'acheteur sous-estime presque toujours",
+    "title_en": "Acquisition: what buyers almost always underestimate",
+    "tags_fr": "M&A · Intégration",
+    "tags_en": "M&A · Integration",
+    "date_fr": "26 avr. 2026",
+    "date_en": "Apr 26, 2026",
+    "image_fr": "/assets/illus-acquisition.jpg",
+    "image_en": "/assets/illus-acquisition-en.jpg",
+    "alt_fr": "Illustration : les six points humains d'une intégration post-acquisition réussie",
+    "alt_en": "Illustration: the six human factors of a successful post-acquisition integration",
+    "excerpt_fr": "Cinq acquisitions intégrées, deux rachats vécus. Ce que l'acheteur sous-estime presque toujours : les six points humains qui font basculer l'intégration post-acquisition.",
+    "excerpt_en": "Five acquisitions integrated, two PE buyouts experienced. What buyers almost always underestimate: the six human factors that tip post-acquisition integration."
   }
 ]
