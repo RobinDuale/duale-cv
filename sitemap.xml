@@ -182,9 +182,23 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/en/perspectives/successful-exit-what-buyers-really-look-at.html</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/perspectives/exit-reussi-ce-que-lacheteur-regarde-vraiment.html" />
+  </url>
+  <url>
+    <loc>https://cv-robin.duale.fr/fr/perspectives/acquisition-ce-que-lacheteur-sous-estime.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/perspectives/acquisition-what-buyers-almost-always-underestimate.html" />
+  </url>
+  <url>
+    <loc>https://cv-robin.duale.fr/en/perspectives/acquisition-what-buyers-almost-always-underestimate.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/perspectives/acquisition-ce-que-lacheteur-sous-estime.html" />
   </url>
 </urlset>
