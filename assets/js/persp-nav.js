@@ -38,7 +38,7 @@
     for (var i = articles.length - 1; i >= 0; i--) {
       var a = articles[i];
       html += '<div class="persp-card">'
-        + '<img src="' + a[imageKey] + '" alt="' + a[altKey] + '" class="persp-card-img" width="800" height="420" loading="lazy"/>'
+        + '<a href="/' + lang + '/perspectives/' + a[slugKey] + '.html" tabindex="-1" aria-hidden="true"><img src="' + a[imageKey] + '" alt="' + a[altKey] + '" class="persp-card-img" width="800" height="420" loading="lazy"/></a>'
         + '<div class="persp-card-body">'
         + '<div class="persp-card-date">' + a[dateKey] + '</div>'
         + '<div>'
