@@ -90,10 +90,29 @@ Utiliser `class="nav-link active"` sur le lien Perspectives pour tous les nouvea
 
 ---
 
+### Acquisition : ce que l'acheteur sous-estime presque toujours
+
+- **Date publiée :** 28 avril 2026
+- **dateModified :** 2026-04-28
+- **Catégorie (eyebrow) :** Perspectives · M&A & Intégration
+- **Tags sidebar :** M&A · Intégration · Private equity
+- **Keywords schema :** acquisition, intégration, post-acquisition, M&A, private equity, CEO, SaaS, culture, management, due diligence
+- **Temps de lecture :** 6 min
+- **wordCount schema :** 1100
+- **Slug FR :** `acquisition-ce-que-lacheteur-sous-estime`
+- **Slug EN :** `acquisition-what-buyers-almost-always-underestimate`
+- **Illustration :** `illus-acquisition.jpg` (JPG) / OG : `illus-acquisition-og.jpg`
+- **articleSection :** M&A & Intégration
+- **Angle :** Double expérience acquéreur/acquis — les six points humains que l'acheteur sous-estime et qui font basculer l'intégration post-acquisition
+- **Structure :** 6 H2 + CTA "Vous pilotez une recherche de CEO ?"
+- **Sujets couverts :** intégration post-acquisition, culture d'entreprise, management d'équipe, retention des talents, communication, due diligence humaine
+
+---
+
 ### Exit réussi : ce que l'acheteur regarde vraiment
 
 - **Date publiée :** 24 avril 2026
-- **dateModified :** 2026-04-24
+- **dateModified :** 2026-05-01
 - **Catégorie (eyebrow) :** Perspectives · M&A & Private Equity
 - **Tags sidebar :** M&A · Private equity · SaaS
 - **Keywords schema :** exit, M&A, private equity, ARR, NRR, due diligence, CEO, SaaS, valorisation, data room
