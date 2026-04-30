@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <title>Admin · Robin Dualé</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Jost', sans-serif; background: #f0ece2; color: #1a1712; font-size: 15px; min-height: 100vh; }
+
+    /* ── LOGIN ── */
+    #screen-login { display:flex; align-items:center; justify-content:center; min-height:100vh; padding:24px; }
+    .login-card { background:#fff; border:1px solid #e0d9cc; border-radius:4px; padding:40px 48px; width:100%; max-width:440px; }
+    .login-logo { font-size:12px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:#9a7228; margin-bottom:24px; }
+    .login-card h2 { font-size:20px; font-weight:500; margin-bottom:8px; }
+    .login-card > p { font-size:13px; color:#666; margin-bottom:24px; line-height:1.6; }
+    .field-label { font-size:11px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:#888; margin-bottom:5px; display:block; }
+    .login-card input { width:100%; padding:10px 12px; border:1px solid #d0c9bc; border-radius:3px; font-family:monospace; font-size:13px; margin-bottom:16px; background:#faf9f6; outline:none; }
+    .login-card input:focus { border-color:#9a7228; }
+    .btn-primary { width:100%; padding:10px; background:#9a7228; color:#fff; border:none; border-radius:3px; font-family:'Jost',sans-serif; font-size:14px; font-weight:500; cursor:pointer; letter-spacing:.04em; }
+    .btn-primary:hover { background:#7d5c20; }
+    .login-hint { font-size:12px; color:#aaa; margin-top:18px; line-height:1.6; }
+    .login-hint a { color:#9a7228; }
+    .login-hint code { background:#f0ece2; padding:1px 5px; border-radius:2px; font-size:11px; }
+    .login-error { color:#c0392b; font-size:13px; margin-top:8px; display:none; }
+
+    /* ── HEADER ── */
+    .admin-header { position:fixed; top:0; left:0; right:0; height:52px; background:#1a1712; display:flex; align-items:center; padding:0 20px; gap:12px; z-index:100; border-bottom:1px solid #2e2a24; }
+    .admin-brand { font-size:12px; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:#9a7228; flex:1; }
+    .btn-back { background:none; border:none; color:#aaa; font-family:'Jost',sans-serif; font-size:13px; cursor:pointer; padding:4px 8px; }
+    .btn-back:hover { color:#fff; }
+    .btn-save { background:#9a7228; color:#fff; border:none; border-radius:3px; font-family:'Jost',sans-serif; font-size:13px; font-weight:500; padding:7px 18px; cursor:pointer; letter-spacing:.04em; }
+    .btn-save:hover { background:#7d5c20; }
+    .btn-save:disabled { background:#5a4a30; cursor:not-allowed; }
+    .btn-logout { background:none; border:1px solid #3a3530; border-radius:3px; color:#aaa; font-family:'Jost',sans-serif; font-size:12px; padding:5px 12px; cursor:pointer; }
+    .btn-logout:hover { color:#fff; border-color:#666; }
+    .editor-header-title { color:#888; font-size:13px; flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+
+    /* ── PAGE ── */
+    .page-body { padding-top:52px; }
+    .page-main { max-width:860px; margin:0 auto; padding:32px 24px 80px; }
+
+    /* ── LIST ── */
+    .list-header { margin-bottom:24px; }
+    .list-header h1 { font-size:22px; font-weight:500; }
+    .list-header p { font-size:13px; color:#888; margin-top:4px; }
+    .articles-table { width:100%; border-collapse:collapse; background:#fff; border:1px solid #e0d9cc; border-radius:4px; overflow:hidden; }
+    .articles-table th { text-align:left; padding:10px 16px; font-size:11px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:#888; background:#faf9f6; border-bottom:1px solid #e0d9cc; }
+    .articles-table td { padding:12px 16px; border-bottom:1px solid #f0ece2; font-size:14px; vertical-align:middle; }
+    .articles-table tr:last-child td { border-bottom:none; }
+    .articles-table tr:hover td { background:#fdf9f3; }
+    .date-cell { color:#999; font-size:12px; white-space:nowrap; width:110px; }
+    .title-cell small { display:block; color:#bbb; font-size:12px; margin-top:2px; font-style:italic; }
+    .btn-edit { background:none; border:1px solid #d0c9bc; border-radius:3px; color:#9a7228; font-family:'Jost',sans-serif; font-size:12px; font-weight:500; padding:5px 12px; cursor:pointer; white-space:nowrap; }
+    .btn-edit:hover { background:#9a7228; color:#fff; border-color:#9a7228; }
+
+    /* ── NOTICE ── */
+    .info-badge { display:flex; align-items:center; gap:8px; background:#fdf6e8; border:1px solid #e8d49a; border-radius:3px; padding:10px 14px; font-size:13px; color:#7d5c20; margin-bottom:24px; }
+    .info-badge svg { flex-shrink:0; }
+
+    /* ── FIELDS ── */
+    .field-group { margin-bottom:22px; }
+    .field-group label { display:block; font-size:11px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:#888; margin-bottom:6px; }
+    .field-group input[type="text"] { width:100%; padding:10px 12px; border:1px solid #d0c9bc; border-radius:3px; font-family:'Jost',sans-serif; font-size:15px; background:#fff; outline:none; color:#1a1712; }
+    .field-group input[type="text"]:focus { border-color:#9a7228; }
+    .char-count { font-size:11px; font-weight:500; margin-left:8px; font-style:normal; letter-spacing:0; text-transform:none; }
+    .char-count.warn { color:#e67e22; }
+    .char-count.ok   { color:#27ae60; }
+    .char-count.over { color:#c0392b; }
+    .field-hint { font-size:12px; color:#aaa; margin-top:5px; }
+
+    /* ── TOOLBAR ── */
+    .editor-toolbar { display:flex; gap:4px; padding:6px 8px; background:#faf9f6; border:1px solid #d0c9bc; border-bottom:none; border-radius:3px 3px 0 0; flex-wrap:wrap; }
+    .editor-toolbar button { padding:4px 10px; border:1px solid transparent; border-radius:2px; background:none; font-family:'Jost',sans-serif; font-size:13px; cursor:pointer; color:#444; }
+    .editor-toolbar button:hover { background:#e8e2d6; border-color:#c8c0b0; }
+    .toolbar-sep { width:1px; background:#d0c9bc; margin:2px 4px; }
+
+    /* ── EDITOR BODY ── */
+    .editor-body { background:#fff; border:1px solid #d0c9bc; border-radius:0 0 3px 3px; padding:24px 28px; min-height:400px; outline:none; line-height:1.78; font-size:15px; color:#1a1712; }
+    .editor-body:focus { border-color:#9a7228; }
+    .editor-body h2 { font-size:18px; font-weight:600; margin:28px 0 12px; }
+    .editor-body p { margin-bottom:14px; }
+    .editor-body p:last-child { margin-bottom:0; }
+    .editor-body a { color:#9a7228; }
+    .editor-body strong, .editor-body b { font-weight:600; }
+    .editor-body em, .editor-body i { font-style:italic; }
+
+    /* ── PROGRESS ── */
+    .progress-wrap { background:#fff; border:1px solid #e0d9cc; border-radius:4px; padding:20px 24px; margin-bottom:24px; display:none; }
+    .progress-wrap.visible { display:block; }
+    .progress-title { font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:#888; margin-bottom:14px; }
+    .step { display:flex; align-items:center; gap:10px; font-size:14px; color:#aaa; padding:5px 0; }
+    .step.active { color:#1a1712; font-weight:500; }
+    .step.done   { color:#27ae60; }
+    .step.error  { color:#c0392b; }
+    .step-icon { width:18px; text-align:center; font-size:14px; flex-shrink:0; }
+    .step-spinner { display:inline-block; width:14px; height:14px; border:2px solid #d0c9bc; border-top-color:#9a7228; border-radius:50%; animation:spin .7s linear infinite; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    .progress-note { font-size:12px; color:#9a7228; margin-top:12px; line-height:1.6; }
+
+    /* ── STATUS ── */
+    .save-status { position:fixed; bottom:24px; right:24px; padding:10px 18px; border-radius:4px; font-size:13px; font-weight:500; opacity:0; transition:opacity .3s; pointer-events:none; }
+    .save-status.visible { opacity:1; }
+    .save-status.success { background:#27ae60; color:#fff; }
+    .save-status.error   { background:#c0392b; color:#fff; }
+
+    /* ── UTILS ── */
+    .loading   { color:#999; font-size:14px; padding:24px 0; }
+    .msg-error { color:#c0392b; font-size:14px; padding:24px 0; }
+    [hidden]   { display:none !important; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     SCREEN 1 — LOGIN
+══════════════════════════════════════ -->
+<div id="screen-login">
+  <div class="login-card">
+    <div class="login-logo">Robin Dualé · Admin</div>
+    <h2>Connexion</h2>
+    <p>Entrez votre GitHub Personal Access Token pour accéder à l'éditeur.</p>
+    <label class="field-label">GitHub Personal Access Token</label>
+    <input type="password" id="token-github" placeholder="ghp_xxxxxxxxxxxx"
+           onkeydown="if(event.key==='Enter') login()"/>
+    <button class="btn-primary" onclick="login()">Accéder</button>
+    <div class="login-error" id="login-error"></div>
+    <p class="login-hint">
+      Créez un token sur
+      <a href="https://github.com/settings/tokens/new?scopes=repo" target="_blank">
+        github.com &rarr; Settings &rarr; Tokens
+      </a>
+      avec le scope <code>repo</code>.
+    </p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     SCREEN 2 — LISTE DES ARTICLES
+══════════════════════════════════════ -->
+<div id="screen-list" hidden>
+  <div class="admin-header">
+    <span class="admin-brand">Robin Dualé · Admin</span>
+    <button class="btn-logout" onclick="logout()">Déconnexion</button>
+  </div>
+  <div class="page-body">
+    <div class="page-main">
+      <div class="list-header">
+        <h1>Articles Perspectives</h1>
+        <p>Éditez la version française — demandez ensuite à Claude Code de traduire et publier la version anglaise.</p>
+      </div>
+      <div id="articles-container">
+        <div class="loading">Chargement…</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     SCREEN 3 — EDITEUR (FR uniquement)
+══════════════════════════════════════ -->
+<div id="screen-editor" hidden>
+  <div class="admin-header">
+    <button class="btn-back" onclick="showList()">← Articles</button>
+    <span class="editor-header-title" id="editor-header-title"></span>
+    <button class="btn-save" id="btn-save" onclick="saveArticle()">Publier FR</button>
+  </div>
+  <div class="page-body">
+    <div class="page-main">
+
+      <div class="info-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Version française uniquement. Une fois publiée, demandez à Claude Code de traduire la version anglaise.
+      </div>
+
+      <!-- Progression -->
+      <div class="progress-wrap" id="progress-wrap">
+        <div class="progress-title">Publication en cours</div>
+        <div class="step" id="step-fr">
+          <span class="step-icon" id="icon-fr">○</span>
+          Commit de la version française sur GitHub
+        </div>
+        <p class="progress-note" id="progress-note" hidden>
+          Version FR publiée. Pour traduire en anglais, ouvrez Claude Code et dites :<br>
+          <em>"Traduis et publie la version EN de l'article [titre]"</em>
+        </p>
+      </div>
+
+      <div class="field-group">
+        <label>Titre de l'article (H1) — Français</label>
+        <input type="text" id="field-title" placeholder="Titre de l'article"/>
+      </div>
+
+      <div class="field-group">
+        <label>Meta description — Français
+          <span id="meta-count" class="char-count"></span>
+        </label>
+        <input type="text" id="field-meta"
+               placeholder="Description pour les moteurs de recherche (150-160 car.)"
+               oninput="updateMetaCount()"/>
+        <div class="field-hint">Idéalement entre 150 et 160 caractères.</div>
+      </div>
+
+      <div class="field-group">
+        <label>Contenu de l'article — Français</label>
+        <div class="editor-toolbar">
+          <button onclick="fmt('bold')"><strong>G</strong></button>
+          <button onclick="fmt('italic')"><em>I</em></button>
+          <div class="toolbar-sep"></div>
+          <button onclick="fmt('formatBlock','h2')">H2</button>
+          <button onclick="fmt('formatBlock','p')">¶ Para</button>
+          <div class="toolbar-sep"></div>
+          <button onclick="insertLink()">Lien</button>
+          <button onclick="fmt('unlink')">-Lien</button>
+          <div class="toolbar-sep"></div>
+          <button onclick="fmt('removeFormat')">Effacer</button>
+        </div>
+        <div id="editor-body" class="editor-body" contenteditable="true"
+             onkeydown="handleKey(event)"></div>
+      </div>
+
+    </div>
+  </div>
+  <div id="save-status" class="save-status"></div>
+</div>
+
+<script>
+'use strict';
+
+const OWNER  = 'RobinDuale';
+const REPO   = 'duale-cv';
+const BRANCH = 'main';
+
+// ─────────────────────────────────────────────
+// AUTH
+// ─────────────────────────────────────────────
+function getToken() { return localStorage.getItem('gh_token') || ''; }
+
+function login() {
+  const t   = document.getElementById('token-github').value.trim();
+  const err = document.getElementById('login-error');
+  if (!t) { err.textContent = 'Entrez votre token GitHub.'; err.style.display = 'block'; return; }
+  err.style.display = 'none';
+  localStorage.setItem('gh_token', t);
+  showList();
+}
+
+function logout() {
+  localStorage.removeItem('gh_token');
+  show('screen-login');
+  document.getElementById('token-github').value = '';
+}
+
+// ─────────────────────────────────────────────
+// SCREENS
+// ─────────────────────────────────────────────
+function show(id) {
+  ['screen-login','screen-list','screen-editor'].forEach(s => {
+    document.getElementById(s).hidden = (s !== id);
+  });
+}
+
+// ─────────────────────────────────────────────
+// GITHUB API
+// ─────────────────────────────────────────────
+async function ghGet(path) {
+  const r = await fetch(
+    `https://api.github.com/repos/${OWNER}/${REPO}/contents/${encodeURIComponent(path)}?ref=${BRANCH}`,
+    { headers: { Authorization: `token ${getToken()}`, Accept: 'application/vnd.github.v3+json' } }
+  );
+  if (!r.ok) { const d = await r.json().catch(()=>({})); throw new Error(d.message || `GitHub ${r.status}`); }
+  const d = await r.json();
+  return {
+    content: decodeURIComponent(escape(atob(d.content.replace(/\n/g,'')))),
+    sha: d.sha
+  };
+}
+
+async function ghPut(path, content, sha, message) {
+  const r = await fetch(
+    `https://api.github.com/repos/${OWNER}/${REPO}/contents/${encodeURIComponent(path)}`,
+    {
+      method: 'PUT',
+      headers: {
+        Authorization: `token ${getToken()}`,
+        Accept: 'application/vnd.github.v3+json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        message, content: btoa(unescape(encodeURIComponent(content))),
+        sha, branch: BRANCH
+      })
+    }
+  );
+  if (!r.ok) { const d = await r.json().catch(()=>({})); throw new Error(d.message || `GitHub ${r.status}`); }
+  return r.json();
+}
+
+// ─────────────────────────────────────────────
+// ARTICLE LIST
+// ─────────────────────────────────────────────
+let articles = [];
+
+async function showList() {
+  show('screen-list');
+  const c = document.getElementById('articles-container');
+  c.innerHTML = '<div class="loading">Chargement…</div>';
+  try {
+    const r = await fetch('/assets/perspectives.json?_=' + Date.now());
+    if (!r.ok) throw new Error('Impossible de charger perspectives.json');
+    articles = await r.json();
+    articles.sort((a,b) => new Date(b.date_en) - new Date(a.date_en));
+
+    c.innerHTML = `
+      <table class="articles-table">
+        <thead><tr>
+          <th>Date</th><th>Article</th><th></th>
+        </tr></thead>
+        <tbody>
+          ${articles.map((a,i) => `
+            <tr>
+              <td class="date-cell">${a.date_fr}</td>
+              <td class="title-cell">
+                ${a.title_fr}
+                <small>${a.title_en}</small>
+              </td>
+              <td style="text-align:right">
+                <button class="btn-edit" onclick="editArticle(${i})">Modifier &rarr;</button>
+              </td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>`;
+  } catch(e) {
+    c.innerHTML = `<div class="msg-error">Erreur : ${e.message}</div>`;
+  }
+}
+
+// ─────────────────────────────────────────────
+// EDITOR
+// ─────────────────────────────────────────────
+let currentFr = { path:'', sha:'', html:'' };
+
+async function editArticle(idx) {
+  show('screen-editor');
+  const a = articles[idx];
+  document.getElementById('editor-header-title').textContent = a.title_fr;
+  document.getElementById('editor-body').innerHTML = '<em style="color:#aaa">Chargement…</em>';
+  document.getElementById('field-title').value = '';
+  document.getElementById('field-meta').value  = '';
+  document.getElementById('progress-wrap').classList.remove('visible');
+  document.getElementById('progress-note').hidden = true;
+  setStatus('');
+  setStep('fr', '');
+
+  try {
+    const fr = await ghGet(`fr/perspectives/${a.slug_fr}.html`);
+    currentFr = { path:`fr/perspectives/${a.slug_fr}.html`, sha:fr.sha, html:fr.content };
+
+    const doc = new DOMParser().parseFromString(fr.content, 'text/html');
+    document.getElementById('field-title').value =
+      doc.querySelector('.page-title')?.textContent?.trim() ?? '';
+    document.getElementById('field-meta').value =
+      doc.querySelector('meta[name="description"]')?.getAttribute('content') ?? '';
+    updateMetaCount();
+
+    const bodyDiv = doc.querySelector('.article-body');
+    if (!bodyDiv) throw new Error('Bloc .article-body introuvable.');
+    const cta = bodyDiv.querySelector('.article-cta');
+    if (cta) cta.remove();
+    document.getElementById('editor-body').innerHTML = bodyDiv.innerHTML.trim();
+    document.execCommand('defaultParagraphSeparator', false, 'p');
+
+  } catch(e) {
+    document.getElementById('editor-body').innerHTML =
+      `<em style="color:#c0392b">Erreur : ${e.message}</em>`;
+  }
+}
+
+// ─────────────────────────────────────────────
+// SAVE
+// ─────────────────────────────────────────────
+async function saveArticle() {
+  const btn   = document.getElementById('btn-save');
+  const title = document.getElementById('field-title').value.trim();
+  const meta  = document.getElementById('field-meta').value.trim();
+  const body  = document.getElementById('editor-body').innerHTML;
+  const today = new Date().toISOString().slice(0,10);
+
+  btn.disabled = true;
+  document.getElementById('progress-wrap').classList.add('visible');
+  document.getElementById('progress-note').hidden = true;
+  setStep('fr', '');
+  setStatus('');
+
+  try {
+    setStep('fr', 'active');
+    const newHtmlFr = buildUpdatedHtml(currentFr.html, title, meta, body, today);
+    const resFr = await ghPut(
+      currentFr.path, newHtmlFr, currentFr.sha,
+      `Update article FR: ${title}`
+    );
+    currentFr.sha  = resFr.content.sha;
+    currentFr.html = newHtmlFr;
+    setStep('fr', 'done');
+
+    document.getElementById('progress-note').hidden = false;
+    setStatus('Version FR publiée sur GitHub.', 'success');
+
+  } catch(e) {
+    setStep('fr', 'error');
+    setStatus(`Erreur : ${e.message}`, 'error');
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+// Reconstruit le HTML FR complet avec les nouvelles valeurs
+function buildUpdatedHtml(originalHtml, title, meta, body, today) {
+  let html = originalHtml;
+
+  html = html.replace(/(<meta name="description" content=")[^"]*(")/,        `$1${escAttr(meta)}$2`);
+  html = html.replace(/(<meta property="og:description" content=")[^"]*(")/,  `$1${escAttr(meta)}$2`);
+  html = html.replace(/("description":\s*")[^"]*(")/,
+    `$1${meta.replace(/\\/g,'\\\\').replace(/"/g,'\\"')}$2`);
+  html = html.replace(/(<h1 class="page-title">)([\s\S]*?)(<\/h1>)/,         `$1${title}$3`);
+  html = html.replace(/("dateModified":\s*")[^"]*(")/,                        `$1${today}$2`);
+
+  const origDoc = new DOMParser().parseFromString(originalHtml, 'text/html');
+  const ctaOrig = origDoc.querySelector('.article-cta');
+  const ctaHtml = ctaOrig ? '\n\n      ' + ctaOrig.outerHTML : '';
+  const newBlock = '\n      ' + body + ctaHtml + '\n    ';
+
+  html = html.replace(
+    /(<div class="article-body">)([\s\S]*?)(\n    <\/div>\n  <\/div>)/,
+    `$1${newBlock}$3`
+  );
+  return html;
+}
+
+// ─────────────────────────────────────────────
+// PROGRESS STEP
+// ─────────────────────────────────────────────
+const ICONS = {
+  '':      '○',
+  active:  '<span class="step-spinner"></span>',
+  done:    '✓',
+  error:   '✕'
+};
+
+function setStep(id, state) {
+  const el   = document.getElementById(`step-${id}`);
+  const icon = document.getElementById(`icon-${id}`);
+  el.classList.remove('active','done','error');
+  if (state) el.classList.add(state);
+  icon.innerHTML = ICONS[state] || '○';
+}
+
+// ─────────────────────────────────────────────
+// TOOLBAR
+// ─────────────────────────────────────────────
+function fmt(cmd, val) {
+  document.getElementById('editor-body').focus();
+  document.execCommand(cmd, false, val || null);
+}
+
+function insertLink() {
+  const url = prompt('URL du lien :', 'https://');
+  if (url && url !== 'https://') {
+    document.getElementById('editor-body').focus();
+    document.execCommand('createLink', false, url);
+  }
+}
+
+function handleKey(e) {
+  if (e.key === 'Tab') { e.preventDefault(); document.execCommand('insertText', false, '  '); }
+}
+
+// ─────────────────────────────────────────────
+// HELPERS
+// ─────────────────────────────────────────────
+function updateMetaCount() {
+  const n  = document.getElementById('field-meta').value.length;
+  const el = document.getElementById('meta-count');
+  el.textContent = `${n} car.`;
+  el.className   = 'char-count ' + (n < 140 ? 'warn' : n <= 160 ? 'ok' : 'over');
+}
+
+function escAttr(s) { return s.replace(/&/g,'&amp;').replace(/"/g,'&quot;'); }
+
+let statusTimer;
+function setStatus(msg, type) {
+  const el = document.getElementById('save-status');
+  clearTimeout(statusTimer);
+  el.textContent = msg;
+  el.className   = 'save-status' + (type ? ' '+type : '');
+  if (msg) {
+    el.classList.add('visible');
+    if (type === 'success') statusTimer = setTimeout(() => el.classList.remove('visible'), 8000);
+  } else {
+    el.classList.remove('visible');
+  }
+}
+
+// ─────────────────────────────────────────────
+// INIT
+// ─────────────────────────────────────────────
+if (getToken()) showList(); else show('screen-login');
+</script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Page introuvable · Robin Dualé</title>
+  <meta name="robots" content="noindex, nofollow"/>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png"/>
+  <link rel="shortcut icon" href="/favicon.ico"/>
+  <link rel="preload" href="/assets/css/main.css" as="style"/>
+  <link rel="stylesheet" href="/assets/css/main.css"/>
+  <script>
+    (function () {
+      var path = window.location.pathname;
+
+      // Article EN sans version EN publiee : rediriger vers FR
+      var enArticleMatch = path.match(/^\/en\/perspectives\/(.+)\.html$/);
+      if (enArticleMatch) {
+        // Charger perspectives.json pour trouver le slug FR correspondant
+        fetch('/assets/perspectives.json')
+          .then(function (r) { return r.json(); })
+          .then(function (articles) {
+            var slug_en = enArticleMatch[1];
+            var found = articles.find(function (a) { return a.slug_en === slug_en; });
+            if (found) {
+              window.location.replace('/fr/perspectives/' + found.slug_fr + '.html');
+            }
+            // Si introuvable dans le JSON, on reste sur la page 404
+          })
+          .catch(function () {
+            // Echec du fetch : on reste sur la page 404
+          });
+        return; // Attendre la redirection JS avant d'afficher
+      }
+
+      // Page EN generique sans equivalent : rediriger vers home EN
+      if (path.startsWith('/en/') && path !== '/en/') {
+        // Laisser afficher la page 404 avec liens utiles
+      }
+    })();
+  </script>
+  <style>
+    .not-found-wrapper {
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      gap: 1.5rem;
+    }
+    .not-found-code {
+      font-size: 6rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      opacity: 0.35;
+    }
+    .not-found-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .not-found-sub {
+      color: #6b6457;
+      max-width: 36rem;
+      line-height: 1.7;
+    }
+    .not-found-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+    .not-found-links a {
+      display: inline-block;
+      padding: 0.65rem 1.4rem;
+      border: 1.5px solid var(--gold);
+      color: var(--gold);
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: background 0.2s, color 0.2s;
+    }
+    .not-found-links a:hover {
+      background: var(--gold);
+      color: var(--cream);
+    }
+    .not-found-links a.primary {
+      background: var(--gold);
+      color: var(--cream);
+    }
+    .not-found-links a.primary:hover {
+      background: #7d5c1f;
+      border-color: #7d5c1f;
+    }
+    /* Masquer le contenu pendant une redirection EN en cours */
+    body.redirecting .not-found-wrapper {
+      visibility: hidden;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="/fr/">Robin Dualé</a>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="/fr/">Accueil</a></li>
+          <li><a href="/fr/perspectives/">Perspectives</a></li>
+          <li><a href="/fr/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="lang-switch">
+        <a href="/fr/" hreflang="fr">FR</a>
+        <span>|</span>
+        <a href="/en/" hreflang="en">EN</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="not-found-wrapper">
+      <div class="not-found-code">404</div>
+      <h1 class="not-found-title">Cette page est introuvable</h1>
+      <p class="not-found-sub">
+        La version anglaise de cet article n'est pas encore disponible, ou cette page a été deplacee.
+        La version francaise est accessible via les liens ci-dessous.
+      </p>
+      <div class="not-found-links">
+        <a href="/fr/" class="primary">Accueil FR</a>
+        <a href="/fr/perspectives/">Perspectives FR</a>
+        <a href="/en/">Home EN</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>&copy; 2026 Robin Dualé</p>
+    </div>
+  </footer>
+
+  <script>
+    // Si URL EN article : marquer body en attente de redirection
+    (function () {
+      var path = window.location.pathname;
+      if (path.match(/^\/en\/perspectives\/.+\.html$/)) {
+        document.body.classList.add('redirecting');
+      }
+      // Adapter le texte si visiteur EN
+      if (path.startsWith('/en/')) {
+        document.querySelector('.not-found-title').textContent = 'Page not found';
+        document.querySelector('.not-found-sub').textContent =
+          'The English version of this article is not yet available, or this page has been moved. '
+          + 'You can browse the French version using the links below.';
+        document.title = 'Page not found · Robin Dualé';
+      }
+    })();
+  </script>
+</body>
+</html>
