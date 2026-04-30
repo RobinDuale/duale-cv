@@ -1,0 +1,14 @@
+# Windows system files
+desktop.ini
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+
+# Admin (local dev only, already excluded by robots.txt)
+# admin/ is committed intentionally — ne pas ignorer
+
+# Brouillons
+fr/perspectives/_draft-*.html
+en/perspectives/_draft-*.html
