@@ -112,7 +112,7 @@ Utiliser `class="nav-link active"` sur le lien Perspectives pour tous les nouvea
 ### Acquisition : ce que l'acheteur sous-estime presque toujours
 
 - **Date publiée :** 28 avril 2026
-- **dateModified :** 2026-04-28
+- **dateModified :** 2026-05-01
 - **Catégorie (eyebrow) :** Perspectives · M&A & Intégration
 - **Tags sidebar :** M&A · Intégration · Private equity
 - **Keywords schema :** acquisition, intégration, post-acquisition, M&A, private equity, CEO, SaaS, culture, management, due diligence
@@ -131,7 +131,7 @@ Utiliser `class="nav-link active"` sur le lien Perspectives pour tous les nouvea
 ### Exit réussi : ce que l'acheteur regarde vraiment
 
 - **Date publiée :** 24 avril 2026
-- **dateModified :** 2026-05-01
+- **dateModified :** 2026-05-01 (ouverture positionnement BtoC/e-commerce CTA + sidebar)
 - **Catégorie (eyebrow) :** Perspectives · M&A & Private Equity
 - **Tags sidebar :** M&A · Private equity · SaaS
 - **Keywords schema :** exit, M&A, private equity, ARR, NRR, due diligence, CEO, SaaS, valorisation, data room
@@ -150,7 +150,7 @@ Utiliser `class="nav-link active"` sur le lien Perspectives pour tous les nouvea
 ### Passer au tout-abonnement
 
 - **Date publiée :** 17 avril 2026
-- **dateModified :** 2026-04-22
+- **dateModified :** 2026-05-01
 - **Catégorie (eyebrow) :** Perspectives · SaaS & Transformation
 - **Tags sidebar :** SaaS · Abonnement · Transformation
 - **Keywords schema :** SaaS, abonnement, ARR, transformation, CEO, private equity, churn, modèle économique
@@ -169,7 +169,7 @@ Utiliser `class="nav-link active"` sur le lien Perspectives pour tous les nouvea
 ### L'avantage compétitif sera profondément humain
 
 - **Date publiée :** 13 avril 2026
-- **dateModified :** 2026-04-22
+- **dateModified :** 2026-05-01
 - **Catégorie (eyebrow) :** Perspectives · IA & Leadership
 - **Tags sidebar :** IA · Leadership · Responsabilité
 - **Keywords schema :** IA, leadership, transformation, CEO, humain, responsabilité, avantage compétitif
@@ -188,7 +188,7 @@ Utiliser `class="nav-link active"` sur le lien Perspectives pour tous les nouvea
 ### Le gain de productivité n'est plus une promesse
 
 - **Date publiée :** 10 avril 2026
-- **dateModified :** 2026-04-22
+- **dateModified :** 2026-05-01
 - **Catégorie (eyebrow) :** Perspectives · IA · Transformation organisationnelle
 - **Tags sidebar :** IA · Leadership · Transformation
 - **Keywords schema :** IA, transformation organisationnelle, CEO, productivité, leadership, B2B SaaS
@@ -207,7 +207,7 @@ Utiliser `class="nav-link active"` sur le lien Perspectives pour tous les nouvea
 ### Je suis le produit
 
 - **Date publiée :** 8 avril 2026
-- **dateModified :** 2026-04-22
+- **dateModified :** 2026-05-01
 - **Catégorie (eyebrow) :** Perspectives · IA & Personal branding
 - **Tags sidebar :** IA · Personal branding
 - **Keywords schema :** CEO, IA, personal branding, go-to-market, transformation digitale
