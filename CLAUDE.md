@@ -56,6 +56,19 @@ Ce fichier est le journal éditorial du site. Il doit toujours refléter l'état
 4. **Mettre à jour `articles-publies.md`** (dateModified + note des changements)
 5. Commit + push (après confirmation)
 
+## Noms de fichiers EN — nav critique
+
+Les pages EN ont des noms différents des pages FR. Utiliser **exactement** ces chemins dans le nav des articles EN :
+
+```
+/en/                        → Home
+/en/about.html              → About
+/en/track-record.html       → Career  ⚠️ (pas career.html)
+/en/references.html         → Testimonials  ⚠️ (pas testimonials.html)
+/en/perspectives/           → Perspectives
+/en/contact.html            → Contact
+```
+
 ## Palette CSS
 
 ```css
