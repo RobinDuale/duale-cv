@@ -25,25 +25,28 @@
     var el = document.getElementById('persp-grid');
     if (!el) return;
 
-    var slugKey    = 'slug_'    + lang;
-    var titleKey   = 'title_'   + lang;
-    var tagsKey    = 'tags_'    + lang;
-    var dateKey    = 'date_'    + lang;
-    var imageKey   = 'image_'   + lang;
-    var altKey     = 'alt_'     + lang;
-    var excerptKey = 'excerpt_' + lang;
-    var readLabel  = lang === 'fr' ? "Lire l'article" : 'Read article';
+    var slugKey     = 'slug_'     + lang;
+    var titleKey    = 'title_'    + lang;
+    var subtitleKey = 'subtitle_' + lang;
+    var tagsKey     = 'tags_'     + lang;
+    var dateKey     = 'date_'     + lang;
+    var imageKey    = 'image_'    + lang;
+    var altKey      = 'alt_'      + lang;
+    var excerptKey  = 'excerpt_'  + lang;
+    var readLabel   = lang === 'fr' ? "Lire l'article" : 'Read article';
 
     var html = '';
     for (var i = articles.length - 1; i >= 0; i--) {
       var a = articles[i];
+      var sub = a[subtitleKey] || '';
+      var titleHtml = a[titleKey] + (sub ? '<br><em>' + sub + '</em>' : '');
       html += '<div class="persp-card">'
         + '<a href="/' + lang + '/perspectives/' + a[slugKey] + '.html" tabindex="-1" aria-hidden="true"><img src="' + a[imageKey] + '" alt="' + a[altKey] + '" class="persp-card-img" width="800" height="420" loading="lazy"/></a>'
         + '<div class="persp-card-body">'
         + '<div class="persp-card-date">' + a[dateKey] + '</div>'
         + '<div>'
         + '<span class="persp-card-tag">' + a[tagsKey] + '</span>'
-        + '<div class="persp-card-title">' + a[titleKey] + '</div>'
+        + '<div class="persp-card-title">' + titleHtml + '</div>'
         + '<p class="persp-card-excerpt">' + a[excerptKey] + '</p>'
         + '<a class="persp-card-link" href="/' + lang + '/perspectives/' + a[slugKey] + '.html">' + readLabel + '</a>'
         + '</div>'

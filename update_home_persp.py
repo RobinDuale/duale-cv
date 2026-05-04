@@ -29,20 +29,24 @@ def parse_date(article):
 
 
 def build_card_fr(article):
+    sub = article.get("subtitle_fr", "")
+    title_html = article["title_fr"] + (f'<br><em>{sub}</em>' if sub else "")
     return (
         f'      <a class="persp-teaser-card" href="/fr/perspectives/{article["slug_fr"]}.html">\n'
         f'        <div class="persp-card-date">{article["date_fr"]}</div>\n'
-        f'        <div class="persp-card-title">{article["title_fr"]}</div>\n'
+        f'        <div class="persp-card-title">{title_html}</div>\n'
         f'        <p class="persp-card-excerpt">{article["excerpt_fr"]}</p>\n'
         f'      </a>'
     )
 
 
 def build_card_en(article):
+    sub = article.get("subtitle_en", "")
+    title_html = article["title_en"] + (f'<br><em>{sub}</em>' if sub else "")
     return (
         f'      <a class="persp-teaser-card" href="/en/perspectives/{article["slug_en"]}.html">\n'
         f'        <div class="persp-card-date">{article["date_en"]}</div>\n'
-        f'        <div class="persp-card-title">{article["title_en"]}</div>\n'
+        f'        <div class="persp-card-title">{title_html}</div>\n'
         f'        <p class="persp-card-excerpt">{article["excerpt_en"]}</p>\n'
         f'      </a>'
     )

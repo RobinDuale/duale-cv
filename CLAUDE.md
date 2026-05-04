@@ -33,6 +33,36 @@ Production : https://cv-robin.duale.fr
 
 Ce fichier est le journal éditorial du site. Il doit toujours refléter l'état réel des articles publiés.
 
+## Convention titre à deux niveaux (H1 + cartes)
+
+Chaque article utilise un titre en deux niveaux visuels :
+
+- **Niveau 1 (noir)** : titre principal — `title_fr` / `title_en` dans `perspectives.json`
+- **Niveau 2 (or italique)** : sous-titre/accroche — `subtitle_fr` / `subtitle_en` dans `perspectives.json`
+
+### Dans le H1 de l'article HTML
+
+```html
+<h1 class="page-title">Titre principal,<br><em>sous-titre accroche.</em></h1>
+```
+
+### Dans `perspectives.json`
+
+```json
+{
+  "title_fr": "Titre principal,",
+  "subtitle_fr": "sous-titre accroche.",
+  "title_en": "Main title:",
+  "subtitle_en": "hook subtitle."
+}
+```
+
+- `subtitle_fr` / `subtitle_en` peuvent être vides (`""`) si l'article n'a pas de sous-titre
+- `persp-nav.js` et `update_home_persp.py` génèrent automatiquement le rendu deux niveaux dans les cartes
+- Dans la sidebar (article précédent/suivant), seul le titre principal est affiché
+
+---
+
 ## Workflow — nouvel article
 
 1. Créer `fr/perspectives/[slug-fr].html` et `en/perspectives/[slug-en].html`
