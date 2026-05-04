@@ -156,6 +156,8 @@ Chaque article doit contenir un bloc auteur visible :
 
 Sans attribution explicite, le contenu reste "anonyme" pour les LLM et ne peut pas être cité avec confiance.
 
+**Attention** : le CTA sidebar des articles EN peut utiliser "Get in touch" ou "Contact me" selon l'article. Vérifier que le lien LinkedIn est présent dans les deux cas — ne pas se fier uniquement à la présence de "Contact me".
+
 ### 5c. Structure de contenu "citable" pour les LLM
 
 Chaque article doit avoir :
@@ -194,6 +196,7 @@ en/perspectives/index.html           → idem
 sitemap.xml                          → ajouter les 2 URLs avec lastmod du jour
 llms.txt + llms-fr.txt               → ajouter titre + URL + excerpt de l'article
 articles-publies.md                  → nouvelle entrée en tête (antéchronologique)
+indexnow-ping.sh                     → ajouter les 2 URLs (FR + EN) de l'article
 ```
 
 **Note** : les blocs "À lire aussi" et la navigation prev/next sont gérés automatiquement par `persp-nav.js` — aucune modification manuelle dans les articles existants.
