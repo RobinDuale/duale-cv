@@ -30,6 +30,7 @@ Production : https://cv-robin.duale.fr
 - **Interdit** : le caractère `—` (tiret cadratin) dans tout contenu créé
 - **Python** : `python` (pas `python3`) — Windows
 - **Ne jamais modifier** les pages parcours/track-record depuis le contenu éditorial
+- **SEO/GEO : après chaque modification ou création, vérifier systématiquement la checklist ci-dessous et signaler tout point manquant avant le commit**
 
 ## Synchronisation locale — à faire en début de session
 
@@ -110,13 +111,19 @@ img_resized.save("assets/illus-[nom]-og.png")
 
 ### 3. SEO / meta obligatoires (FR + EN)
 
+- `<title>` — 55-65 car., keyword principal en tête, distinct du H1
 - `<meta name="description">` — unique, 150-160 car., contenu réel de l'article
 - `<meta property="og:description">` — peut être identique ou légèrement différent
 - `<meta property="og:image">` et `<meta name="twitter:image">` → `illus-[nom]-og.png`
 - `<link rel="canonical">` — URL absolue de la page
 - `<link rel="alternate" hreflang="fr">` et `hreflang="en"` — dans les deux versions
 
-### 4. Schema.org (deux blocs JSON-LD obligatoires)
+### 4. Structure H1/H2 (SEO + GEO)
+
+- **H1 unique**, distinct du title tag
+- **H2 formulés en questions ou assertions claires et extractibles** — les LLM utilisent la hiérarchie des headings pour extraire des réponses
+
+### 5. Schema.org (deux blocs JSON-LD obligatoires)
 
 **BreadcrumbList** :
 ```json
@@ -129,7 +136,40 @@ img_resized.save("assets/illus-[nom]-og.png")
 
 **BlogPosting** — champs obligatoires : `headline`, `wordCount`, `articleSection`, `description`, `datePublished`, `dateModified`, `image`, `mainEntityOfPage`, `author`, `publisher`, `url`, `inLanguage`, `keywords`
 
-### 5. perspectives.json
+- `author` doit pointer vers l'entité `Person` Robin Duale avec `sameAs` LinkedIn
+- `dateModified` = date du jour à chaque modification (signal fraîcheur pour les LLM)
+
+**FAQ Schema** — à ajouter si l'article traite d'une problématique avec des questions implicites (3-5 questions/réponses en fin de page) :
+```json
+{"@type": "FAQPage", "mainEntity": [
+  {"@type": "Question", "name": "Question ?", "acceptedAnswer": {"@type": "Answer", "text": "Réponse."}}
+]}
+```
+
+### 5b. Bloc auteur E-E-A-T (obligatoire sur chaque article)
+
+Chaque article doit contenir un bloc auteur visible :
+- Nom : Robin Duale
+- Titre/positionnement
+- Lien LinkedIn
+- (idéalement photo)
+
+Sans attribution explicite, le contenu reste "anonyme" pour les LLM et ne peut pas être cité avec confiance.
+
+### 5c. Structure de contenu "citable" pour les LLM
+
+Chaque article doit avoir :
+- Un **résumé intro** de moins de 80 mots en début d'article (type abstract)
+- Une **section "points clés"** ou "à retenir" avant le footer
+- Des **définitions explicites** des concepts clés dans le corps du texte
+- Des formulations autonomes (compréhensibles sans contexte externe)
+
+### 5d. Maillage interne
+
+- Au moins **2 liens internes sortants** vers des articles existants
+- Au moins **1 article existant** mis à jour pour pointer vers le nouvel article
+
+### 6. perspectives.json
 
 Ajouter l'entrée en fin de tableau :
 ```json
@@ -145,7 +185,7 @@ Ajouter l'entrée en fin de tableau :
 }
 ```
 
-### 6. Mise à jour des fichiers existants
+### 7. Mise à jour des fichiers existants
 
 ```
 python update_home_persp.py          → regénère les 3 cartes home FR + EN
@@ -158,9 +198,9 @@ articles-publies.md                  → nouvelle entrée en tête (antéchronol
 
 **Note** : les blocs "À lire aussi" et la navigation prev/next sont gérés automatiquement par `persp-nav.js` — aucune modification manuelle dans les articles existants.
 
-### 7. Commit + push (après confirmation Robin)
+### 8. Commit + push (après confirmation Robin)
 
-### 8. IndexNow ping (après push)
+### 9. IndexNow ping (après push)
 
 ```powershell
 $body = @{
@@ -226,6 +266,54 @@ Les pages EN ont des noms différents des pages FR. Utiliser **exactement** ces 
 /en/perspectives/           → Perspectives
 /en/contact.html            → Contact
 ```
+
+---
+
+## Audit SEO/GEO — checklist systématique
+
+**A appliquer après chaque création ou modification d'article ou de page. Signaler tout point manquant avant le commit.**
+
+### Technique
+
+- [ ] `<title>` : 55-65 car., keyword en tête, distinct du H1
+- [ ] `<meta name="description">` : unique, 150-160 car.
+- [ ] `og:image` + `twitter:image` présents et pointent vers `-og.png` (1200x630)
+- [ ] `<link rel="canonical">` URL absolue correcte
+- [ ] `hreflang` FR + EN présents dans les deux versions
+- [ ] `dateModified` dans BlogPosting Schema = date du jour si modifié
+- [ ] `sitemap.xml` mis à jour (`lastmod` du jour)
+- [ ] IndexNow pingué après push
+
+### Structure éditoriale
+
+- [ ] H1 unique, distinct du title tag
+- [ ] H2 formulés en questions ou assertions claires et extractibles
+- [ ] Résumé intro de moins de 80 mots en début d'article
+- [ ] Section "points clés" ou "à retenir" avant le footer
+- [ ] Définitions explicites des concepts clés dans le corps
+
+### E-E-A-T et entité auteur (critique pour GEO)
+
+- [ ] Bloc auteur visible : nom Robin Duale + titre + lien LinkedIn
+- [ ] `author` dans BlogPosting Schema chaîné vers entité `Person` avec `sameAs` LinkedIn
+- [ ] Biographie courte et titre de Robin cohérents avec toutes les autres pages du site
+
+### Maillage interne
+
+- [ ] Au moins 2 liens internes sortants vers des articles existants
+- [ ] Au moins 1 article existant mis à jour pour pointer vers la nouvelle page
+
+### Schema.org optionnel mais recommandé
+
+- [ ] FAQ Schema si l'article contient des questions implicites (3-5 Q/R)
+
+### Crawlers IA — à vérifier une fois par trimestre
+
+`robots.txt` doit autoriser explicitement : `GPTBot`, `ClaudeBot`, `PerplexityBot`, `Google-Extended`, `Amazonbot`, `cohere-ai`
+
+### Fichiers GEO
+
+- [ ] `llms.txt` + `llms-fr.txt` mis à jour si contenu nouveau ou modifié significativement
 
 ---
 

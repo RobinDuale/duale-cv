@@ -44,6 +44,18 @@ Allow: /
 User-agent: Slurp
 Allow: /
 
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
 # Block bad bots
 User-agent: AhrefsBot
 Disallow: /
