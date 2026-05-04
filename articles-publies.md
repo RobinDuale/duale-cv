@@ -93,7 +93,7 @@ Utiliser `class="nav-link active"` sur le lien Perspectives pour tous les nouvea
 ### Savoir transformer la pression en ambition, est-ce vraiment ce qui fait la différence ?
 
 - **Date publiée :** 2 mai 2026
-- **dateModified :** 2026-05-04
+- **dateModified :** 2026-05-04 (corrections typo FR : "focussant" → "focalisant", "l'intension" → "l'intention" ; H1 split deux niveaux ; retraduction EN)
 - **Catégorie (eyebrow) :** Perspectives · Leadership & Gouvernance
 - **Tags sidebar :** Leadership · Gouvernance · Private equity
 - **Keywords schema :** leadership, gouvernance, private equity, CEO, ambition, pression, transformation, management, croissance, équipe
@@ -131,7 +131,7 @@ Utiliser `class="nav-link active"` sur le lien Perspectives pour tous les nouvea
 ### Exit réussi : ce que l'acheteur regarde vraiment
 
 - **Date publiée :** 24 avril 2026
-- **dateModified :** 2026-05-01 (ouverture positionnement BtoC/e-commerce CTA + sidebar)
+- **dateModified :** 2026-05-04 (correction H1 FR : ajout `<br><em>` manquant entre titre et sous-titre)
 - **Catégorie (eyebrow) :** Perspectives · M&A & Private Equity
 - **Tags sidebar :** M&A · Private equity · SaaS
 - **Keywords schema :** exit, M&A, private equity, ARR, NRR, due diligence, CEO, SaaS, valorisation, data room
