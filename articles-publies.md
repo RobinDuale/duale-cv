@@ -93,7 +93,7 @@ Utiliser `class="nav-link active"` sur le lien Perspectives pour tous les nouvea
 ### Savoir transformer la pression en ambition, est-ce vraiment ce qui fait la différence ?
 
 - **Date publiée :** 2 mai 2026
-- **dateModified :** 2026-05-02
+- **dateModified :** 2026-05-04
 - **Catégorie (eyebrow) :** Perspectives · Leadership & Gouvernance
 - **Tags sidebar :** Leadership · Gouvernance · Private equity
 - **Keywords schema :** leadership, gouvernance, private equity, CEO, ambition, pression, transformation, management, croissance, équipe
