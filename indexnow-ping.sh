@@ -25,6 +25,8 @@ PAYLOAD="{
       \"https://${HOST}/fr/perspectives/migration-100-abonnement.html\",
       \"https://${HOST}/fr/perspectives/exit-reussi-ce-que-lacheteur-regarde-vraiment.html\",
       \"https://${HOST}/fr/perspectives/acquisition-ce-que-lacheteur-sous-estime.html\",
+      \"https://${HOST}/fr/perspectives/transformer-la-pression-en-ambition.html\",
+      \"https://${HOST}/en/perspectives/turning-pressure-into-ambition.html\",
       \"https://${HOST}/en/about.html\",
       \"https://${HOST}/en/track-record.html\",
       \"https://${HOST}/en/references.html\",
