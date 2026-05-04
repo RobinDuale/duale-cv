@@ -80,7 +80,63 @@
 
 <div class="two-col">
   <div class="main-col">
-    <div class="article-illus"><img src="/assets/illus-pression-ambition.jpg" alt="Illustration : transformer la pression des investisseurs en ambition collective pour ses équipes" class="article-illus-img" width="800" height="420" loading="lazy"/></div>
+    <div class="carousel" aria-label="Diaporama : pression vs ambition">
+      <div class="carousel-track">
+        <img src="/assets/Pression_vs_Ambition_slide_1.png" alt="Slide 1 - Transformer la pression en ambition" class="carousel-slide active"/>
+        <img src="/assets/Pression_vs_Ambition_slide_2.png" alt="Slide 2 - Transformer la pression en ambition" class="carousel-slide"/>
+        <img src="/assets/Pression_vs_Ambition_slide_3.png" alt="Slide 3 - Transformer la pression en ambition" class="carousel-slide"/>
+        <img src="/assets/Pression_vs_Ambition_slide_4.png" alt="Slide 4 - Transformer la pression en ambition" class="carousel-slide"/>
+        <img src="/assets/Pression_vs_Ambition_slide_5.png" alt="Slide 5 - Transformer la pression en ambition" class="carousel-slide"/>
+      </div>
+      <button class="carousel-btn carousel-prev" aria-label="Image précédente">&#8249;</button>
+      <button class="carousel-btn carousel-next" aria-label="Image suivante">&#8250;</button>
+      <div class="carousel-dots" role="tablist">
+        <span class="carousel-dot active" role="tab" aria-label="Slide 1"></span>
+        <span class="carousel-dot" role="tab" aria-label="Slide 2"></span>
+        <span class="carousel-dot" role="tab" aria-label="Slide 3"></span>
+        <span class="carousel-dot" role="tab" aria-label="Slide 4"></span>
+        <span class="carousel-dot" role="tab" aria-label="Slide 5"></span>
+      </div>
+    </div>
+    <style>
+      .carousel { position: relative; width: 100%; margin-bottom: 1.5rem; user-select: none; }
+      .carousel-track { width: 100%; }
+      .carousel-slide { display: none; width: 100%; height: auto; border-radius: 4px; }
+      .carousel-slide.active { display: block; }
+      .carousel-btn {
+        position: absolute; top: 50%; transform: translateY(-50%);
+        background: rgba(26,23,18,0.45); color: #f7f4ee;
+        border: none; cursor: pointer; font-size: 2rem; line-height: 1;
+        padding: 0.2rem 0.7rem; border-radius: 3px;
+        transition: background 0.2s;
+      }
+      .carousel-btn:hover { background: var(--gold); }
+      .carousel-prev { left: 0.5rem; }
+      .carousel-next { right: 0.5rem; }
+      .carousel-dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 0.6rem; }
+      .carousel-dot {
+        width: 8px; height: 8px; border-radius: 50%;
+        background: var(--gold-mid); cursor: pointer; transition: background 0.2s;
+      }
+      .carousel-dot.active { background: var(--gold); }
+    </style>
+    <script>
+      (function() {
+        var slides = document.querySelectorAll('.carousel-slide');
+        var dots = document.querySelectorAll('.carousel-dot');
+        var current = 0;
+        function goTo(n) {
+          slides[current].classList.remove('active');
+          dots[current].classList.remove('active');
+          current = (n + slides.length) % slides.length;
+          slides[current].classList.add('active');
+          dots[current].classList.add('active');
+        }
+        document.querySelector('.carousel-prev').addEventListener('click', function() { goTo(current - 1); });
+        document.querySelector('.carousel-next').addEventListener('click', function() { goTo(current + 1); });
+        dots.forEach(function(dot, i) { dot.addEventListener('click', function() { goTo(i); }); });
+      })();
+    </script>
     <div class="article-meta">
       <span>2 mai 2026</span>
       <span class="article-meta-sep">·</span>
