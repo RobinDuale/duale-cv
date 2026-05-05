@@ -73,7 +73,7 @@ def en_file_exists(article):
 
 
 def main():
-    articles = json.loads(JSON_PATH.read_text(encoding="utf-8"))
+    articles = [a for a in json.loads(JSON_PATH.read_text(encoding="utf-8")) if not a.get("draft")]
     top3 = sorted(articles, key=parse_date, reverse=True)[:3]
 
     print("3 articles selectionnes (les plus recents) :")

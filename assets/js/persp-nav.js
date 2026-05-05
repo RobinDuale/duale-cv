@@ -13,10 +13,11 @@
   fetch('/assets/perspectives.json')
     .then(function (r) { return r.json(); })
     .then(function (articles) {
+      var published = articles.filter(function (a) { return !a.draft; });
       if (path.match(/\/perspectives\/$/) || path.match(/\/perspectives\/index\.html$/)) {
-        buildGrid(articles, lang);
+        buildGrid(published, lang);
       } else {
-        buildNav(articles, lang, lbl);
+        buildNav(published, lang, lbl);
       }
     })
     .catch(function () {});
