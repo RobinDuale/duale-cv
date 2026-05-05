@@ -162,9 +162,25 @@ Sans attribution explicite, le contenu reste "anonyme" pour les LLM et ne peut p
 
 Chaque article doit avoir :
 - Un **résumé intro** de moins de 80 mots en début d'article (type abstract)
-- Une **section "points clés"** ou "à retenir" avant le footer
+- Une **section "points clés"** ou "à retenir" avant le footer — voir markup ci-dessous
 - Des **définitions explicites** des concepts clés dans le corps du texte
 - Des formulations autonomes (compréhensibles sans contexte externe)
+
+**Markup obligatoire pour le bloc Points clés** (FR) / Key takeaways (EN) — à placer avant `.article-cta` :
+
+```html
+<div class="article-takeaways">
+  <div class="article-takeaways-title">Points clés</div>
+  <ul class="article-takeaways-list">
+    <li>Point 1.</li>
+    <li>Point 2.</li>
+    <li>Point 3.</li>
+    <li>Point 4.</li>
+  </ul>
+</div>
+```
+
+Version EN : remplacer `Points clés` par `Key takeaways`. Le CSS `.article-takeaways` est défini dans `main.css` — ne pas recréer de style inline.
 
 ### 5d. Maillage interne
 
@@ -235,7 +251,7 @@ Après une modif via admin : **toujours faire `git pull` avant de travailler en 
 2. Modifier le fichier FR (ou récupérer la version admin)
 3. Traduire fidèlement et mettre à jour le fichier EN
 4. Vérifier que `dateModified` est mis à jour dans le Schema.org du HTML (FR + EN)
-5. Lancer `python update_home_persp.py` si l'article est dans les 3 plus récents
+5. Lancer `python update_home_persp.py` si l'article est dans les 3 plus récents **ou si une date dans `perspectives.json` a changé** — les cartes home sont statiques et ne se mettent pas à jour automatiquement
 6. Mettre à jour `sitemap.xml` (`lastmod` du jour sur les 2 URLs)
 7. Mettre à jour `llms.txt` et `llms-fr.txt` si le contenu a changé significativement
 8. **Mettre à jour `articles-publies.md`** (dateModified + note des changements)
