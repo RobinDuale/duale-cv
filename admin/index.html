@@ -75,6 +75,8 @@
     .char-count.ok   { color:#27ae60; }
     .char-count.over { color:#c0392b; }
     .field-hint { font-size:12px; color:#aaa; margin-top:5px; }
+    .takeaways-inputs { display:flex; flex-direction:column; gap:8px; }
+    .takeaways-inputs input[type="text"] { font-size:14px; }
 
     /* ── TOOLBAR ── */
     .editor-toolbar { display:flex; gap:4px; padding:6px 8px; background:#faf9f6; border:1px solid #d0c9bc; border-bottom:none; border-radius:3px 3px 0 0; flex-wrap:wrap; }
@@ -218,6 +220,17 @@
                placeholder="Description pour les moteurs de recherche (150-160 car.)"
                oninput="updateMetaCount()"/>
         <div class="field-hint">Idéalement entre 150 et 160 caractères.</div>
+      </div>
+
+      <div class="field-group">
+        <label>Points clés — Français</label>
+        <div class="takeaways-inputs">
+          <input type="text" id="tk-1" placeholder="Point clé 1"/>
+          <input type="text" id="tk-2" placeholder="Point clé 2"/>
+          <input type="text" id="tk-3" placeholder="Point clé 3"/>
+          <input type="text" id="tk-4" placeholder="Point clé 4"/>
+        </div>
+        <div class="field-hint">4 points maximum. Laisser vide pour supprimer un point.</div>
       </div>
 
       <div class="field-group">
@@ -401,6 +414,12 @@ async function editArticle(idx) {
 
     const bodyDiv = doc.querySelector('.article-body');
     if (!bodyDiv) throw new Error('Bloc .article-body introuvable.');
+    const takeaways = bodyDiv.querySelector('.article-takeaways');
+    const tkItems = takeaways ? [...takeaways.querySelectorAll('li')].map(li => li.innerHTML.trim()) : [];
+    ['tk-1','tk-2','tk-3','tk-4'].forEach((id, i) => {
+      document.getElementById(id).value = tkItems[i] || '';
+    });
+    if (takeaways) takeaways.remove();
     const cta = bodyDiv.querySelector('.article-cta');
     if (cta) cta.remove();
     document.getElementById('editor-body').innerHTML = bodyDiv.innerHTML.trim();
@@ -424,12 +443,13 @@ async function saveDraft() {
   const body     = document.getElementById('editor-body').innerHTML;
   const today    = new Date().toISOString().slice(0,10);
 
+  const takeaways = ['tk-1','tk-2','tk-3','tk-4'].map(id => document.getElementById(id).value.trim());
   draftBtn.disabled = saveBtn.disabled = true;
   document.getElementById('progress-wrap').classList.remove('visible');
   setStatus('');
 
   try {
-    const newHtml = buildUpdatedHtml(currentFr.html, title, subtitle, meta, body, today);
+    const newHtml = buildUpdatedHtml(currentFr.html, title, subtitle, meta, body, today, takeaways);
     const msg     = currentArticleDraft ? `Draft: ${title}` : `Update article FR: ${title}`;
     const res     = await ghPut(currentFr.path, newHtml, currentFr.sha, msg);
     currentFr.sha  = res.content.sha;
@@ -454,6 +474,7 @@ async function publishArticle() {
   const body     = document.getElementById('editor-body').innerHTML;
   const today    = new Date().toISOString().slice(0,10);
 
+  const takeaways = ['tk-1','tk-2','tk-3','tk-4'].map(id => document.getElementById(id).value.trim());
   draftBtn.disabled = saveBtn.disabled = true;
   document.getElementById('progress-title').textContent = 'Publication en cours';
   document.getElementById('step-json').hidden = false;
@@ -466,7 +487,7 @@ async function publishArticle() {
   try {
     // Étape 1 : commit HTML
     setStep('fr', 'active');
-    const newHtml = buildUpdatedHtml(currentFr.html, title, subtitle, meta, body, today);
+    const newHtml = buildUpdatedHtml(currentFr.html, title, subtitle, meta, body, today, takeaways);
     const resFr   = await ghPut(currentFr.path, newHtml, currentFr.sha, `Publish article FR: ${title}`);
     currentFr.sha  = resFr.content.sha;
     currentFr.html = newHtml;
@@ -503,7 +524,7 @@ async function publishArticle() {
 }
 
 // Reconstruit le HTML FR complet avec les nouvelles valeurs
-function buildUpdatedHtml(originalHtml, title, subtitle, meta, body, today) {
+function buildUpdatedHtml(originalHtml, title, subtitle, meta, body, today, takeaways) {
   let html = originalHtml;
 
   // H1 deux niveaux : titre noir + sous-titre or italique (si présent)
@@ -519,7 +540,13 @@ function buildUpdatedHtml(originalHtml, title, subtitle, meta, body, today) {
   const origDoc = new DOMParser().parseFromString(originalHtml, 'text/html');
   const ctaOrig = origDoc.querySelector('.article-cta');
   const ctaHtml = ctaOrig ? '\n\n      ' + ctaOrig.outerHTML : '';
-  const newBlock = '\n      ' + body + ctaHtml + '\n    ';
+  const tkItems = (takeaways || []).filter(t => t.trim());
+  const tkHtml = tkItems.length > 0
+    ? '\n\n      <div class="article-takeaways">\n        <div class="article-takeaways-title">Points clés</div>\n        <ul class="article-takeaways-list">\n'
+      + tkItems.map(t => `          <li>${t}</li>`).join('\n')
+      + '\n        </ul>\n      </div>'
+    : '';
+  const newBlock = '\n      ' + body + tkHtml + ctaHtml + '\n    ';
 
   html = html.replace(
     /(<div class="article-body">)([\s\S]*?)(\n    <\/div>\n  <\/div>)/,
