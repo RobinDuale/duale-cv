@@ -252,6 +252,12 @@
              onkeydown="handleKey(event)"></div>
       </div>
 
+      <div class="field-group">
+        <label>Texte CTA — Français</label>
+        <textarea id="field-cta" rows="3" style="width:100%;padding:10px 12px;border:1px solid #d0c9bc;border-radius:3px;font-family:'Jost',sans-serif;font-size:14px;background:#fff;outline:none;color:#1a1712;resize:vertical;line-height:1.5;" onfocus="this.style.borderColor='#9a7228'" onblur="this.style.borderColor='#d0c9bc'" placeholder="Texte affiché dans le bloc CTA sous l'article."></textarea>
+        <div class="field-hint">Le titre du CTA ("Échanger sur ces sujets") et les boutons ne sont pas modifiables ici.</div>
+      </div>
+
     </div>
   </div>
   <div id="save-status" class="save-status"></div>
@@ -422,6 +428,8 @@ async function editArticle(idx) {
     });
     if (takeaways) takeaways.remove();
     const cta = bodyDiv.querySelector('.article-cta');
+    const ctaText = cta ? (cta.querySelector('.article-cta-text')?.textContent?.trim() ?? '') : '';
+    document.getElementById('field-cta').value = ctaText;
     if (cta) cta.remove();
     document.getElementById('editor-body').innerHTML = bodyDiv.innerHTML.trim();
     document.execCommand('defaultParagraphSeparator', false, 'p');
@@ -445,12 +453,13 @@ async function saveDraft() {
   const today    = new Date().toISOString().slice(0,10);
 
   const takeaways = ['tk-1','tk-2','tk-3','tk-4'].map(id => document.getElementById(id).value.trim());
+  const ctaText   = document.getElementById('field-cta').value.trim();
   draftBtn.disabled = saveBtn.disabled = true;
   document.getElementById('progress-wrap').classList.remove('visible');
   setStatus('');
 
   try {
-    const newHtml = buildUpdatedHtml(currentFr.html, title, subtitle, meta, body, today, takeaways);
+    const newHtml = buildUpdatedHtml(currentFr.html, title, subtitle, meta, body, today, takeaways, ctaText);
     const msg     = currentArticleDraft ? `Draft: ${title}` : `Update article FR: ${title}`;
     const res     = await ghPut(currentFr.path, newHtml, currentFr.sha, msg);
     currentFr.sha  = res.content.sha;
@@ -476,6 +485,7 @@ async function publishArticle() {
   const today    = new Date().toISOString().slice(0,10);
 
   const takeaways = ['tk-1','tk-2','tk-3','tk-4'].map(id => document.getElementById(id).value.trim());
+  const ctaText   = document.getElementById('field-cta').value.trim();
   draftBtn.disabled = saveBtn.disabled = true;
   document.getElementById('progress-title').textContent = 'Publication en cours';
   document.getElementById('step-json').hidden = false;
@@ -488,7 +498,7 @@ async function publishArticle() {
   try {
     // Étape 1 : commit HTML
     setStep('fr', 'active');
-    const newHtml = buildUpdatedHtml(currentFr.html, title, subtitle, meta, body, today, takeaways);
+    const newHtml = buildUpdatedHtml(currentFr.html, title, subtitle, meta, body, today, takeaways, ctaText);
     const resFr   = await ghPut(currentFr.path, newHtml, currentFr.sha, `Publish article FR: ${title}`);
     currentFr.sha  = resFr.content.sha;
     currentFr.html = newHtml;
@@ -525,7 +535,7 @@ async function publishArticle() {
 }
 
 // Reconstruit le HTML FR complet avec les nouvelles valeurs
-function buildUpdatedHtml(originalHtml, title, subtitle, meta, body, today, takeaways) {
+function buildUpdatedHtml(originalHtml, title, subtitle, meta, body, today, takeaways, ctaText) {
   let html = originalHtml;
 
   // H1 deux niveaux : titre noir + sous-titre or italique (si présent)
@@ -540,6 +550,10 @@ function buildUpdatedHtml(originalHtml, title, subtitle, meta, body, today, take
 
   const origDoc = new DOMParser().parseFromString(originalHtml, 'text/html');
   const ctaOrig = origDoc.querySelector('.article-cta');
+  if (ctaOrig && ctaText) {
+    const ctaTextEl = ctaOrig.querySelector('.article-cta-text');
+    if (ctaTextEl) ctaTextEl.textContent = ctaText;
+  }
   const ctaHtml = ctaOrig ? '\n\n      ' + ctaOrig.outerHTML : '';
   const tkItems = (takeaways || []).filter(t => t.trim());
   const tkHtml = tkItems.length > 0
