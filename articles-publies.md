@@ -90,10 +90,10 @@ Utiliser `class="nav-link active"` sur le lien Perspectives pour tous les nouvea
 
 ---
 
-### Construire maintenant son autorité dans les LLMs, est-ce une question de survie ?
+### Construire maintenant son autorité dans les LLMs. Le guide de survie !
 
 - **Date publiée :** 6 mai 2026
-- **dateModified :** 2026-05-06
+- **dateModified :** 2026-05-05 (mise à jour titre/sous-titre après admin : "Le guide de survie !" ; suppression em dash EN ; correction ordre grille)
 - **Catégorie (eyebrow) :** Perspectives · SEO & GEO · Visibilité
 - **Tags sidebar :** SEO · GEO · IA
 - **Keywords schema :** LLM, autorité thématique, SEO, GEO, PME, visibilité IA, référencement, ChatGPT, Claude, Perplexity
@@ -103,7 +103,7 @@ Utiliser `class="nav-link active"` sur le lien Perspectives pour tous les nouvea
 - **Slug EN :** `llm-authority`
 - **Illustration :** `illus-llms.png` (FR) / `illus-llms-en.png` (EN) / OG : `illus-llms-og.png` / `illus-llms-en-og.png`
 - **articleSection :** SEO & GEO · Visibilité
-- **Angle :** Signal personnel (site indexé dans les LLMs en un mois sans budget) comme point de départ d'une réflexion stratégique pour les PME — autorité thématique et fenêtre du premier entrant
+- **Angle :** Signal personnel (site indexé dans les LLMs en un mois sans budget) comme point de départ d'une réflexion stratégique pour les PME, autorité thématique et fenêtre du premier entrant
 - **Structure :** 3 H2 + FAQ Schema (3 Q/R) + Points clés + CTA "Échanger sur ces sujets"
 - **Sujets couverts :** autorité thématique, GEO (Generative Engine Optimization), visibilité IA, SEO vs LLMs, prime au premier entrant, stratégie éditoriale PME, e-commerce spécialisé vs généraliste
 
