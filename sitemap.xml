@@ -212,4 +212,18 @@
     <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/perspectives/transformer-la-pression-en-ambition.html" />
   </url>
+  <url>
+    <loc>https://cv-robin.duale.fr/fr/perspectives/autorite-dans-les-llms.html</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/perspectives/llm-authority.html" />
+  </url>
+  <url>
+    <loc>https://cv-robin.duale.fr/en/perspectives/llm-authority.html</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/perspectives/autorite-dans-les-llms.html" />
+  </url>
 </urlset>

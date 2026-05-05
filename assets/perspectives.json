@@ -116,15 +116,14 @@
     "subtitle_en": "is it a matter of survival?",
     "tags_fr": "SEO · GEO · IA",
     "tags_en": "SEO · GEO · AI",
-    "date_fr": "5 mai 2026",
-    "date_en": "May 5, 2026",
-    "image_fr": "/assets/illus-llms.jpg",
-    "image_en": "/assets/illus-llms.jpg",
+    "date_fr": "6 mai 2026",
+    "date_en": "May 6, 2026",
+    "image_fr": "/assets/illus-llms.png",
+    "image_en": "/assets/illus-llms-en.png",
     "alt_fr": "Illustration : construire son autorité dans les LLMs",
     "alt_en": "Illustration: building LLM authority",
     "excerpt_fr": "En un mois sans budget, mon site personnel remonte dans les LLMs. Ce signal pose une question stratégique pour les PME : la prochaine bataille de visibilité se joue dans les réponses des LLMs, et la fenêtre pour agir est encore ouverte.",
-    "excerpt_en": "In one month, my website surfaces in LLMs with no budget. This raises a strategic question for SMBs: the next visibility battle is being fought inside LLM responses, and the window to act is still open.",
-    "draft": true
+    "excerpt_en": "In one month, my website surfaces in LLMs with no budget. This raises a strategic question for SMBs: the next visibility battle is being fought inside LLM responses, and the window to act is still open."
   },
   {
     "slug_fr": "transformer-la-pression-en-ambition",
