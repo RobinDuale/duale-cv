@@ -87,6 +87,13 @@ Chaque article utilise un titre en deux niveaux visuels :
 - `persp-nav.js` et `update_home_persp.py` génèrent automatiquement le rendu deux niveaux dans les cartes
 - Dans la sidebar (article précédent/suivant), seul le titre principal est affiché
 
+### Ordre des entrées dans `perspectives.json` — règle critique
+
+`persp-nav.js` construit la grille en itérant le tableau **en sens inverse** (du dernier au premier).  
+**Conséquence : les entrées doivent toujours être dans l'ordre chronologique — du plus ancien (index 0) au plus récent (dernier index).**  
+Le dernier article du JSON est affiché en première position dans la grille.  
+Si un article est ajouté ou si une date est modifiée, vérifier que l'ordre chronologique est respecté dans le tableau.
+
 ---
 
 ## Workflow — nouvel article (checklist complète)
@@ -270,6 +277,11 @@ Après une modif via admin : **toujours faire `git pull` avant de travailler en 
 - **Ne traduit pas** l'EN — à faire manuellement via Claude Code après
 
 Quand Robin dit "j'ai modifié via l'admin" : faire `git pull`, comparer FR vs EN, retraduire si nécessaire.
+
+**Si le titre ou le sous-titre a changé via l'admin :**
+1. Mettre à jour `title_fr`, `subtitle_fr`, `title_en`, `subtitle_en` dans `perspectives.json`
+2. Relancer `python update_home_persp.py` (les cartes home affichent le titre depuis le JSON)
+3. Mettre à jour l'entrée dans `articles-publies.md` avec le nouveau titre et une note de modification
 
 ---
 
