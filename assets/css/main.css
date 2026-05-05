@@ -566,6 +566,22 @@ body {
   transition: color 0.2s;
 }
 .article-back:hover { color: var(--gold); }
+.article-takeaways {
+  margin-top: 40px; margin-bottom: 8px; padding: 24px 28px;
+  background: var(--cream); border-left: 3px solid var(--gold);
+}
+.article-takeaways-title {
+  font-family: var(--sans); font-size: 13px; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
+}
+.article-takeaways-list {
+  margin: 0; padding-left: 18px;
+}
+.article-takeaways-list li {
+  font-family: var(--serif); font-size: 15px; color: var(--ink);
+  line-height: 1.7; margin-bottom: 8px;
+}
+.article-takeaways-list li:last-child { margin-bottom: 0; }
 .article-cta {
   margin-top: 40px; padding: 28px; background: var(--cream);
   border: 0.5px solid var(--gold-border);
