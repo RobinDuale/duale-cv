@@ -256,14 +256,19 @@ Après une modif via admin : **toujours faire `git pull` avant de travailler en 
 
 1. `git pull origin main` — récupérer la version admin si modifiée en ligne
 2. Modifier le fichier FR (ou récupérer la version admin)
-3. Traduire fidèlement et mettre à jour le fichier EN
+3. **Traduire fidèlement et mettre à jour le fichier EN** — toujours, même pour un changement de titre ou de chapô
 4. Vérifier que `dateModified` est mis à jour dans le Schema.org du HTML (FR + EN)
-5. Lancer `python update_home_persp.py` si l'article est dans les 3 plus récents **ou si une date dans `perspectives.json` a changé** — les cartes home sont statiques et ne se mettent pas à jour automatiquement
-6. Mettre à jour `sitemap.xml` (`lastmod` du jour sur les 2 URLs)
-7. Mettre à jour `llms.txt` et `llms-fr.txt` si le contenu a changé significativement
-8. **Mettre à jour `articles-publies.md`** (dateModified + note des changements)
-9. Commit + push (après confirmation Robin)
-10. IndexNow ping sur les URLs modifiées
+5. **Si le titre, le sous-titre ou l'excerpt a changé :**
+   - Mettre à jour `perspectives.json` : `title_fr`, `subtitle_fr`, `title_en`, `subtitle_en`, `excerpt_fr`, `excerpt_en`
+   - Vérifier que l'ordre chronologique des entrées est respecté (voir règle ci-dessus)
+   - Lancer `python update_home_persp.py` — les cartes home (titre, sous-titre, excerpt) et la home perspectives sont statiques, elles ne se mettent pas à jour automatiquement
+   - **Vérifier visuellement** `fr/index.html` et `en/index.html` (3 cartes home) ainsi que `fr/perspectives/index.html` et `en/perspectives/index.html` pour s'assurer que titre, sous-titre et chapô sont cohérents avec l'article
+6. Lancer `python update_home_persp.py` également si l'article est dans les 3 plus récents ou si une date a changé
+7. Mettre à jour `sitemap.xml` (`lastmod` du jour sur les 2 URLs)
+8. Mettre à jour `llms.txt` et `llms-fr.txt` si le contenu a changé significativement
+9. **Mettre à jour `articles-publies.md`** (dateModified + note des changements)
+10. Commit + push (après confirmation Robin)
+11. IndexNow ping sur les URLs modifiées
 
 ---
 
