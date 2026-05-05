@@ -369,7 +369,7 @@ async function showList() {
               <td class="date-cell">${a.date_fr || '—'}${a.draft ? '<br><span class="draft-badge">Brouillon</span>' : ''}</td>
               <td class="title-cell">
                 ${a.title_fr}${a.subtitle_fr ? ' <em style="color:#9a7228">' + a.subtitle_fr + '</em>' : ''}
-                <small>${a.title_en}${a.subtitle_en ? ' ' + a.subtitle_en : ''}</small>
+                <small>${a.title_en}</small>
               </td>
               <td style="text-align:right">
                 <button class="btn-edit" onclick="editArticle(${i})">Modifier &rarr;</button>

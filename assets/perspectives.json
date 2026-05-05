@@ -108,24 +108,6 @@
     "excerpt_en": "Five acquisitions integrated, two PE buyouts experienced. What buyers almost always underestimate: the six human factors that tip post-acquisition integration."
   },
   {
-    "slug_fr": "autorite-dans-les-llms",
-    "slug_en": "llm-authority",
-    "title_fr": "Construire maintenant son autorité dans les LLMs,",
-    "subtitle_fr": "est-ce une question de survie ?",
-    "title_en": "Building LLM authority now:",
-    "subtitle_en": "is it a matter of survival?",
-    "tags_fr": "SEO · GEO · IA",
-    "tags_en": "SEO · GEO · AI",
-    "date_fr": "6 mai 2026",
-    "date_en": "May 6, 2026",
-    "image_fr": "/assets/illus-llms.png",
-    "image_en": "/assets/illus-llms-en.png",
-    "alt_fr": "Illustration : construire son autorité dans les LLMs",
-    "alt_en": "Illustration: building LLM authority",
-    "excerpt_fr": "En un mois sans budget, mon site personnel remonte dans les LLMs. Ce signal pose une question stratégique pour les PME : la prochaine bataille de visibilité se joue dans les réponses des LLMs, et la fenêtre pour agir est encore ouverte.",
-    "excerpt_en": "In one month, my website surfaces in LLMs with no budget. This raises a strategic question for SMBs: the next visibility battle is being fought inside LLM responses, and the window to act is still open."
-  },
-  {
     "slug_fr": "transformer-la-pression-en-ambition",
     "slug_en": "turning-pressure-into-ambition",
     "title_fr": "Savoir transformer la pression en ambition,",
@@ -142,5 +124,23 @@
     "alt_en": "Illustration: turning investor pressure into collective ambition for teams",
     "excerpt_fr": "La pression de croissance en contexte PE est inévitable. Ce qui fait la différence : la capacité du CEO à la transformer en ambition partagée, à chaque board, à chaque plan révisé.",
     "excerpt_en": "Growth pressure in a PE context is unavoidable. What makes the difference: a CEO's ability to turn that pressure into shared ambition, at every board meeting, at every revised plan."
+  },
+  {
+    "slug_fr": "autorite-dans-les-llms",
+    "slug_en": "llm-authority",
+    "title_fr": "Construire maintenant son autorité dans les LLMs.",
+    "subtitle_fr": "Le guide de survie !",
+    "title_en": "Building LLM authority now.",
+    "subtitle_en": "The survival guide!",
+    "tags_fr": "SEO · GEO · IA",
+    "tags_en": "SEO · GEO · AI",
+    "date_fr": "6 mai 2026",
+    "date_en": "May 6, 2026",
+    "image_fr": "/assets/illus-llms.png",
+    "image_en": "/assets/illus-llms-en.png",
+    "alt_fr": "Illustration : construire son autorité dans les LLMs",
+    "alt_en": "Illustration: building LLM authority",
+    "excerpt_fr": "En un mois sans budget, mon site personnel remonte dans les LLMs. Ce signal pose une question stratégique pour les PME : la prochaine bataille de visibilité se joue dans les réponses des LLMs, et la fenêtre pour agir est encore ouverte.",
+    "excerpt_en": "In one month, my website surfaces in LLMs with no budget. This raises a strategic question for SMBs: the next visibility battle is being fought inside LLM responses, and the window to act is still open."
   }
 ]
