@@ -93,7 +93,7 @@ Utiliser `class="nav-link active"` sur le lien Perspectives pour tous les nouvea
 ### Construire maintenant son autorité dans les LLMs. Le guide de survie !
 
 - **Date publiée :** 6 mai 2026
-- **dateModified :** 2026-05-05 (mise à jour titre/sous-titre après admin : "Le guide de survie !" ; suppression em dash EN ; correction ordre grille)
+- **dateModified :** 2026-05-06 (enrichissement corps FR : donnée trafic organique -2,5% 2025, référence TikTok, paragraphe mécanismes opaques ; synchro EN ; lien interne avantage-competitif-humain.html ajouté FR)
 - **Catégorie (eyebrow) :** Perspectives · SEO & GEO · Visibilité
 - **Tags sidebar :** SEO · GEO · IA
 - **Keywords schema :** LLM, autorité thématique, SEO, GEO, PME, visibilité IA, référencement, ChatGPT, Claude, Perplexity
