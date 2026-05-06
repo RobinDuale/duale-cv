@@ -90,15 +90,15 @@ Utiliser `class="nav-link active"` sur le lien Perspectives pour tous les nouvea
 
 ---
 
-### Construire maintenant son autorité dans les LLMs. Le guide de survie !
+### Celui qui est cité précède souvent celui qui est choisi.
 
 - **Date publiée :** 6 mai 2026
-- **dateModified :** 2026-05-06 (réécriture complète FR via admin ; réécriture complète EN depuis FR : trafic organique -2,5% 2025, référence TikTok, paragraphe mécanismes opaques, reformulation intro et paragraphe intuition finale ; lien interne avantage-competitif-humain.html ajouté FR)
+- **dateModified :** 2026-05-06 (nouveau titre H1 FR+EN : "Celui qui est cité précède souvent celui qui est choisi" ; réécriture complète EN ; ajout paragraphes GEO/AEO, RAG, "share of AI voice", limite autorité réelle/perçue ; mise en gras phrases clés ; Schema FR headline + breadcrumb mis à jour)
 - **Catégorie (eyebrow) :** Perspectives · SEO & GEO · Visibilité
 - **Tags sidebar :** SEO · GEO · IA
 - **Keywords schema :** LLM, autorité thématique, SEO, GEO, PME, visibilité IA, référencement, ChatGPT, Claude, Perplexity
-- **Temps de lecture :** 5 min
-- **wordCount schema :** 950
+- **Temps de lecture :** 7 min
+- **wordCount schema :** 1300
 - **Slug FR :** `autorite-dans-les-llms`
 - **Slug EN :** `llm-authority`
 - **Illustration :** `illus-llms.png` (FR) / `illus-llms-en.png` (EN) / OG : `illus-llms-og.png` / `illus-llms-en-og.png`

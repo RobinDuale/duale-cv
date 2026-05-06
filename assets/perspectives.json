@@ -128,10 +128,10 @@
   {
     "slug_fr": "autorite-dans-les-llms",
     "slug_en": "llm-authority",
-    "title_fr": "Construire maintenant son autorité dans les LLMs.",
-    "subtitle_fr": "Le guide de survie !",
-    "title_en": "Building LLM authority now.",
-    "subtitle_en": "The survival guide!",
+    "title_fr": "Celui qui est cité précède souvent celui qui est choisi.",
+    "subtitle_fr": "Comment les LLM déplacent la formation de la décision et redéfinissent les règles de la visibilité digitale.",
+    "title_en": "The one who gets cited often precedes the one who gets chosen.",
+    "subtitle_en": "How LLMs are shifting how decisions form and rewriting the rules of digital visibility.",
     "tags_fr": "SEO · GEO · IA",
     "tags_en": "SEO · GEO · AI",
     "date_fr": "6 mai 2026",
@@ -140,7 +140,7 @@
     "image_en": "/assets/illus-llms-en.png",
     "alt_fr": "Illustration : construire son autorité dans les LLMs",
     "alt_en": "Illustration: building LLM authority",
-    "excerpt_fr": "En un mois sans budget, mon site personnel remonte dans les LLMs. Ce signal pose une question stratégique pour les PME : la prochaine bataille de visibilité se joue dans les réponses des LLMs, et la fenêtre pour agir est encore ouverte.",
-    "excerpt_en": "In one month, my website surfaces in LLMs with no budget. This raises a strategic question for SMBs: the next visibility battle is being fought inside LLM responses, and the window to act is still open."
+    "excerpt_fr": "Celui qui est cité par un LLM précède souvent celui qui est choisi. Ce déplacement du lieu où se forme la décision d'achat redéfinit les règles de la visibilité pour toute entreprise disposant d'une expertise sectorielle réelle.",
+    "excerpt_en": "The one cited by an LLM often precedes the one chosen. This shift in where purchase decisions form is rewriting the visibility rules for any company with genuine sector expertise."
   }
 ]
