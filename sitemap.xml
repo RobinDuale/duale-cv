@@ -89,6 +89,49 @@
     <priority>0.82</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/saas-ceo-lbo.html" />
   </url>
+  <!-- English Positioning -->
+  <url>
+    <loc>https://cv-robin.duale.fr/en/transformation-growth-b2b-saas-data-ceo.html</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/ceo-transformation-croissance-b2b-saas-data.html" />
+  </url>
+  <url>
+    <loc>https://cv-robin.duale.fr/en/active-ownership-transformation-growth.html</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.83</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/actionnariat-actif-transformation-croissance.html" />
+  </url>
+  <url>
+    <loc>https://cv-robin.duale.fr/en/french-subsidiary-european-global-group.html</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/filiale-francaise-groupe-europeen-global.html" />
+  </url>
+  <url>
+    <loc>https://cv-robin.duale.fr/en/build-up-external-growth.html</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/build-up-croissance-externe.html" />
+  </url>
+  <url>
+    <loc>https://cv-robin.duale.fr/en/saas-subscription-transformation.html</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/transformation-abonnement-saas.html" />
+  </url>
+  <url>
+    <loc>https://cv-robin.duale.fr/en/saas-ceo-lbo.html</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/ceo-saas-lbo.html" />
+  </url>
   <!-- French Perspectives -->
   <url>
     <loc>https://cv-robin.duale.fr/fr/perspectives/</loc>
