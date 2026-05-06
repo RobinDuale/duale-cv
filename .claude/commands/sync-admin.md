@@ -9,6 +9,8 @@ Synchronise complètement le site après une modification via l'admin panel.
 
 L'argument `$ARGUMENTS` est le slug FR de l'article modifié.
 
+**Si `$ARGUMENTS` est vide**, lire `assets/perspectives.json`, afficher la liste des articles publiés (hors drafts) avec leur date et titre, et demander : "Quel article veux-tu synchroniser ?" Attendre la réponse avant de continuer.
+
 ### 1. Pull
 
 ```bash
