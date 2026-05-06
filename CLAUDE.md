@@ -6,20 +6,23 @@ Production : https://cv-robin.duale.fr
 ## Stack & structure
 
 ```
-/fr/                      → pages françaises
-/en/                      → pages anglaises
-/fr/perspectives/         → index + articles FR
-/en/perspectives/         → index + articles EN
-/assets/css/main.css      → feuille de style unique
-/assets/js/main.js        → JS unique
-/assets/js/persp-nav.js   → navigation dynamique (À lire aussi, prev/next) — lit perspectives.json
-/assets/perspectives.json → source de vérité articles (titre, sous-titre, slug, date, image, excerpt)
-/articles-publies.md      → journal éditorial de tous les articles
-/admin/index.html         → panel admin (édition FR + commit GitHub via token)
-/update_home_persp.py     → script Python : regénère les 3 cartes home FR + EN depuis perspectives.json
-/sitemap.xml              → sitemap SEO
-/llms.txt                 → contexte GEO anglais (pour LLMs)
-/llms-fr.txt              → contexte GEO français (pour LLMs)
+/fr/                         → pages françaises
+/en/                         → pages anglaises
+/fr/perspectives/            → index + articles FR
+/en/perspectives/            → index + articles EN
+/assets/css/main.css         → feuille de style unique
+/assets/js/main.js           → JS unique
+/assets/js/persp-nav.js      → navigation dynamique (À lire aussi, prev/next) — lit perspectives.json
+/assets/perspectives.json    → source de vérité articles (titre, sous-titre, slug, date, image, excerpt)
+/articles-publies.md         → journal éditorial de tous les articles
+/admin/index.html            → panel admin (édition FR uniquement + commit GitHub via token)
+/update_home_persp.py        → script Python : regénère les 3 cartes home FR + EN depuis perspectives.json
+/new_article.py              → script Python : crée l'article FR en draft (noindex, hors sitemap)
+/publish_article.py          → script Python : publie le draft (retire noindex, met à jour tous les fichiers)
+/article_input.example.json  → modèle de fichier d'input pour new_article.py et publish_article.py
+/sitemap.xml                 → sitemap SEO
+/llms.txt                    → contexte GEO anglais (pour LLMs)
+/llms-fr.txt                 → contexte GEO français (pour LLMs)
 ```
 
 ## Règles absolues
@@ -96,84 +99,69 @@ Si un article est ajouté ou si une date est modifiée, vérifier que l'ordre ch
 
 ---
 
-## Workflow — nouvel article (checklist complète)
+## Workflow — nouvel article (4 étapes)
 
-### 1. Fichiers article
+### Étape 1 — Préparer l'input et créer le draft FR
 
-- Créer `fr/perspectives/[slug-fr].html` et `en/perspectives/[slug-en].html`
-- Copier un article existant comme base, ne pas réinventer la structure
-- **Utiliser le texte exact fourni par Robin** — ne jamais réécrire le contenu
+1. Copier `article_input.example.json` en `article_input.json` et remplir tous les champs
+2. Placer l'illustration dans `/assets/illus-[nom].jpg` (800x420) et l'OG image en `/assets/illus-[nom]-og.png` (1200x630)
+3. Lancer le script :
 
-### 2. Illustration
-
-- Illustration article : `/assets/illus-[nom].jpg` (800x420) ou SVG
-- OG image : `/assets/illus-[nom]-og.png` (1200x630) — générer avec PIL :
-
-```python
-from PIL import Image
-img = Image.open("assets/illus-[nom].jpg")
-img_resized = img.resize((1200, 630))
-img_resized.save("assets/illus-[nom]-og.png")
+```powershell
+python new_article.py article_input.json
 ```
 
-### 3. SEO / meta obligatoires (FR + EN)
+Le script crée `fr/perspectives/[slug-fr].html` avec `<meta name="robots" content="noindex">`.
+L'article n'apparait pas dans les grilles, la home ni le sitemap — accessible uniquement par URL directe.
 
-- `<title>` — 55-65 car., keyword principal en tête, distinct du H1
-- `<meta name="description">` — unique, 150-160 car., contenu réel de l'article
-- `<meta property="og:description">` — peut être identique ou légèrement différent
-- `<meta property="og:image">` et `<meta name="twitter:image">` → `illus-[nom]-og.png`
-- `<link rel="canonical">` — URL absolue de la page
-- `<link rel="alternate" hreflang="fr">` et `hreflang="en"` — dans les deux versions
+4. Commit + push pour déployer le draft en ligne.
 
-### 4. Structure H1/H2 (SEO + GEO)
+### Étape 2 — Retravaille depuis l'admin
 
-- **H1 unique**, distinct du title tag
-- **H2 formulés en questions ou assertions claires et extractibles** — les LLM utilisent la hiérarchie des headings pour extraire des réponses
+Robin édite le contenu FR via `/admin/index.html`. L'admin commite directement sur GitHub.
+Après modifications via l'admin : **faire `git pull` avant de travailler en local**.
 
-### 5. Schema.org (deux blocs JSON-LD obligatoires)
+### Étape 3 — Publication complète
 
-**BreadcrumbList** :
-```json
-{"@type": "BreadcrumbList", "itemListElement": [
-  {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cv-robin.duale.fr/fr/"},
-  {"@type": "ListItem", "position": 2, "name": "Perspectives", "item": "https://cv-robin.duale.fr/fr/perspectives/"},
-  {"@type": "ListItem", "position": 3, "name": "[Titre]", "item": "https://cv-robin.duale.fr/fr/perspectives/[slug].html"}
-]}
+Quand le contenu FR est validé :
+
+```powershell
+python publish_article.py article_input.json
 ```
 
-**BlogPosting** — champs obligatoires : `headline`, `wordCount`, `articleSection`, `description`, `datePublished`, `dateModified`, `image`, `mainEntityOfPage`, `author`, `publisher`, `url`, `inLanguage`, `keywords`
+Le script fait automatiquement :
+- Retire `<meta name="robots" content="noindex">` du HTML FR
+- Ajoute l'entrée dans `perspectives.json` (ordre chronologique)
+- Lance `python update_home_persp.py` (home FR + EN)
+- Ajoute les 2 URLs dans `sitemap.xml`
+- Ajoute les entrées dans `llms.txt` et `llms-fr.txt`
+- Prepend l'entrée dans `articles-publies.md`
 
-- `author` doit pointer vers l'entité `Person` Robin Duale avec `sameAs` LinkedIn
-- `dateModified` = date du jour à chaque modification (signal fraîcheur pour les LLM)
+**Note importante** : si le titre ou l'excerpt a changé via l'admin depuis la création du draft,
+mettre à jour `article_input.json` AVANT de lancer `publish_article.py`.
 
-**FAQ Schema** — à ajouter si l'article traite d'une problématique avec des questions implicites (3-5 questions/réponses en fin de page) :
-```json
-{"@type": "FAQPage", "mainEntity": [
-  {"@type": "Question", "name": "Question ?", "acceptedAnswer": {"@type": "Answer", "text": "Réponse."}}
-]}
-```
+### Étape 4 — Version EN + finalisation (avec Claude)
 
-### 5b. Bloc auteur E-E-A-T (obligatoire sur chaque article)
+1. Demander à Claude de créer `en/perspectives/[slug-en].html` depuis le contenu FR finalisé
+2. Commit + push (après confirmation Robin)
+3. IndexNow ping (voir ci-dessous)
 
-Chaque article doit contenir un bloc auteur visible :
-- Nom : Robin Duale
-- Titre/positionnement
-- Lien LinkedIn
-- (idéalement photo)
+**Note** : les blocs "À lire aussi" et prev/next sont gérés automatiquement par `persp-nav.js`.
 
-Sans attribution explicite, le contenu reste "anonyme" pour les LLM et ne peut pas être cité avec confiance.
+---
 
-**Attention** : le CTA sidebar des articles EN peut utiliser "Get in touch" ou "Contact me" selon l'article. Vérifier que le lien LinkedIn est présent dans les deux cas — ne pas se fier uniquement à la présence de "Contact me".
+## Contenu de body_fr dans article_input.json — règles éditoriales
 
-### 5c. Structure de contenu "citable" pour les LLM
+Le champ `body_fr` doit contenir le HTML complet du corps article (tout ce qui est dans `<div class="article-body">`), hors bloc `.article-cta` (généré automatiquement par le script).
 
-Chaque article doit avoir :
-- Un **résumé intro** de moins de 80 mots en début d'article (type abstract)
-- Une **section "points clés"** ou "à retenir" avant le footer — voir markup ci-dessous
-- Des **définitions explicites** des concepts clés dans le corps du texte
-- Des formulations autonomes (compréhensibles sans contexte externe)
+Structure attendue :
+- `<p class="lead">` — résumé de moins de 80 mots
+- `<h2>` — formulés en questions ou assertions extractibles par les LLM
+- `<p class="body-text">` — paragraphes
+- `<div class="article-takeaways">` — bloc Points clés obligatoire
+- `<p class="body-text">` — lien interne de maillage (au moins 1)
 
-**Markup obligatoire pour le bloc Points clés** (FR) / Key takeaways (EN) — à placer avant `.article-cta` :
+**Markup bloc Points clés** (FR) / Key takeaways (EN) :
 
 ```html
 <div class="article-takeaways">
@@ -182,47 +170,16 @@ Chaque article doit avoir :
     <li>Point 1.</li>
     <li>Point 2.</li>
     <li>Point 3.</li>
-    <li>Point 4.</li>
   </ul>
 </div>
 ```
 
-Version EN : remplacer `Points clés` par `Key takeaways`. Le CSS `.article-takeaways` est défini dans `main.css` — ne pas recréer de style inline.
-
-### 5d. Maillage interne
-
-- Au moins **2 liens internes sortants** vers des articles existants
-- Au moins **1 article existant** mis à jour pour pointer vers le nouvel article
-
-### 6. perspectives.json
-
-Ajouter l'entrée en fin de tableau :
+**FAQ Schema** — à ajouter manuellement dans le `<head>` si l'article contient des questions implicites :
 ```json
-{
-  "slug_fr": "...", "slug_en": "...",
-  "title_fr": "Titre principal,", "subtitle_fr": "sous-titre accroche.",
-  "title_en": "Main title:", "subtitle_en": "hook subtitle.",
-  "tags_fr": "Tag1 · Tag2", "tags_en": "Tag1 · Tag2",
-  "date_fr": "1 jan. 2026", "date_en": "Jan 1, 2026",
-  "image_fr": "/assets/illus-[nom].jpg", "image_en": "/assets/illus-[nom]-en.jpg",
-  "alt_fr": "...", "alt_en": "...",
-  "excerpt_fr": "...", "excerpt_en": "..."
-}
+{"@type": "FAQPage", "mainEntity": [
+  {"@type": "Question", "name": "Question ?", "acceptedAnswer": {"@type": "Answer", "text": "Réponse."}}
+]}
 ```
-
-### 7. Mise à jour des fichiers existants
-
-```
-python update_home_persp.py          → regénère les 3 cartes home FR + EN
-fr/perspectives/index.html           → la grille est générée par persp-nav.js (rien à faire manuellement)
-en/perspectives/index.html           → idem
-sitemap.xml                          → ajouter les 2 URLs avec lastmod du jour
-llms.txt + llms-fr.txt               → ajouter titre + URL + excerpt de l'article
-articles-publies.md                  → nouvelle entrée en tête (antéchronologique)
-indexnow-ping.sh                     → ajouter les 2 URLs (FR + EN) de l'article
-```
-
-**Note** : les blocs "À lire aussi" et la navigation prev/next sont gérés automatiquement par `persp-nav.js` — aucune modification manuelle dans les articles existants.
 
 ### 8. Commit + push (après confirmation Robin)
 

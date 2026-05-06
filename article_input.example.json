@@ -1,0 +1,51 @@
+{
+  "_instructions": "Copier ce fichier en article_input.json et remplir tous les champs. Les champs marqués (optionnel) peuvent rester vides (\"\").",
+
+  "slug_fr": "mon-article-fr",
+  "slug_en": "my-article-en",
+
+  "title_fr": "Titre principal,",
+  "subtitle_fr": "sous-titre accroche en italique or.",
+  "title_en": "Main title:",
+  "subtitle_en": "hook subtitle in gold italic.",
+
+  "eyebrow_fr": "Perspectives · M&A · Private equity",
+  "eyebrow_en": "Perspectives · M&A · Private equity",
+
+  "date_fr": "6 mai 2026",
+  "date_en": "May 6, 2026",
+  "date_iso": "2026-05-06",
+
+  "tags_fr": "M&A · Private equity",
+  "tags_en": "M&A · Private equity",
+
+  "article_section": "M&A & Private equity",
+
+  "image_slug": "illus-mon-article",
+  "alt_fr": "Illustration : description courte de l'image",
+  "alt_en": "Illustration: short image description",
+
+  "meta_description_fr": "150 à 160 caractères. Description unique de l'article, keyword en tête. Pas de répétition du title.",
+  "meta_description_en": "150 to 160 characters. Unique description of the article, keyword first. Not a repeat of the title.",
+
+  "og_description_fr": "Peut être identique ou légèrement différent de meta_description_fr.",
+  "og_description_en": "Can match or slightly differ from meta_description_en.",
+
+  "excerpt_fr": "Extrait court (2-3 phrases) pour les cartes de la home et de la grille Perspectives.",
+  "excerpt_en": "Short excerpt (2-3 sentences) for the home cards and Perspectives grid.",
+
+  "read_time_fr": "5 min de lecture",
+  "read_time_en": "5 min read",
+
+  "word_count": 650,
+
+  "keywords_fr": ["mot-clé 1", "mot-clé 2", "CEO", "private equity"],
+  "keywords_en": ["keyword 1", "keyword 2", "CEO", "private equity"],
+
+  "cta_title_fr": "(optionnel) Titre du bloc CTA en bas d'article. Laisser vide pour le texte par défaut.",
+  "cta_title_en": "(optionnel) CTA block title at the bottom of the article. Leave empty for default text.",
+
+  "body_fr": "<p class=\"lead\">Chapô de l'article — résumé de moins de 80 mots.</p>\n\n      <h2>Premier H2 — formulé comme une assertion ou une question claire</h2>\n\n      <p class=\"body-text\">Premier paragraphe.</p>\n\n      <h2>Deuxième H2</h2>\n\n      <p class=\"body-text\">Deuxième paragraphe.</p>\n\n      <div class=\"article-takeaways\">\n        <div class=\"article-takeaways-title\">Points clés</div>\n        <ul class=\"article-takeaways-list\">\n          <li>Point 1.</li>\n          <li>Point 2.</li>\n          <li>Point 3.</li>\n        </ul>\n      </div>\n\n      <p class=\"body-text\">Pour aller plus loin, voir <a href=\"/fr/page-liee.html\">la page dédiée</a>.</p>",
+
+  "body_en": ""
+}
