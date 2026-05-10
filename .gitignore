@@ -12,3 +12,6 @@ __pycache__/
 # Brouillons
 fr/perspectives/_draft-*.html
 en/perspectives/_draft-*.html
+
+# Archives locales
+archive/

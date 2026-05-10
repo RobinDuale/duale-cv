@@ -35,6 +35,14 @@ Production : https://cv-robin.duale.fr
 - **Ne jamais modifier** les pages parcours/track-record depuis le contenu éditorial
 - **SEO/GEO : après chaque modification ou création, vérifier systématiquement la checklist ci-dessous et signaler tout point manquant avant le commit**
 
+## Mémoire entre sessions (`memory/`)
+
+Le repo GitHub est **public** — ne jamais y mettre d'informations sensibles ou personnelles.
+
+- **`CLAUDE.md`** (repo public) : toutes les règles projet, workflows, conventions. C'est ici que vont les préférences et décisions qui émergent en conversation, si elles ne sont pas sensibles.
+- **`memory/`** (local, jamais pushé) : uniquement les données personnelles/privées qui ne doivent pas apparaître sur GitHub (ex : email, identité).
+- **Règle** : ne jamais dupliquer dans `memory/` ce qui est déjà dans `CLAUDE.md`. Si quelque chose mérite d'être retenu entre sessions et n'est pas sensible, l'ajouter dans `CLAUDE.md`.
+
 ## Synchronisation locale — à faire en début de session
 
 L'admin panel peut avoir commité directement sur GitHub entre deux sessions :
@@ -121,32 +129,9 @@ L'article n'apparait pas dans les grilles, la home ni le sitemap — accessible 
 Robin édite le contenu FR via `/admin/index.html`. L'admin commite directement sur GitHub.
 Après modifications via l'admin : **faire `git pull` avant de travailler en local**.
 
-### Étape 3 — Publication complète
+### Étapes 3 et 4 — Publication + version EN
 
-Quand le contenu FR est validé :
-
-```powershell
-python publish_article.py article_input.json
-```
-
-Le script fait automatiquement :
-- Retire `<meta name="robots" content="noindex">` du HTML FR
-- Ajoute l'entrée dans `perspectives.json` (ordre chronologique)
-- Lance `python update_home_persp.py` (home FR + EN)
-- Ajoute les 2 URLs dans `sitemap.xml`
-- Ajoute les entrées dans `llms.txt` et `llms-fr.txt`
-- Prepend l'entrée dans `articles-publies.md`
-
-**Note importante** : si le titre ou l'excerpt a changé via l'admin depuis la création du draft,
-mettre à jour `article_input.json` AVANT de lancer `publish_article.py`.
-
-### Étape 4 — Version EN + finalisation (avec Claude)
-
-1. Demander à Claude de créer `en/perspectives/[slug-en].html` depuis le contenu FR finalisé
-2. Commit + push (après confirmation Robin)
-3. IndexNow ping (voir ci-dessous)
-
-**Note** : les blocs "À lire aussi" et prev/next sont gérés automatiquement par `persp-nav.js`.
+Utiliser le skill `/publish-article` — il orchestre tout : script de publication, création EN, audit SEO/GEO, commit, IndexNow.
 
 ---
 
@@ -185,20 +170,7 @@ Structure attendue :
 
 ### 9. IndexNow ping (après push)
 
-```powershell
-$body = @{
-  host        = "cv-robin.duale.fr"
-  key         = "A8A911547D7C17BDDBE856B293F83A46"
-  keyLocation = "https://cv-robin.duale.fr/A8A911547D7C17BDDBE856B293F83A46.txt"
-  urlList     = @(
-    "https://cv-robin.duale.fr/fr/",
-    "https://cv-robin.duale.fr/en/",
-    "https://cv-robin.duale.fr/fr/perspectives/[slug-fr].html",
-    "https://cv-robin.duale.fr/en/perspectives/[slug-en].html"
-  )
-} | ConvertTo-Json
-Invoke-WebRequest -Uri "https://api.indexnow.org/indexnow" -Method POST -ContentType "application/json; charset=utf-8" -Body $body -UseBasicParsing
-```
+Utiliser le skill `/indexnow <slug-fr> <slug-en>`.
 
 ---
 
@@ -207,25 +179,7 @@ Invoke-WebRequest -Uri "https://api.indexnow.org/indexnow" -Method POST -Content
 ### Via l'admin panel (`/admin/index.html`)
 
 L'admin édite uniquement le FR et commite directement sur GitHub.
-Après une modif via admin : **toujours faire `git pull` avant de travailler en local**.
-
-### Checklist après toute modification
-
-1. `git pull origin main` — récupérer la version admin si modifiée en ligne
-2. Modifier le fichier FR (ou récupérer la version admin)
-3. **Traduire fidèlement et mettre à jour le fichier EN** — toujours, même pour un changement de titre ou de chapô
-4. Vérifier que `dateModified` est mis à jour dans le Schema.org du HTML (FR + EN)
-5. **Si le titre, le sous-titre ou l'excerpt a changé :**
-   - Mettre à jour `perspectives.json` : `title_fr`, `subtitle_fr`, `title_en`, `subtitle_en`, `excerpt_fr`, `excerpt_en`
-   - Vérifier que l'ordre chronologique des entrées est respecté (voir règle ci-dessus)
-   - Lancer `python update_home_persp.py` — les cartes home (titre, sous-titre, excerpt) et la home perspectives sont statiques, elles ne se mettent pas à jour automatiquement
-   - **Vérifier visuellement** `fr/index.html` et `en/index.html` (3 cartes home) ainsi que `fr/perspectives/index.html` et `en/perspectives/index.html` pour s'assurer que titre, sous-titre et chapô sont cohérents avec l'article
-6. Lancer `python update_home_persp.py` également si l'article est dans les 3 plus récents ou si une date a changé
-7. Mettre à jour `sitemap.xml` (`lastmod` du jour sur les 2 URLs)
-8. Mettre à jour `llms.txt` et `llms-fr.txt` si le contenu a changé significativement
-9. **Mettre à jour `articles-publies.md`** (dateModified + note des changements)
-10. Commit + push (après confirmation Robin)
-11. IndexNow ping sur les URLs modifiées
+Après une modif via admin : utiliser le skill `/sync-admin <slug-fr>` — il orchestre tout : pull, traduction EN, mise à jour JSON/sitemap/llms.txt, commit, IndexNow.
 
 ---
 
@@ -264,49 +218,10 @@ Les pages EN ont des noms différents des pages FR. Utiliser **exactement** ces 
 
 ## Audit SEO/GEO — checklist systématique
 
-**A appliquer après chaque création ou modification d'article ou de page. Signaler tout point manquant avant le commit.**
+**A appliquer après chaque création ou modification d'article ou de page.**  
+Utiliser le skill `/seo-check <slug-fr>` pour exécuter l'audit complet et signaler tout point manquant avant le commit.
 
-### Technique
-
-- [ ] `<title>` : 55-65 car., keyword en tête, distinct du H1
-- [ ] `<meta name="description">` : unique, 150-160 car.
-- [ ] `og:image` + `twitter:image` présents et pointent vers `-og.png` (1200x630)
-- [ ] `<link rel="canonical">` URL absolue correcte
-- [ ] `hreflang` FR + EN présents dans les deux versions
-- [ ] `dateModified` dans BlogPosting Schema = date du jour si modifié
-- [ ] `sitemap.xml` mis à jour (`lastmod` du jour)
-- [ ] IndexNow pingué après push
-
-### Structure éditoriale
-
-- [ ] H1 unique, distinct du title tag
-- [ ] H2 formulés en questions ou assertions claires et extractibles
-- [ ] Résumé intro de moins de 80 mots en début d'article
-- [ ] Section "points clés" ou "à retenir" avant le footer
-- [ ] Définitions explicites des concepts clés dans le corps
-
-### E-E-A-T et entité auteur (critique pour GEO)
-
-- [ ] Bloc auteur visible : nom Robin Duale + titre + lien LinkedIn
-- [ ] `author` dans BlogPosting Schema chaîné vers entité `Person` avec `sameAs` LinkedIn
-- [ ] Biographie courte et titre de Robin cohérents avec toutes les autres pages du site
-
-### Maillage interne
-
-- [ ] Au moins 2 liens internes sortants vers des articles existants
-- [ ] Au moins 1 article existant mis à jour pour pointer vers la nouvelle page
-
-### Schema.org optionnel mais recommandé
-
-- [ ] FAQ Schema si l'article contient des questions implicites (3-5 Q/R)
-
-### Crawlers IA — à vérifier une fois par trimestre
-
-`robots.txt` doit autoriser explicitement : `GPTBot`, `ClaudeBot`, `PerplexityBot`, `Google-Extended`, `Amazonbot`, `cohere-ai`
-
-### Fichiers GEO
-
-- [ ] `llms.txt` + `llms-fr.txt` mis à jour si contenu nouveau ou modifié significativement
+Note : `robots.txt` doit autoriser explicitement — à vérifier une fois par trimestre : `GPTBot`, `ClaudeBot`, `PerplexityBot`, `Google-Extended`, `Amazonbot`, `cohere-ai`
 
 ---
 
