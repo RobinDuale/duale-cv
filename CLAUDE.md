@@ -31,6 +31,7 @@ Production : https://cv-robin.duale.fr
 - **Jamais de `git push` sans confirmation** de Robin
 - **Commits en anglais**, co-signés : `Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>`
 - **Interdit** : le caractère `—` (tiret cadratin) dans tout contenu créé
+- **Noms de fichiers assets** : toujours en minuscules, tirets uniquement — jamais d'espaces, underscores ou majuscules (ex : `illus-mon-image.jpg`, pas `Mon Image.jpg` ni `mon_image.jpg`). Un espace dans un nom de fichier casse l'URL et provoque des images brisées en production.
 - **Python** : `python` (pas `python3`) — Windows
 - **Ne jamais modifier** les pages parcours/track-record depuis le contenu éditorial
 - **SEO/GEO : après chaque modification ou création, vérifier systématiquement la checklist ci-dessous et signaler tout point manquant avant le commit**
@@ -220,6 +221,24 @@ Les pages EN ont des noms différents des pages FR. Utiliser **exactement** ces 
 
 **A appliquer après chaque création ou modification d'article ou de page.**  
 Utiliser le skill `/seo-check <slug-fr>` pour exécuter l'audit complet et signaler tout point manquant avant le commit.
+
+### Dates Schema.org — format obligatoire avec timezone
+
+Toutes les dates dans les blocs `<script type="application/ld+json">` doivent être au format **ISO 8601 complet avec timezone**, sans quoi Google Search Console remonte des erreurs de validation :
+
+```
+✅  "datePublished": "2026-04-08T00:00:00+02:00"
+✅  "dateModified":  "2026-05-05T00:00:00+02:00"
+✅  "uploadDate":    "2026-03-07T00:00:00+01:00"
+❌  "datePublished": "2026-04-08"   ← format trop court, rejeté par GSC
+```
+
+Règle timezone :
+- Heure d'hiver (nov–mars) : `+01:00`
+- Heure d'été (avr–oct) : `+02:00`
+
+S'applique à tous les types Schema : `BlogPosting`, `ProfilePage`, `VideoObject`, etc.  
+**Vérifier systématiquement ce format lors de tout ajout ou modification de date dans un bloc JSON-LD.**
 
 Note : `robots.txt` doit autoriser explicitement — à vérifier une fois par trimestre : `GPTBot`, `ClaudeBot`, `PerplexityBot`, `Google-Extended`, `Amazonbot`, `cohere-ai`
 
