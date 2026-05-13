@@ -318,6 +318,7 @@
           <div class="toolbar-sep"></div>
           <button onclick="fmt('insertUnorderedList')" title="Liste à puces">• Liste</button>
           <button onclick="fmt('insertOrderedList')" title="Liste numérotée">1. Liste</button>
+          <button onclick="indentPara()" title="Indenter le paragraphe sous une puce">↳ Indent</button>
           <div class="toolbar-sep"></div>
           <button onclick="fmt('removeFormat')">Effacer</button>
         </div>
@@ -683,6 +684,21 @@ function insertLink() {
     document.getElementById('editor-body').focus();
     document.execCommand('createLink', false, url);
   }
+}
+
+function indentPara() {
+  const editor = document.getElementById('editor-body');
+  editor.focus();
+  const sel = window.getSelection();
+  if (!sel.rangeCount) return;
+  let node = sel.anchorNode;
+  while (node && node !== editor) {
+    if (node.nodeType === 1 && /^(P|DIV|H2|BLOCKQUOTE)$/.test(node.tagName)) break;
+    node = node.parentNode;
+  }
+  if (!node || node === editor) return;
+  // Toggle : si déjà indenté, on retire ; sinon on indente au niveau des puces
+  node.style.paddingLeft = node.style.paddingLeft ? '' : '40px';
 }
 
 function handleKey(e) {
