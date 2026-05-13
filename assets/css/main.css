@@ -567,6 +567,15 @@ body {
   transition: color 0.2s;
 }
 .article-back:hover { color: var(--gold); }
+.article-body ul, .article-body ol {
+  padding-left: 22px; margin-bottom: 16px;
+}
+.article-body ul { list-style: disc; }
+.article-body ol { list-style: decimal; }
+.article-body li {
+  font-size: 15px; color: var(--ink); line-height: 1.7; margin-bottom: 6px;
+}
+.article-body li:last-child { margin-bottom: 0; }
 .article-takeaways {
   margin-top: 40px; margin-bottom: 8px; padding: 24px 28px;
   background: var(--cream); border-left: 3px solid var(--gold);

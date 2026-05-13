@@ -108,6 +108,9 @@
     .editor-body a { color:#9a7228; }
     .editor-body strong, .editor-body b { font-weight:600; }
     .editor-body em, .editor-body i { font-style:italic; }
+    .editor-body ul { padding-left:22px; margin-bottom:14px; list-style:disc; }
+    .editor-body ol { padding-left:22px; margin-bottom:14px; list-style:decimal; }
+    .editor-body li { margin-bottom:5px; line-height:1.7; }
 
     /* ── PROGRESS ── */
     .progress-wrap { background:#fff; border:1px solid #e0d9cc; border-radius:4px; padding:20px 24px; margin-bottom:24px; display:none; }
@@ -312,6 +315,9 @@
           <div class="toolbar-sep"></div>
           <button onclick="insertLink()">Lien</button>
           <button onclick="fmt('unlink')">-Lien</button>
+          <div class="toolbar-sep"></div>
+          <button onclick="fmt('insertUnorderedList')" title="Liste à puces">• Liste</button>
+          <button onclick="fmt('insertOrderedList')" title="Liste numérotée">1. Liste</button>
           <div class="toolbar-sep"></div>
           <button onclick="fmt('removeFormat')">Effacer</button>
         </div>
