@@ -142,5 +142,24 @@
     "alt_en": "Illustration: building LLM authority",
     "excerpt_fr": "Les LLM redéfinissent le lieu où se forme la décision d'achat : avant même la visite d'un site, une recommandation peut déjà avoir été formulée. Pour les PME disposant d'une expertise réelle, la fenêtre pour construire une autorité thématique identifiable est une opportunité à saisir.",
     "excerpt_en": "LLMs are rewriting where purchase decisions form: before a site is even visited, a recommendation may already have been made. For SMBs with genuine expertise, the window to build identifiable thematic authority is an opportunity to seize."
+  },
+  {
+    "slug_fr": "haut-de-bilan-ceo-investisseur",
+    "slug_en": "ceo-capital-structure-guide",
+    "title_fr": "Pourquoi tout CEO avec un investisseur",
+    "subtitle_fr": "doit lire son haut de bilan.",
+    "title_en": "Why every CEO with an investor",
+    "subtitle_en": "must read their capital structure.",
+    "tags_fr": "Private Equity · Gouvernance · Finance",
+    "tags_en": "Private Equity · Governance · Finance",
+    "date_fr": "13 mai 2026",
+    "date_en": "May 13, 2026",
+    "image_fr": "/assets/illus-haut-de-bilan.jpg",
+    "image_en": "/assets/illus-haut-de-bilan.jpg",
+    "alt_fr": "Illustration : structure du haut de bilan en contexte private equity",
+    "alt_en": "Illustration: capital structure in a private equity context",
+    "excerpt_fr": "Dès qu'un investisseur entre dans la structure, la direction générale s'exerce à l'intérieur de règles fixées avant votre arrivée. TRI, covenants, pacte d'actionnaires et management package : lire son haut de bilan comme une grille de gouvernance change la qualité des décisions au board.",
+    "excerpt_en": "As soon as an investor enters the structure, you run operations inside rules that were set before you arrived. IRR, covenants, shareholders' agreement and management package: reading your capital structure as a governance grid changes the quality of every board decision.",
+    "draft": true
   }
 ]
