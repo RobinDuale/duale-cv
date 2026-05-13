@@ -258,11 +258,46 @@ def main():
     html = build_fr_html(d, draft=True)
     out_path.write_text(html, encoding="utf-8")
 
+    # Ajoute l'entree draft dans perspectives.json pour que l'admin puisse l'editer.
+    # persp-nav.js filtre les entrees draft=true : la grille et la home ne l'affichent pas.
+    persp_path = ROOT / "assets" / "perspectives.json"
+    with open(persp_path, encoding="utf-8") as f:
+        articles = json.load(f)
+
+    image_slug = d["image_slug"]
+    already = any(a.get("slug_fr") == slug_fr for a in articles)
+    if not already:
+        articles.append({
+            "slug_fr":    d["slug_fr"],
+            "slug_en":    d["slug_en"],
+            "title_fr":   d["title_fr"],
+            "subtitle_fr": d.get("subtitle_fr", ""),
+            "title_en":   d["title_en"],
+            "subtitle_en": d.get("subtitle_en", ""),
+            "tags_fr":    d["tags_fr"],
+            "tags_en":    d["tags_en"],
+            "date_fr":    d["date_fr"],
+            "date_en":    d["date_en"],
+            "image_fr":   f"/assets/{image_slug}.jpg",
+            "image_en":   f"/assets/{image_slug}.jpg",
+            "alt_fr":     d["alt_fr"],
+            "alt_en":     d["alt_en"],
+            "excerpt_fr": d["excerpt_fr"],
+            "excerpt_en": d["excerpt_en"],
+            "draft":      True,
+        })
+        with open(persp_path, "w", encoding="utf-8") as f:
+            json.dump(articles, f, ensure_ascii=False, indent=2)
+            f.write("\n")
+        print(f"  perspectives.json mis a jour (entree draft ajoutee en fin de tableau)")
+    else:
+        print(f"  perspectives.json : entree {slug_fr} deja presente, pas de modification")
+
     print(f"\nDraft cree : fr/perspectives/{slug_fr}.html")
     print(f"URL directe : https://cv-robin.duale.fr/fr/perspectives/{slug_fr}.html")
     print("\nProchaines etapes :")
     print("  1. git add + commit + push pour deployer le draft")
-    print("  2. Retravaille l'article depuis l'admin")
+    print("  2. Retravaille l'article depuis l'admin (/admin/index.html)")
     print("  3. python publish_article.py article_input.json pour la mise en ligne complete")
 
 

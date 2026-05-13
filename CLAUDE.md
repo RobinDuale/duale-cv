@@ -120,8 +120,11 @@ Si un article est ajouté ou si une date est modifiée, vérifier que l'ordre ch
 python new_article.py article_input.json
 ```
 
-Le script crée `fr/perspectives/[slug-fr].html` avec `<meta name="robots" content="noindex">`.
-L'article n'apparait pas dans les grilles, la home ni le sitemap — accessible uniquement par URL directe.
+Le script crée deux choses :
+- `fr/perspectives/[slug-fr].html` avec `<meta name="robots" content="noindex">`
+- Une entrée `"draft": true` dans `perspectives.json` (en dernière position, ordre chronologique)
+
+L'entrée draft est visible dans l'admin panel (badge "Brouillon") mais filtrée partout ailleurs : grilles, home, sitemap, navigation prev/next. `persp-nav.js` exclut systématiquement les entrées `draft: true`.
 
 4. Commit + push pour déployer le draft en ligne.
 
