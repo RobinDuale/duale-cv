@@ -576,6 +576,7 @@ body {
   font-size: 15px; color: var(--ink); line-height: 1.7; margin-bottom: 6px;
 }
 .article-body li:last-child { margin-bottom: 0; }
+.article-body p[style*="padding-left"] { margin-bottom: 14px; }
 .article-takeaways {
   margin-top: 40px; margin-bottom: 8px; padding: 24px 28px;
   background: var(--cream); border-left: 3px solid var(--gold);
