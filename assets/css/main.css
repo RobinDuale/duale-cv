@@ -544,7 +544,7 @@ body {
   border: 0.5px solid var(--gold-border);
   transform: scale(0.96);
   transition: transform 0.25s ease;
-  cursor: default;
+  cursor: zoom-out;
 }
 .lightbox-overlay.open .lightbox-img { transform: scale(1); }
 .lightbox-close {
