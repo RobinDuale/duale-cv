@@ -580,6 +580,7 @@ body {
 }
 .article-video:hover .media-zoom-btn,
 .carousel:hover .media-zoom-btn { opacity: 1; }
+body.lightbox-open .media-zoom-btn { opacity: 0 !important; pointer-events: none; }
 .media-zoom-btn svg { width: 100%; height: 100%; display: block; }
 .persp-card-date {
   font-family: var(--sans); font-size: 12px; letter-spacing: 0.12em;

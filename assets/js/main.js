@@ -91,6 +91,7 @@ function refuseCookies() {
 
   function show() {
     document.body.appendChild(overlay);
+    document.body.classList.add('lightbox-open');
     requestAnimationFrame(() => overlay.classList.add('open'));
     document.addEventListener('keydown', onKey);
   }
@@ -111,6 +112,7 @@ function refuseCookies() {
 
   function close() {
     overlay.classList.remove('open');
+    document.body.classList.remove('lightbox-open');
     vid.pause(); vid.src = '';
     document.removeEventListener('keydown', onKey);
     overlay.addEventListener('transitionend', () => overlay.remove(), { once: true });
