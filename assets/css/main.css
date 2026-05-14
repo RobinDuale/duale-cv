@@ -536,9 +536,9 @@ body {
 }
 .lightbox-overlay.open { opacity: 1; visibility: visible; }
 .lightbox-img {
-  max-width: min(92vw, 1080px);
+  width: min(92vw, 1080px);
   max-height: 88vh;
-  width: auto; height: auto;
+  height: auto;
   display: block;
   border-radius: 2px;
   border: 0.5px solid var(--gold-border);
