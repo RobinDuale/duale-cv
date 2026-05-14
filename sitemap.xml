@@ -312,4 +312,18 @@
     <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/perspectives/autorite-dans-les-llms.html" />
   </url>
+  <url>
+    <loc>https://cv-robin.duale.fr/fr/perspectives/haut-de-bilan-ceo-investisseur.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/perspectives/ceo-capital-structure-guide.html" />
+  </url>
+  <url>
+    <loc>https://cv-robin.duale.fr/en/perspectives/ceo-capital-structure-guide.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/perspectives/haut-de-bilan-ceo-investisseur.html" />
+  </url>
 </urlset>

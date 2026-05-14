@@ -90,6 +90,20 @@ Utiliser `class="nav-link active"` sur le lien Perspectives pour tous les nouvea
 
 ---
 
+### Le haut de bilan : ce que j'aurais voulu qu'on m'explique L'alignement indispensable entre un investisseur et un CEO
+
+- **Date publiee :** 13 mai 2026
+- **dateModified :** 2026-05-13T00:00:00+02:00
+- **Slug FR :** `fr/perspectives/haut-de-bilan-ceo-investisseur.html`
+- **Slug EN :** `en/perspectives/ceo-capital-structure-guide.html`
+- **Title EN :** What I wish someone had explained to me about capital structure The essential alignment between an investor and a CEO
+- **Categorie (eyebrow) :** Perspectives · Private Equity · Gouvernance
+- **Tags sidebar :** Private Equity · Gouvernance · Finance
+- **Keywords schema :** haut de bilan, CEO, private equity, covenants, pacte d'actionnaires, management package, gouvernance, investisseur, LBO, TRI
+- **Illustration :** `/assets/illus-haut-de-bilan.png` / `-og.png`
+
+---
+
 ### Celui qui est cité précède souvent celui qui est choisi.
 
 - **Date publiée :** 6 mai 2026

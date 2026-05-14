@@ -49,6 +49,18 @@ def remove_noindex(slug_fr):
 
 
 # ---------------------------------------------------------------------------
+# Helper : detecte l'extension reelle de l'image (jpg ou png)
+# ---------------------------------------------------------------------------
+
+def _image_ext(slug, suffix=""):
+    """Retourne 'slug[-suffix].ext' en detectant jpg puis png dans /assets/."""
+    for ext in ("jpg", "png"):
+        if (ROOT / "assets" / f"{slug}{suffix}.{ext}").exists():
+            return f"{slug}{suffix}.{ext}"
+    return f"{slug}{suffix}.jpg"  # fallback
+
+
+# ---------------------------------------------------------------------------
 # 2. Ajoute l'entree dans perspectives.json
 # ---------------------------------------------------------------------------
 
@@ -73,8 +85,8 @@ def update_perspectives_json(d):
         "tags_en": d["tags_en"],
         "date_fr": d["date_fr"],
         "date_en": d["date_en"],
-        "image_fr": f"/assets/{d['image_slug']}.jpg",
-        "image_en": f"/assets/{d['image_slug']}.jpg",
+        "image_fr": f"/assets/{_image_ext(d['image_slug'])}",
+        "image_en": f"/assets/{_image_ext(d['image_slug'], suffix='-en')}",
         "alt_fr": d["alt_fr"],
         "alt_en": d["alt_en"],
         "excerpt_fr": d["excerpt_fr"],
@@ -252,7 +264,7 @@ def update_articles_publies(d):
         f'- **Categorie (eyebrow) :** {d["eyebrow_fr"]}\n'
         f'- **Tags sidebar :** {d["tags_fr"]}\n'
         f'- **Keywords schema :** {", ".join(d["keywords_fr"])}\n'
-        f'- **Illustration :** `/assets/{d["image_slug"]}.jpg` / `-og.png`\n'
+        f'- **Illustration :** `/assets/{_image_ext(d["image_slug"])}` / `-og.png`\n'
         f'\n'
         f'---\n'
         f'\n'

@@ -2,10 +2,10 @@
   "slug_fr": "haut-de-bilan-ceo-investisseur",
   "slug_en": "ceo-capital-structure-guide",
 
-  "title_fr": "Pourquoi tout CEO avec un investisseur",
-  "subtitle_fr": "doit lire son haut de bilan.",
-  "title_en": "Why every CEO with an investor",
-  "subtitle_en": "must read their capital structure.",
+  "title_fr": "Le haut de bilan : ce que j'aurais voulu qu'on m'explique.",
+  "subtitle_fr": "L'alignement indispensable entre un investisseur et un CEO",
+  "title_en": "What I wish someone had explained to me about capital structure.",
+  "subtitle_en": "The essential alignment between an investor and a CEO",
 
   "eyebrow_fr": "Perspectives · Private Equity · Gouvernance",
   "eyebrow_en": "Perspectives · Private Equity · Governance",
@@ -23,19 +23,19 @@
   "alt_fr": "Illustration : structure du haut de bilan en contexte private equity",
   "alt_en": "Illustration: capital structure in a private equity context",
 
-  "meta_description_fr": "Le haut de bilan se lit d'abord comme une grille de gouvernance. TRI, covenants, pacte d'actionnaires : ce que tout CEO avec un investisseur doit maîtriser.",
-  "meta_description_en": "What every CEO with an investor must understand: IRR, covenants, shareholders' agreement, management package, and how it changes governance.",
+  "meta_description_fr": "Le haut de bilan comme grille de gouvernance : comment les couches du capital, les covenants et le management package structurent la relation CEO-investisseur.",
+  "meta_description_en": "Capital structure as a governance grid: how layers of financing, covenants, and the management package shape the CEO-investor relationship.",
 
-  "og_description_fr": "Le haut de bilan se lit d'abord comme une grille de gouvernance. TRI, covenants, pacte d'actionnaires : ce que tout CEO avec un investisseur doit maîtriser.",
-  "og_description_en": "What every CEO with an investor must understand: IRR, covenants, shareholders' agreement, management package, and how it changes governance.",
+  "og_description_fr": "Le haut de bilan comme grille de gouvernance : comment les couches du capital, les covenants et le management package structurent la relation CEO-investisseur.",
+  "og_description_en": "Capital structure as a governance grid: how layers of financing, covenants, and the management package shape the CEO-investor relationship.",
 
-  "excerpt_fr": "Dès qu'un investisseur entre dans la structure, la direction générale s'exerce à l'intérieur de règles fixées avant votre arrivée. TRI, covenants, pacte d'actionnaires et management package : lire son haut de bilan comme une grille de gouvernance change la qualité des décisions au board.",
-  "excerpt_en": "As soon as an investor enters the structure, you run operations inside rules that were set before you arrived. IRR, covenants, shareholders' agreement and management package: reading your capital structure as a governance grid changes the quality of every board decision.",
+  "excerpt_fr": "D'expérience, l'entrée d'un investisseur financier est le moment où beaucoup de CEOs réalisent qu'ils ne connaissaient pas toutes les règles du jeu. Financement, contrats, management package, mécanique de sortie : ces quatre dimensions structurent une grande partie du dialogue entre un CEO et son investisseur.",
+  "excerpt_en": "In my experience, the arrival of a financial investor is often when many CEOs realise they did not know all the rules of the game. Financing, contracts, management package, exit mechanics: these four dimensions shape much of the dialogue between a CEO and their investor.",
 
-  "read_time_fr": "7 min de lecture",
-  "read_time_en": "7 min read",
+  "read_time_fr": "12 min de lecture",
+  "read_time_en": "12 min read",
 
-  "word_count": 1300,
+  "word_count": 2800,
 
   "keywords_fr": ["haut de bilan", "CEO", "private equity", "covenants", "pacte d'actionnaires", "management package", "gouvernance", "investisseur", "LBO", "TRI"],
   "keywords_en": ["capital structure", "CEO", "private equity", "covenants", "shareholders agreement", "management package", "governance", "investor", "LBO", "IRR"],

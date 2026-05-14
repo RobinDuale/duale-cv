@@ -146,20 +146,19 @@
   {
     "slug_fr": "haut-de-bilan-ceo-investisseur",
     "slug_en": "ceo-capital-structure-guide",
-    "title_fr": "La lecture du haut de bilan",
-    "subtitle_fr": "L'alignement indispensable entre un investisseur et un CEO.",
-    "title_en": "Reading the capital structure",
-    "subtitle_en": "The essential alignment between an investor and a CEO.",
+    "title_fr": "Le haut de bilan : ce que j'aurais voulu qu'on m'explique.",
+    "subtitle_fr": "L'alignement indispensable entre un investisseur et un CEO",
+    "title_en": "What I wish someone had explained to me about capital structure.",
+    "subtitle_en": "The essential alignment between an investor and a CEO",
     "tags_fr": "Private Equity · Gouvernance · Finance",
     "tags_en": "Private Equity · Governance · Finance",
     "date_fr": "13 mai 2026",
     "date_en": "May 13, 2026",
-    "image_fr": "/assets/illus-haut-de-bilan.jpg",
-    "image_en": "/assets/illus-haut-de-bilan.jpg",
+    "image_fr": "/assets/illus-haut-de-bilan.png",
+    "image_en": "/assets/illus-haut-de-bilan-en.png",
     "alt_fr": "Illustration : structure du haut de bilan en contexte private equity",
     "alt_en": "Illustration: capital structure in a private equity context",
-    "excerpt_fr": "L'entrée d'un investisseur modifie le cadre de décision du CEO. Financement, covenants, management package, mécanique de sortie : ces quatre dimensions structurent le dialogue avec le board et changent la qualité des arbitrages rendus au quotidien.",
-    "excerpt_en": "An investor's arrival changes the CEO's decision-making framework. Financing, covenants, management package, exit mechanics: these four dimensions structure the dialogue with the board and change the quality of day-to-day decisions.",
-    "draft": true
+    "excerpt_fr": "D'expérience, l'entrée d'un investisseur financier est le moment où beaucoup de CEOs réalisent qu'ils ne connaissaient pas toutes les règles du jeu. Financement, contrats, management package, mécanique de sortie : ces quatre dimensions structurent une grande partie du dialogue entre un CEO et son investisseur.",
+    "excerpt_en": "In my experience, the arrival of a financial investor is often when many CEOs realise they did not know all the rules of the game. Financing, contracts, management package, exit mechanics: these four dimensions shape much of the dialogue between a CEO and their investor."
   }
 ]
