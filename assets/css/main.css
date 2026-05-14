@@ -536,7 +536,7 @@ body {
 }
 .lightbox-overlay.open { opacity: 1; visibility: visible; }
 .lightbox-img {
-  width: min(92vw, 1080px);
+  width: min(96vw, 1296px);
   max-height: 88vh;
   height: auto;
   display: block;
@@ -557,9 +557,9 @@ body {
 .lightbox-close:hover { opacity: 1; }
 .lightbox-close svg { width: 100%; height: 100%; }
 .lightbox-video {
-  max-width: min(92vw, 960px);
+  max-width: min(96vw, 1152px);
   max-height: 80vh;
-  width: min(92vw, 960px);
+  width: min(96vw, 1152px);
   display: block;
   border-radius: 2px;
   transform: scale(0.96);
