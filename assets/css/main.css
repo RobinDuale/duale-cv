@@ -556,6 +556,31 @@ body {
 }
 .lightbox-close:hover { opacity: 1; }
 .lightbox-close svg { width: 100%; height: 100%; }
+.lightbox-video {
+  max-width: min(92vw, 960px);
+  max-height: 80vh;
+  width: min(92vw, 960px);
+  display: block;
+  border-radius: 2px;
+  transform: scale(0.96);
+  transition: transform 0.25s ease;
+  cursor: default;
+}
+.lightbox-overlay.open .lightbox-video { transform: scale(1); }
+
+/* ── BOUTON ZOOM sur vidéo et carousel ── */
+.article-video { position: relative; }
+.media-zoom-btn {
+  position: absolute; top: 10px; right: 10px; z-index: 10;
+  width: 36px; height: 36px;
+  background: rgba(26,23,18,0.55); border: 0.5px solid rgba(247,244,238,0.2);
+  border-radius: 50%; padding: 7px;
+  color: var(--cream); opacity: 0;
+  cursor: pointer; transition: opacity 0.2s;
+}
+.article-video:hover .media-zoom-btn,
+.carousel:hover .media-zoom-btn { opacity: 1; }
+.media-zoom-btn svg { width: 100%; height: 100%; display: block; }
 .persp-card-date {
   font-family: var(--sans); font-size: 12px; letter-spacing: 0.12em;
   text-transform: uppercase; color: var(--gold); padding-top: 4px;
