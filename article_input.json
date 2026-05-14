@@ -1,49 +1,56 @@
 {
   "slug_fr": "haut-de-bilan-ceo-investisseur",
   "slug_en": "ceo-capital-structure-guide",
-
   "title_fr": "Le haut de bilan : ce que j'aurais voulu qu'on m'explique.",
   "subtitle_fr": "L'alignement indispensable entre un investisseur et un CEO",
   "title_en": "What I wish someone had explained to me about capital structure.",
   "subtitle_en": "The essential alignment between an investor and a CEO",
-
   "eyebrow_fr": "Perspectives · Private Equity · Gouvernance",
   "eyebrow_en": "Perspectives · Private Equity · Governance",
-
-  "date_fr": "13 mai 2026",
-  "date_en": "May 13, 2026",
-  "date_iso": "2026-05-13T00:00:00+02:00",
-
+  "date_fr": "14 mai 2026",
+  "date_en": "May 14, 2026",
+  "date_iso": "2026-05-14T00:00:00+02:00",
   "tags_fr": "Private Equity · Gouvernance · Finance",
   "tags_en": "Private Equity · Governance · Finance",
-
   "article_section": "Private Equity & Gouvernance",
-
   "image_slug": "illus-haut-de-bilan",
   "alt_fr": "Illustration : structure du haut de bilan en contexte private equity",
   "alt_en": "Illustration: capital structure in a private equity context",
-
   "meta_description_fr": "Le haut de bilan comme grille de gouvernance : comment les couches du capital, les covenants et le management package structurent la relation CEO-investisseur.",
   "meta_description_en": "Capital structure as a governance grid: how layers of financing, covenants, and the management package shape the CEO-investor relationship.",
-
   "og_description_fr": "Le haut de bilan comme grille de gouvernance : comment les couches du capital, les covenants et le management package structurent la relation CEO-investisseur.",
   "og_description_en": "Capital structure as a governance grid: how layers of financing, covenants, and the management package shape the CEO-investor relationship.",
-
   "excerpt_fr": "D'expérience, l'entrée d'un investisseur financier est le moment où beaucoup de CEOs réalisent qu'ils ne connaissaient pas toutes les règles du jeu. Financement, contrats, management package, mécanique de sortie : ces quatre dimensions structurent une grande partie du dialogue entre un CEO et son investisseur.",
   "excerpt_en": "In my experience, the arrival of a financial investor is often when many CEOs realise they did not know all the rules of the game. Financing, contracts, management package, exit mechanics: these four dimensions shape much of the dialogue between a CEO and their investor.",
-
   "read_time_fr": "12 min de lecture",
   "read_time_en": "12 min read",
-
   "word_count": 2800,
-
-  "keywords_fr": ["haut de bilan", "CEO", "private equity", "covenants", "pacte d'actionnaires", "management package", "gouvernance", "investisseur", "LBO", "TRI"],
-  "keywords_en": ["capital structure", "CEO", "private equity", "covenants", "shareholders agreement", "management package", "governance", "investor", "LBO", "IRR"],
-
+  "keywords_fr": [
+    "haut de bilan",
+    "CEO",
+    "private equity",
+    "covenants",
+    "pacte d'actionnaires",
+    "management package",
+    "gouvernance",
+    "investisseur",
+    "LBO",
+    "TRI"
+  ],
+  "keywords_en": [
+    "capital structure",
+    "CEO",
+    "private equity",
+    "covenants",
+    "shareholders agreement",
+    "management package",
+    "governance",
+    "investor",
+    "LBO",
+    "IRR"
+  ],
   "cta_title_fr": "Vous cherchez un CEO capable de piloter à tous les étages ?",
   "cta_title_en": "Looking for a CEO who can operate at every level?",
-
   "body_fr": "      <p class=\"lead\">Dès qu'un investisseur entre dans la structure, le CEO pilote la performance opérationnelle à l'intérieur d'une structure de capital qui a ses propres mécaniques et sa propre définition du succès. TRI, covenants, pacte d'actionnaires, management package : comprendre ces quatre piliers change la qualité des arbitrages rendus au board et la façon de gouverner au quotidien.</p>\n\n      <h2>Ce qui change quand un investisseur entre dans la structure</h2>\n\n      <p class=\"body-text\">Un investisseur apporte du capital, et avec lui une horloge et une équation de rendement qui appartiennent à un autre cadre que celui du dirigeant.</p>\n\n      <p class=\"body-text\">Un fonds est dépositaire de l'argent de ses propres souscripteurs, les <strong>LPs</strong> (Limited Partners : assureurs, fonds de pension, family offices, qui ont confié leur capital au fonds pour une durée définie, généralement dix ans). Il doit restituer ce capital, idéalement avec un multiple, dans une fenêtre de temps contractuelle dont les extensions existent mais ne changent pas la logique de fond.</p>\n\n      <p class=\"body-text\">De là découle la notion centrale du métier : le <strong>TRI</strong> (Taux de Rendement Interne, indicateur qui mesure la performance d'un investissement en tenant compte du temps). De là découle une formulation très contre-intuitive pour un opérationnel : à investissement initial comparable, 20 M€ dans trois ans peuvent valoir mieux en TRI pour le fonds que 40 M€ dans sept ans. Le temps est un coût. Plus la sortie se rapproche, plus chaque mois de retard pèse sur le TRI affiché aux LPs.</p>\n\n      <p class=\"body-text\">Cette logique reconfigure tout. Une croissance dite saine et patiente reste audible, mais seulement si elle se traduit dans la fenêtre de liquidité du fonds : meilleur multiple de sortie, risque réduit, visibilité accrue sur le cash-flow. Un projet stratégique qui ne se monétise qu'à cinq ans peut être disqualifié structurellement, même s'il est juste sur le fond. Le CEO qui ignore cette équation se retrouve à gouverner en parallèle de son board.</p>\n\n      <h2>La carte du capital : qui est assis où à la table</h2>\n\n      <p class=\"body-text\">En cas de cession ou de difficulté, l'ordre dans lequel chacun récupère son argent est fixé à l'avance. Cet ordre détermine les comportements bien avant qu'il s'applique.</p>\n\n      <p class=\"body-text\">Le haut de bilan est une <strong>structure en couches</strong> : chaque couche correspond à un niveau de risque et à une priorité de remboursement. Pensez un immeuble : ceux du sous-sol sont remboursés en premier, ceux du dernier étage en dernier.</p>\n\n      <p class=\"body-text\">Au sous-sol, la <strong>dette senior</strong> : le financement bancaire qui finance l'opération, généralement assorti de sûretés, prioritaire dans la cascade de remboursement. Elle se rembourse en premier, elle coûte le moins cher en taux, elle impose les contraintes les plus immédiates via ses covenants. Juste au-dessus, la <strong>mezzanine</strong> : dette intermédiaire, plus risquée, rémunérée plus cher, remboursée après la dette senior mais avant l'equity. Tout en haut, l'<strong>equity</strong> : le capital propre, le risque pur, remboursé en dernier, qui capte toute la valeur créée au-delà des dettes.</p>\n\n      <p class=\"body-text\">À côté de l'equity financier existe une zone que les CEOs sous-estiment systématiquement : le <strong>management package</strong>, c'est-à-dire l'ensemble des instruments et des clauses qui organisent la participation économique du management à la création de valeur. C'est l'étage économique du CEO. C'est aussi l'étage qui se renégocie à chaque opération. Comprendre cette hiérarchie, c'est savoir d'où viennent les arbitrages du board.</p>\n\n      <h2>Les contraintes contractuelles : covenants et pacte d'actionnaires</h2>\n\n      <p class=\"body-text\">Deux types de contraintes encadrent le CEO. L'une est binaire, l'autre est politique. Les confondre coûte cher.</p>\n\n      <p class=\"body-text\">Les <strong>covenants bancaires</strong> sont des engagements financiers chiffrés inscrits dans le contrat de prêt : typiquement un ratio dette nette sur EBITDA, un niveau minimum de cash, un ratio de couverture des intérêts. Ils sont binaires. Soit le ratio est respecté à la date de mesure, soit il est cassé. S'il est cassé, le prêteur dispose de droits contractuels lourds : exigibilité anticipée du prêt, mise en oeuvre des sûretés, renégociation forcée des conditions, augmentation de marge, restrictions supplémentaires. La banque ne devient pas propriétaire automatiquement, mais elle prend la main sur le rapport de force.</p>\n\n      <p class=\"body-text\">Le <strong>pacte d'actionnaires</strong> opère d'une autre manière. C'est un contrat entre actionnaires qui définit les règles du jeu politique : qui décide quoi, à quelle majorité, dans quels délais. Il contient deux mécaniques clés. Les <strong>reserved matters</strong> : décisions qui requièrent l'accord explicite de l'investisseur (budget, recrutements clés, M&amp;A, refinancement, dividendes). Les <strong>droits de veto</strong> : capacité de l'investisseur à bloquer une décision même s'il est minoritaire.</p>\n\n      <p class=\"body-text\">Le lien entre les deux est en cascade : casser un covenant déclenche presque toujours des clauses de protection du pacte (renforcement des droits de l'investisseur, nouvelles reserved matters, parfois remplacement du dirigeant). Dans les montages sans dette structurante, seul le pacte s'applique. Ses effets sur les décisions quotidiennes du CEO peuvent être aussi structurants qu'un covenant, même s'ils relèvent d'une autre nature juridique : le covenant protège un prêteur, le pacte organise le pouvoir entre actionnaires.</p>\n\n      <h2>Le management package : ce que \"être aligné avec l'investisseur\" veut dire en pratique</h2>\n\n      <p class=\"body-text\">Le management package fonctionne comme l'instrument qui relie la rémunération du CEO à la mécanique de sortie de l'investisseur. Il dépasse largement la notion de bonus, et contient les clauses les plus chargées à la signature.</p>\n\n      <p class=\"body-text\">Plusieurs instruments peuvent le composer. Les <strong>BSPCE</strong> (Bons de Souscription de Parts de Créateur d'Entreprise) : bons donnant le droit de souscrire ultérieurement des titres à un prix fixé lors de leur attribution, avec un régime fiscal spécifique, souvent favorable. Le <strong>sweet equity</strong> : mécanisme par lequel le management souscrit des actions à un prix décoté, en contrepartie d'un engagement de durée. Le <strong>ratchet</strong> : accélérateur de performance, plus la plus-value réalisée par l'investisseur dépasse un seuil défini, plus le CEO peut capter une part importante du surplus.</p>\n\n      <p class=\"body-text\">À côté de ces instruments, l'<strong>earn-out</strong> joue un rôle voisin mais distinct. Il s'agit d'un complément de prix versé après la cession, conditionné à l'atteinte d'objectifs définis sur les douze à vingt-quatre mois qui suivent. Il concerne le CEO actionnaire-vendeur plus que le CEO salarié, et constitue un sujet de négociation à part entière dans la documentation de cession.</p>\n\n      <p class=\"body-text\">Le sujet le moins expliqué à la signature, et pourtant le plus sensible, est la clause <strong>good leaver / bad leaver</strong>. Elle définit ce qui se passe si le CEO quitte avant la sortie de l'investisseur. <strong>Good leaver</strong> : départ pour cause non fautive (maladie, décès, parfois divergence stratégique non imputable au dirigeant). Le CEO conserve ses droits ou en perd une partie selon une grille définie. <strong>Bad leaver</strong> : démission, faute grave ou lourde, violation du pacte. Le CEO perd ses droits encore en cours d'acquisition (droits non vestés, c'est-à-dire pas encore définitivement attribués selon le calendrier prévu) et se voit racheter ses titres à un prix dérisoire face à la valeur économique réelle. La frontière entre les deux se négocie. Elle ne se renégocie pas après la signature.</p>\n\n      <h2>Ce que cette lecture change dans la façon de gouverner</h2>\n\n      <p class=\"body-text\">Comprendre le haut de bilan transforme le dialogue avec le board et la qualité des arbitrages rendus. Le métier opérationnel, lui, reste identique.</p>\n\n      <p class=\"body-text\">Trois choses concrètement. Anticiper les moments clés : un refinancement se prépare bien plus de trois mois avant l'échéance, une distribution exceptionnelle ne se propose qu'après avoir mesuré son effet sur les covenants, une cession se prépare dix-huit à vingt-quatre mois en amont. Connaître le calendrier financier de la structure, c'est éviter de subir des décisions qui auraient pu être négociées. Parler la même langue que le board : quand l'investisseur parle de multiple d'EBITDA, de cash conversion, de dilution future, le CEO qui traduit la mécanique en termes opérationnels crée la conversation utile. Celui qui acquiesce sans comprendre la subit. Décider sans asymétrie subie : l'asymétrie d'information entre un fonds et un CEO opérationnel est naturelle. Elle reste évitable.</p>\n\n      <p class=\"body-text\">Le CEO qui maîtrise cette grille de lecture devient lisible pour son investisseur, et son investisseur devient lisible pour lui. Sans rien céder à son métier opérationnel. C'est la condition d'une gouvernance qui ne se subit pas.</p>\n\n      <div class=\"article-takeaways\">\n        <div class=\"article-takeaways-title\">Points clés</div>\n        <ul class=\"article-takeaways-list\">\n          <li>Le haut de bilan se lit comme une grille de gouvernance : covenants, pacte d'actionnaires et management package fixent les règles avant que le CEO n'entre en scène.</li>\n          <li>Le TRI du fonds reconfigure les priorités : un projet stratégique qui ne se monétise qu'à cinq ans peut être structurellement disqualifié, même s'il est juste sur le fond.</li>\n          <li>La clause good leaver / bad leaver se négocie à la signature. Elle ne se renégocie pas après.</li>\n        </ul>\n      </div>\n\n      <p class=\"body-text\">Pour aller plus loin sur les dynamiques de sortie en contexte PE, voir l'article <a href=\"/fr/perspectives/exit-reussi-ce-que-lacheteur-regarde-vraiment.html\">Exit réussi : ce que l'acheteur regarde vraiment</a>.</p>",
-
   "body_en": ""
 }
