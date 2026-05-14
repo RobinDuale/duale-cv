@@ -523,7 +523,30 @@ body {
 .persp-card-img { width: 100%; height: auto; display: block; border-bottom: 0.5px solid var(--gold-border); }
 .persp-card-body { padding: 20px 22px; flex: 1; display: flex; flex-direction: column; }
 .article-illus { margin-bottom: 36px; border-radius: 2px; overflow: hidden; border: 0.5px solid var(--gold-border); }
-.article-illus-img { width: 100%; display: block; }
+.article-illus-img { width: 100%; display: block; cursor: zoom-in; }
+
+/* ── LIGHTBOX ── */
+.lightbox-overlay {
+  position: fixed; inset: 0; z-index: 9000;
+  background: rgba(26,23,18,0.88);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  cursor: zoom-out;
+}
+.lightbox-overlay.open { opacity: 1; visibility: visible; }
+.lightbox-img {
+  max-width: min(92vw, 1080px);
+  max-height: 88vh;
+  width: auto; height: auto;
+  display: block;
+  border-radius: 2px;
+  border: 0.5px solid var(--gold-border);
+  transform: scale(0.96);
+  transition: transform 0.25s ease;
+  cursor: default;
+}
+.lightbox-overlay.open .lightbox-img { transform: scale(1); }
 .persp-card-date {
   font-family: var(--sans); font-size: 12px; letter-spacing: 0.12em;
   text-transform: uppercase; color: var(--gold); padding-top: 4px;

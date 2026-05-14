@@ -65,6 +65,40 @@ function refuseCookies() {
   document.getElementById('cookie-banner').style.display = 'none';
 }
 
+// ── LIGHTBOX ──
+(function () {
+  const overlay = document.createElement('div');
+  overlay.className = 'lightbox-overlay';
+  const img = document.createElement('img');
+  img.className = 'lightbox-img';
+  overlay.appendChild(img);
+
+  function open(src, alt) {
+    img.src = src;
+    img.alt = alt || '';
+    document.body.appendChild(overlay);
+    requestAnimationFrame(() => overlay.classList.add('open'));
+    document.addEventListener('keydown', onKey);
+  }
+
+  function close() {
+    overlay.classList.remove('open');
+    document.removeEventListener('keydown', onKey);
+    overlay.addEventListener('transitionend', () => overlay.remove(), { once: true });
+  }
+
+  function onKey(e) { if (e.key === 'Escape') close(); }
+
+  overlay.addEventListener('click', close);
+  img.addEventListener('click', e => e.stopPropagation());
+
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.article-illus-img').forEach(el => {
+      el.addEventListener('click', () => open(el.src, el.alt));
+    });
+  });
+})();
+
 // ── HAMBURGER MENU ──
 document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.getElementById('hamburger');
