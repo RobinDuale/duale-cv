@@ -90,7 +90,6 @@ function refuseCookies() {
   function onKey(e) { if (e.key === 'Escape') close(); }
 
   overlay.addEventListener('click', close);
-  img.addEventListener('click', e => e.stopPropagation());
 
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.article-illus-img').forEach(el => {
