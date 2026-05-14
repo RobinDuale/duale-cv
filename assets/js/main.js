@@ -81,39 +81,20 @@ function refuseCookies() {
   const img = document.createElement('img');
   img.className = 'lightbox-img';
 
-  const vid = document.createElement('video');
-  vid.className = 'lightbox-video';
-  vid.controls = true;
-
   overlay.appendChild(closeBtn);
   overlay.appendChild(img);
-  overlay.appendChild(vid);
 
-  function show() {
+  function open(src, alt) {
+    img.src = src; img.alt = alt || '';
     document.body.appendChild(overlay);
     document.body.classList.add('lightbox-open');
     requestAnimationFrame(() => overlay.classList.add('open'));
     document.addEventListener('keydown', onKey);
   }
 
-  function openImg(src, alt) {
-    img.src = src; img.alt = alt || '';
-    img.style.display = ''; vid.style.display = 'none'; vid.pause(); vid.src = '';
-    show();
-  }
-
-  function openVid(sources) {
-    vid.innerHTML = '';
-    sources.forEach(s => { const el = document.createElement('source'); el.src = s.src; el.type = s.type; vid.appendChild(el); });
-    vid.load();
-    vid.style.display = ''; img.style.display = 'none';
-    show();
-  }
-
   function close() {
     overlay.classList.remove('open');
     document.body.classList.remove('lightbox-open');
-    vid.pause(); vid.src = '';
     document.removeEventListener('keydown', onKey);
     overlay.addEventListener('transitionend', () => overlay.remove(), { once: true });
   }
@@ -122,7 +103,6 @@ function refuseCookies() {
 
   overlay.addEventListener('click', close);
   closeBtn.addEventListener('click', e => { e.stopPropagation(); close(); });
-  vid.addEventListener('click', e => e.stopPropagation());
 
   function makeZoomBtn() {
     const b = document.createElement('button');
@@ -135,21 +115,7 @@ function refuseCookies() {
   document.addEventListener('DOMContentLoaded', () => {
     // Images d'illustration
     document.querySelectorAll('.article-illus-img').forEach(el => {
-      el.addEventListener('click', () => openImg(el.src, el.alt));
-    });
-
-    // Vidéos
-    document.querySelectorAll('.article-video').forEach(container => {
-      const video = container.querySelector('video');
-      if (!video) return;
-      const zoomBtn = makeZoomBtn();
-      container.appendChild(zoomBtn);
-      zoomBtn.addEventListener('click', e => {
-        e.stopPropagation();
-        const sources = Array.from(video.querySelectorAll('source')).map(s => ({ src: s.src, type: s.type }));
-        if (!sources.length && video.src) sources.push({ src: video.src, type: 'video/mp4' });
-        openVid(sources);
-      });
+      el.addEventListener('click', () => open(el.src, el.alt));
     });
 
     // Carousel
@@ -159,7 +125,7 @@ function refuseCookies() {
       zoomBtn.addEventListener('click', e => {
         e.stopPropagation();
         const active = carousel.querySelector('.carousel-slide.active');
-        if (active) openImg(active.src, active.alt);
+        if (active) open(active.src, active.alt);
       });
     });
   });
