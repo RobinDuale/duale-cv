@@ -523,7 +523,7 @@ body {
 .persp-card-img { width: 100%; height: auto; display: block; border-bottom: 0.5px solid var(--gold-border); }
 .persp-card-body { padding: 20px 22px; flex: 1; display: flex; flex-direction: column; }
 .article-illus { margin-bottom: 36px; border-radius: 2px; overflow: hidden; border: 0.5px solid var(--gold-border); }
-.article-illus-img { width: 100%; display: block; cursor: zoom-in; }
+.article-illus-img { width: 100%; height: auto; display: block; cursor: zoom-in; aspect-ratio: 800 / 420; }
 
 /* ── LIGHTBOX ── */
 .lightbox-overlay {
