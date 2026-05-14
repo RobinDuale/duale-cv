@@ -69,8 +69,13 @@ function refuseCookies() {
 (function () {
   const overlay = document.createElement('div');
   overlay.className = 'lightbox-overlay';
+  const btn = document.createElement('button');
+  btn.className = 'lightbox-close';
+  btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><line x1="8" y1="11" x2="14" y2="11"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>';
+  btn.setAttribute('aria-label', 'Fermer');
   const img = document.createElement('img');
   img.className = 'lightbox-img';
+  overlay.appendChild(btn);
   overlay.appendChild(img);
 
   function open(src, alt) {
@@ -90,6 +95,7 @@ function refuseCookies() {
   function onKey(e) { if (e.key === 'Escape') close(); }
 
   overlay.addEventListener('click', close);
+  btn.addEventListener('click', e => { e.stopPropagation(); close(); });
 
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.article-illus-img').forEach(el => {

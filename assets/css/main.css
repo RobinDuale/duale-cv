@@ -547,6 +547,15 @@ body {
   cursor: default;
 }
 .lightbox-overlay.open .lightbox-img { transform: scale(1); }
+.lightbox-close {
+  position: absolute; top: 20px; right: 24px;
+  width: 40px; height: 40px;
+  background: none; border: none; padding: 0;
+  color: var(--cream); opacity: 0.75;
+  cursor: pointer; transition: opacity 0.15s;
+}
+.lightbox-close:hover { opacity: 1; }
+.lightbox-close svg { width: 100%; height: 100%; }
 .persp-card-date {
   font-family: var(--sans); font-size: 12px; letter-spacing: 0.12em;
   text-transform: uppercase; color: var(--gold); padding-top: 4px;
