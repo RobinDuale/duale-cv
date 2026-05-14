@@ -43,7 +43,9 @@ PAYLOAD="{
       \"https://${HOST}/fr/mentions-legales.html\",
       \"https://${HOST}/en/legal-notice.html\",
       \"https://${HOST}/fr/perspectives/autorite-dans-les-llms.html\",
-      \"https://${HOST}/en/perspectives/llm-authority.html\"
+      \"https://${HOST}/en/perspectives/llm-authority.html\",
+      \"https://${HOST}/fr/perspectives/haut-de-bilan-ceo-investisseur.html\",
+      \"https://${HOST}/en/perspectives/ceo-capital-structure-guide.html\"
     ]
   }"
 
