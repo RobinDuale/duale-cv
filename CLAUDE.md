@@ -243,6 +243,107 @@ Règle timezone :
 S'applique à tous les types Schema : `BlogPosting`, `ProfilePage`, `VideoObject`, etc.  
 **Vérifier systématiquement ce format lors de tout ajout ou modification de date dans un bloc JSON-LD.**
 
+### og:locale, og:image:alt, og:image:width/height — obligatoires sur tous les articles
+
+Chaque article doit avoir dans son `<head>` :
+```html
+<meta property="og:locale" content="fr_FR"/>     <!-- ou en_US pour EN -->
+<meta property="og:image" content="https://cv-robin.duale.fr/assets/[slug]-og.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="[alt text de l'illustration article]"/>
+```
+
+Règle image OG : utiliser l'image `[slug]-og.jpg/png` (1200×630). Si elle n'existe pas encore, utiliser l'illustration article (800×420) et corriger les dimensions déclarées. Une image OG en 404 est la cause principale d'un blocage Bing "has issues preventing indexation".
+
+### Schema.org BlogPosting — image doit être un ImageObject
+
+Le champ `image` doit pointer vers l'image OG (1200×630) et inclure les dimensions :
+```json
+"image": {"@type": "ImageObject", "url": "https://cv-robin.duale.fr/assets/[slug]-og.jpg", "width": 1200, "height": 630}
+```
+Ne jamais laisser `"image": "https://..."` (string seul) — les validateurs Bing/Google exigent un `ImageObject` avec dimensions ≥ 1200px de large.
+
+### HTML valide dans les articles — interdiction `<p><ul>`
+
+L'admin panel peut générer du HTML invalide en wrappant des `<ul>` dans des `<p>`. Vérifier et corriger :
+- `<p class="body-text"><ul>` → `<ul>`
+- `<p class="body-text"></p><ul>` → `<ul>`
+- `</ul></p>` → `</ul>`
+
+### `og:site_name` + Twitter Card — obligatoires sur toutes les pages
+
+Chaque page avec des balises OG doit avoir :
+```html
+<meta property="og:site_name" content="Robin Dualé"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="[titre page]"/>
+<meta name="twitter:description" content="[description page]"/>
+<meta name="twitter:image" content="https://cv-robin.duale.fr/assets/[slug]-og.png"/>
+```
+
+### `loading="lazy"` — interdit sur l'illustration principale d'article
+
+L'illustration principale (`class="article-illus-img"`) ne doit **pas** avoir `loading="lazy"` : Bing ne charge pas les images lazy lors du premier passage crawler. Retirer l'attribut ou le remplacer par `loading="eager"`. Le `loading="lazy"` reste acceptable sur les petites images décoratives (logos nav, etc.).
+
+### `<strong>` au lieu de `<b>` dans les corps d'articles
+
+Dans le contenu éditorial (`<div class="article-body">`), utiliser `<strong>` (sémantique, lu par les crawlers) plutôt que `<b>` (purement stylistique). Remplacer `<b>` par `<strong>` et `</b>` par `</strong>` à la création et lors de toute modification.
+
+### `rel="noopener noreferrer"` — obligatoire sur tous les `target="_blank"`
+
+Tout lien externe ouvrant un nouvel onglet doit avoir `rel="noopener noreferrer"` :
+```html
+<a href="https://..." target="_blank" rel="noopener noreferrer">...</a>
+```
+Signal qualité pour Bing/Google, et bonne pratique sécurité. À vérifier systématiquement sur tout lien ajouté.
+
+### `<noscript>` dans `#persp-nav` — obligatoire sur tous les articles
+
+La sidebar "À lire aussi" est 100% JS-rendered. Pour les crawlers sans JS, ajouter un fallback statique :
+```html
+<!-- FR -->
+<div id="persp-nav"><noscript><a href="/fr/perspectives/">← Retour aux Perspectives</a></noscript></div>
+<!-- EN -->
+<div id="persp-nav"><noscript><a href="/en/perspectives/">← Back to Perspectives</a></noscript></div>
+```
+Le JS remplace le contenu du div quand il s'exécute — le noscript n'interfère pas avec le rendu normal.
+
+### Fallback statique `<ul>` dans les index Perspectives — à maintenir à jour
+
+`persp-nav.js` génère la grille d'articles en JS. Pour que Bing puisse découvrir les articles sans exécuter JS, les fichiers `fr/perspectives/index.html` et `en/perspectives/index.html` contiennent une liste statique `<ul>` à l'intérieur de `#persp-grid`.
+
+**À chaque publication d'un nouvel article**, ajouter le lien dans les deux listes :
+```html
+<!-- dans fr/perspectives/index.html -->
+<li><a href="/fr/perspectives/[slug-fr].html">[titre FR]</a></li>
+<!-- dans en/perspectives/index.html -->
+<li><a href="/en/perspectives/[slug-en].html">[titre EN]</a></li>
+```
+Si ce fallback est absent ou incomplet, Bing peut ne pas découvrir les nouveaux articles lors du premier crawl.
+
+---
+
+### hreflang x-default — obligatoire sur toutes les pages
+
+Chaque page bilingue (FR + EN) doit avoir un `hreflang="x-default"` pointant vers la version EN (fallback international). S'applique au `<head>` HTML **et** au bloc `<url>` du sitemap.
+
+**Dans le `<head>` HTML** (après les liens hreflang fr/en) :
+```html
+<link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/perspectives/slug-fr.html"/>
+<link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/perspectives/slug-en.html"/>
+<link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/perspectives/slug-en.html"/>
+```
+
+**Dans `sitemap.xml`** (après `<loc>`) :
+```xml
+<xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/perspectives/slug-en.html" />
+<xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/perspectives/slug-fr.html" />
+<xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/perspectives/slug-en.html" />
+```
+
+Les scripts `new_article.py` et `publish_article.py` doivent générer ces trois liens. Vérifier systématiquement lors de tout nouvel article ou nouvelle page.
+
 Note : `robots.txt` doit autoriser explicitement — à vérifier une fois par trimestre : `GPTBot`, `ClaudeBot`, `PerplexityBot`, `Google-Extended`, `Amazonbot`, `cohere-ai`
 
 ---

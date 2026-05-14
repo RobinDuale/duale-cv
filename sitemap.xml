@@ -13,6 +13,7 @@
   <!-- French Pages -->
   <url>
     <loc>https://cv-robin.duale.fr/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/" />
     <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -21,6 +22,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/fr/a-propos.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/about.html" />
     <lastmod>2026-04-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -29,6 +31,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/fr/parcours.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/track-record.html" />
     <lastmod>2026-04-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
@@ -37,6 +40,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/fr/temoignages.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/references.html" />
     <lastmod>2026-04-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -45,6 +49,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/fr/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/contact.html" />
     <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
@@ -54,6 +59,7 @@
   <!-- French Positioning Pages -->
   <url>
     <loc>https://cv-robin.duale.fr/fr/ceo-transformation-croissance-b2b-saas-data.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/transformation-growth-b2b-saas-data-ceo.html" />
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.86</priority>
@@ -62,6 +68,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/fr/actionnariat-actif-transformation-croissance.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/active-ownership-transformation-growth.html" />
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.84</priority>
@@ -70,6 +77,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/fr/filiale-francaise-groupe-europeen-global.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/french-subsidiary-european-global-group.html" />
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.84</priority>
@@ -78,6 +86,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/fr/build-up-croissance-externe.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/build-up-external-growth.html" />
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.84</priority>
@@ -86,6 +95,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/fr/transformation-abonnement-saas.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/saas-subscription-transformation.html" />
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.84</priority>
@@ -94,6 +104,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/fr/ceo-saas-lbo.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/saas-ceo-lbo.html" />
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.82</priority>
@@ -103,6 +114,7 @@
   <!-- English Positioning -->
   <url>
     <loc>https://cv-robin.duale.fr/en/transformation-growth-b2b-saas-data-ceo.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/transformation-growth-b2b-saas-data-ceo.html" />
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
@@ -111,6 +123,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/en/active-ownership-transformation-growth.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/active-ownership-transformation-growth.html" />
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.83</priority>
@@ -119,6 +132,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/en/french-subsidiary-european-global-group.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/french-subsidiary-european-global-group.html" />
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.82</priority>
@@ -127,6 +141,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/en/build-up-external-growth.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/build-up-external-growth.html" />
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.82</priority>
@@ -135,6 +150,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/en/saas-subscription-transformation.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/saas-subscription-transformation.html" />
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.82</priority>
@@ -143,6 +159,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/en/saas-ceo-lbo.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/saas-ceo-lbo.html" />
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.82</priority>
@@ -152,6 +169,7 @@
   <!-- French Perspectives -->
   <url>
     <loc>https://cv-robin.duale.fr/fr/perspectives/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/perspectives/" />
     <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
@@ -160,6 +178,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/fr/perspectives/je-suis-le-produit.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/perspectives/i-am-the-product.html" />
     <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -168,6 +187,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/fr/perspectives/ia-accelerateur-organisationnel.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/perspectives/ai-organizational-accelerator.html" />
     <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -176,6 +196,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/fr/perspectives/avantage-competitif-humain.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/perspectives/competitive-edge-is-human.html" />
     <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -184,6 +205,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/fr/perspectives/migration-100-abonnement.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/perspectives/switching-to-100-percent-subscription.html" />
     <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -192,6 +214,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/fr/perspectives/exit-reussi-ce-que-lacheteur-regarde-vraiment.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/perspectives/successful-exit-what-buyers-really-look-at.html" />
     <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -200,6 +223,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/fr/perspectives/acquisition-ce-que-lacheteur-sous-estime.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/perspectives/acquisition-what-buyers-almost-always-underestimate.html" />
     <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -208,6 +232,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/fr/perspectives/transformer-la-pression-en-ambition.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/perspectives/turning-pressure-into-ambition.html" />
     <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -217,6 +242,7 @@
   <!-- French FAQ -->
   <url>
     <loc>https://cv-robin.duale.fr/fr/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/faq.html" />
     <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
@@ -226,6 +252,7 @@
   <!-- English Pages -->
   <url>
     <loc>https://cv-robin.duale.fr/en/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/" />
     <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -234,6 +261,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/en/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/about.html" />
     <lastmod>2026-04-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -242,6 +270,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/en/track-record.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/track-record.html" />
     <lastmod>2026-04-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
@@ -250,6 +279,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/en/references.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/references.html" />
     <lastmod>2026-04-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -258,6 +288,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/en/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/contact.html" />
     <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
@@ -267,6 +298,7 @@
   <!-- English FAQ -->
   <url>
     <loc>https://cv-robin.duale.fr/en/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/faq.html" />
     <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
@@ -276,6 +308,7 @@
   <!-- English Perspectives -->
   <url>
     <loc>https://cv-robin.duale.fr/en/perspectives/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/perspectives/" />
     <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
@@ -284,6 +317,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/en/perspectives/i-am-the-product.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/perspectives/i-am-the-product.html" />
     <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -292,6 +326,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/en/perspectives/ai-organizational-accelerator.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/perspectives/ai-organizational-accelerator.html" />
     <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -300,6 +335,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/en/perspectives/competitive-edge-is-human.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/perspectives/competitive-edge-is-human.html" />
     <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -308,6 +344,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/en/perspectives/switching-to-100-percent-subscription.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/perspectives/switching-to-100-percent-subscription.html" />
     <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -316,6 +353,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/en/perspectives/successful-exit-what-buyers-really-look-at.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/perspectives/successful-exit-what-buyers-really-look-at.html" />
     <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -324,6 +362,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/en/perspectives/acquisition-what-buyers-almost-always-underestimate.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/perspectives/acquisition-what-buyers-almost-always-underestimate.html" />
     <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -332,6 +371,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/en/perspectives/turning-pressure-into-ambition.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/perspectives/turning-pressure-into-ambition.html" />
     <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -340,6 +380,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/fr/perspectives/autorite-dans-les-llms.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/perspectives/llm-authority.html" />
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -348,6 +389,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/en/perspectives/llm-authority.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/perspectives/llm-authority.html" />
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -356,6 +398,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/fr/perspectives/haut-de-bilan-ceo-investisseur.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/perspectives/ceo-capital-structure-guide.html" />
     <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -364,6 +407,7 @@
   </url>
   <url>
     <loc>https://cv-robin.duale.fr/en/perspectives/ceo-capital-structure-guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/perspectives/ceo-capital-structure-guide.html" />
     <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
