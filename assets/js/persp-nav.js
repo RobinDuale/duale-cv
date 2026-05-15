@@ -83,6 +83,10 @@
     });
     if (pool.length < 3 && next) pool.push(next);
     if (pool.length < 3 && prev) pool.push(prev);
+    for (var i = pool.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = pool[i]; pool[i] = pool[j]; pool[j] = tmp;
+    }
     var related = pool.slice(0, 3);
 
     var html = '';
@@ -109,7 +113,7 @@
       for (var j = 0; j < related.length; j++) {
         var a = related[j];
         html += '<div>'
-          + '<div class="persp-card-tag" style="margin-bottom:5px">' + a[tagsKey] + '</div>'
+          + '<div class="persp-card-tag" style="margin-bottom:10px">' + a[tagsKey] + '</div>'
           + '<a class="persp-card-link" href="/' + lang + '/perspectives/' + a[slugKey] + '.html">' + a[titleKey] + '</a>'
           + '</div>';
       }
