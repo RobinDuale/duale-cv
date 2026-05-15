@@ -528,7 +528,9 @@ async function saveDraft() {
   const subtitle = document.getElementById('field-subtitle').value.trim();
   const meta     = document.getElementById('field-meta').value.trim();
   const body     = document.getElementById('editor-body').innerHTML;
-  const today    = new Date().toISOString().slice(0,10);
+  const _now = new Date();
+  const _tz = _now.getTimezoneOffset() === -120 ? '+02:00' : '+01:00';
+  const today = _now.toISOString().slice(0,10) + 'T00:00:00' + _tz;
 
   const takeaways = ['tk-1','tk-2','tk-3','tk-4'].map(id => document.getElementById(id).value.trim());
   const ctaTitle  = document.getElementById('field-cta-title').value.trim();
@@ -561,7 +563,9 @@ async function publishArticle() {
   const subtitle = document.getElementById('field-subtitle').value.trim();
   const meta     = document.getElementById('field-meta').value.trim();
   const body     = document.getElementById('editor-body').innerHTML;
-  const today    = new Date().toISOString().slice(0,10);
+  const _now = new Date();
+  const _tz = _now.getTimezoneOffset() === -120 ? '+02:00' : '+01:00';
+  const today = _now.toISOString().slice(0,10) + 'T00:00:00' + _tz;
 
   const takeaways = ['tk-1','tk-2','tk-3','tk-4'].map(id => document.getElementById(id).value.trim());
   const ctaTitle  = document.getElementById('field-cta-title').value.trim();
