@@ -13,6 +13,7 @@ Production : https://cv-robin.duale.fr
 /assets/css/main.css         → feuille de style unique
 /assets/js/main.js           → JS unique
 /assets/js/persp-nav.js      → navigation dynamique (À lire aussi, prev/next) — lit perspectives.json
+/assets/js/persp-teaser.js   → bloc "derniers articles" dynamique — lit perspectives.json, injecte les 3 derniers articles publiés dans <div id="persp-teaser">
 /assets/perspectives.json    → source de vérité articles (titre, sous-titre, slug, date, image, excerpt)
 /articles-publies.md         → journal éditorial de tous les articles
 /admin/index.html            → panel admin (édition FR uniquement + commit GitHub via token)
@@ -21,6 +22,8 @@ Production : https://cv-robin.duale.fr
 /publish_article.py          → script Python : publie le draft (retire noindex, met à jour tous les fichiers)
 /article_input.example.json  → modèle de fichier d'input pour new_article.py et publish_article.py
 /sitemap.xml                 → sitemap SEO
+/robots.txt                  → directives crawlers + autorisations bots IA (GPTBot, ClaudeBot…)
+/indexnow-ping.sh            → script bash : notifie Bing + Yandex de toutes les pages du site
 /llms.txt                    → contexte GEO anglais (pour LLMs)
 /llms-fr.txt                 → contexte GEO français (pour LLMs)
 ```
@@ -45,6 +48,22 @@ Le repo GitHub est **public** — ne jamais y mettre d'informations sensibles ou
 - **`memory/`** (local, jamais pushé) : uniquement les données personnelles/privées qui ne doivent pas apparaître sur GitHub (ex : email, identité).
 - **Règle** : ne jamais dupliquer dans `memory/` ce qui est déjà dans `CLAUDE.md`. Si quelque chose mérite d'être retenu entre sessions et n'est pas sensible, l'ajouter dans `CLAUDE.md`.
 
+## Serveur de prévisualisation local
+
+Le serveur local est géré par Claude Code via `.claude/launch.json` :
+
+```json
+{ "runtimeExecutable": "npx", "runtimeArgs": ["serve", ".", "-p", "3456", "--no-clipboard"], "port": 3456 }
+```
+
+Le site est servi depuis le répertoire du **worktree actif** sur `http://localhost:3456`. Claude Code le démarre automatiquement à l'ouverture de session. Si besoin de le relancer manuellement :
+
+```powershell
+npx serve . -p 3456 --no-clipboard
+```
+
+---
+
 ## Synchronisation locale — à faire en début de session
 
 L'admin panel peut avoir commité directement sur GitHub entre deux sessions :
@@ -61,22 +80,18 @@ git stash && git pull --rebase && git stash pop
 
 ## Worktree — synchronisation après chaque commit
 
-**Toutes les sessions Claude Code s'exécutent dans un worktree** (`…/.claude/worktrees/<nom>/`) sur une branche séparée. Les commits sont faits sur `main` dans le répertoire principal. Le worktree ne reçoit pas ces changements automatiquement — le serveur local sert depuis le worktree et n'affichera pas les modifications tant que la sync n'est pas faite.
+**Toutes les sessions Claude Code s'exécutent dans un worktree** (`…/.claude/worktrees/<nom>/`) sur une branche séparée. Les commits sont faits sur `main` dans le répertoire principal. Le worktree ne reçoit pas ces changements automatiquement — le serveur local (port 3456) sert depuis le worktree et n'affichera pas les modifications tant que la sync n'est pas faite.
 
-**Worktree du serveur de preview actif :**
-- Chemin : `C:\Users\robin\ClaudeDevRepo\duale-cv\.claude\worktrees\vigilant-beaver-fa8714`
-- URL : `http://localhost:8765/fr/`
-
-**Après chaque commit sur `main`, exécuter systématiquement :**
+**Après chaque commit sur `main`, exécuter systématiquement dans le worktree :**
 
 ```bash
-cd "C:\Users\robin\ClaudeDevRepo\duale-cv\.claude\worktrees\vigilant-beaver-fa8714"
+cd "C:\Users\robin\ClaudeDevRepo\duale-cv\.claude\worktrees\<nom-worktree>"
 git stash   # si CLAUDE.md a des modifications locales non commitées
 git merge main --no-edit
 git stash pop   # si stash effectué
 ```
 
-**Vérification** : après la sync, `grep "Mieux me connaître" fr/index.html` dans le worktree doit retourner un résultat.
+**Vérification** : après la sync, `grep "nouveau contenu" fr/index.html` dans le worktree doit retourner un résultat.
 
 ---
 
@@ -190,12 +205,6 @@ Structure attendue :
 ]}
 ```
 
-### 8. Commit + push (après confirmation Robin)
-
-### 9. IndexNow ping (après push)
-
-Utiliser le skill `/indexnow <slug-fr> <slug-en>`.
-
 ---
 
 ## Workflow — modification d'un article existant
@@ -237,6 +246,166 @@ Les pages EN ont des noms différents des pages FR. Utiliser **exactement** ces 
 /en/perspectives/           → Perspectives
 /en/contact.html            → Contact
 ```
+
+---
+
+## Lightbox — images et carousel
+
+Le site dispose d'un système lightbox implémenté dans `assets/js/main.js` (IIFE en bas de fichier) et `assets/css/main.css`.
+
+**Comportement :**
+- Clic sur `.article-illus-img` (image principale d'article) → ouvre la lightbox
+- Clic sur le bouton zoom (loupe +) sur un `.carousel` → ouvre la lightbox sur la slide active
+- Clic n'importe où sur l'overlay (image comprise) → ferme la lightbox
+- Touche `Escape` → ferme la lightbox
+- Vidéos : pas de lightbox — le zoom se fait dans le lecteur natif
+
+**Classes CSS clés :**
+- `.lightbox-overlay` — overlay fixe (z-index: 9000), fond semi-opaque
+- `.lightbox-overlay.open` — état visible
+- `.lightbox-img` — image agrandie (`width: min(96vw, 1296px)`)
+- `.lightbox-close` — bouton loupe "-" en haut à droite
+- `.media-zoom-btn` — bouton loupe "+" sur carousel, visible au hover
+- `body.lightbox-open` — classe ajoutée au body pendant l'ouverture
+
+**Pattern `body.lightbox-open` :** quand la lightbox est ouverte, les éléments qui chevauchent l'overlay (`.media-zoom-btn`, `.hamburger`) sont masqués via :
+```css
+body.lightbox-open .media-zoom-btn,
+body.lightbox-open .hamburger { opacity: 0 !important; pointer-events: none; }
+```
+
+**Images articles :** la classe `.article-illus-img` doit toujours avoir `cursor: zoom-in` et `aspect-ratio: 800 / 420` (voir section mobile ci-dessous).
+
+---
+
+## Images — ratios et dimensions
+
+### Images principales d'articles (`.article-illus-img`)
+
+```css
+.article-illus-img { width: 100%; height: auto; display: block; cursor: zoom-in; aspect-ratio: 800 / 420; }
+```
+Sans `aspect-ratio`, le ratio est ignoré sur mobile et l'image s'affiche en hauteur incorrecte.
+
+### Images de cartes de grille (`.persp-card-img`)
+
+```css
+.persp-card-img { width: 100%; aspect-ratio: 800 / 420; object-fit: cover; }
+```
+`object-fit: cover` recadre automatiquement les images dont le ratio source ne correspond pas exactement au 800:420 attendu — cela évite les cartes à hauteur variable dans la grille. Format source attendu : 800×420 px ou multiple.
+
+---
+
+## persp-teaser.js — intégration sur une page
+
+Pour afficher le bloc "Mes derniers articles" / "Latest articles" en bas d'une page (avant le footer) :
+
+1. Ajouter juste avant `<footer>` :
+```html
+<div id="persp-teaser"></div>
+```
+
+2. Ajouter après le `<script src="../assets/js/main.js">` :
+```html
+<script src="../assets/js/persp-teaser.js" defer></script>
+```
+
+Le chemin `../assets/js/` est correct pour les pages dans `/fr/*.html` ou `/en/*.html`. Pour les articles dans `/fr/perspectives/*.html`, le chemin serait `../../assets/js/persp-teaser.js` (non utilisé pour l'instant — le bloc teaser n'est pas dans les articles).
+
+Pages actuellement équipées : `fr/a-propos.html`, `fr/parcours.html`, `fr/temoignages.html`, `en/about.html`, `en/track-record.html`, `en/references.html`.
+
+Le script filtre automatiquement les drafts (`draft: true`) et affiche les 3 derniers articles publiés. Aucune mise à jour manuelle nécessaire lors de la publication d'un nouvel article.
+
+---
+
+## Convention — alignement bouton dans le page-header (colonne droite)
+
+Le `page-header` a un `padding-right: 56px`. La colonne de droite du layout principal fait `320px`. Pour qu'un bouton placé dans le `page-header` s'aligne visuellement avec la colonne de droite, utiliser ce wrapper :
+
+```html
+<div style="margin-right:-56px;width:320px;display:flex;justify-content:center;flex-shrink:0;">
+  <a class="btn-outline" href="...">Libellé bouton</a>
+</div>
+```
+
+Le `margin-right:-56px` absorbe le padding du parent et aligne le bord droit du wrapper avec le bord droit de la colonne de contenu. S'applique à toutes les pages avec un bouton en haut à droite du `page-header` (À propos, Parcours, Témoignages, Perspectives index, et tous les articles).
+
+---
+
+## Favicon — setup compatible Bing
+
+Bing exige un favicon correctement déclaré pour l'afficher dans les résultats de recherche. Bloc obligatoire dans `<head>` de toutes les pages :
+
+```html
+<link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png"/>
+<link rel="apple-touch-icon" sizes="48x48" href="/assets/favicon-48.png"/>
+```
+
+Fichiers présents dans le repo :
+- `/favicon.ico` — ICO multi-taille (16x16 + 32x32 + 48x48) construit manuellement en binaire Python (`struct`) — Pillow seul ne produit pas un ICO multi-taille valide
+- `/assets/favicon-16.png`, `/assets/favicon-32.png`, `/assets/favicon-48.png` — PNG individuels
+
+**Lors de la création d'une nouvelle page HTML**, toujours utiliser ce bloc complet (5 lignes).
+
+---
+
+## Sitemap — hreflang self-reference (critique Bing)
+
+**Chaque URL dans `sitemap.xml` doit référencer sa propre langue en plus de l'autre langue.**  
+Bing (et Google) rejettent silencieusement les blocs hreflang incomplets — la page passe en "Discovered but not crawled".
+
+Format correct pour chaque `<url>` :
+```xml
+<url>
+  <loc>https://cv-robin.duale.fr/fr/ma-page.html</loc>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/ma-page.html"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/my-page.html"/>
+</url>
+<url>
+  <loc>https://cv-robin.duale.fr/en/my-page.html</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/my-page.html"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/ma-page.html"/>
+</url>
+```
+
+Erreur fréquente : ne mettre que le lien vers l'autre langue, sans auto-référence. **Toujours vérifier lors de l'ajout d'une URL au sitemap.**
+
+---
+
+## Avertissement — update_home_persp.py
+
+`update_home_persp.py` **remplace** les cartes home dans `fr/index.html` et `en/index.html`. Si le script est lancé sur un fichier dont le marqueur de remplacement est absent ou décalé, il **peut appender** le contenu au lieu de remplacer, créant des cartes dupliquées.
+
+Après chaque exécution du script : **vérifier visuellement** que `fr/index.html` et `en/index.html` ne contiennent pas plus de 3 cartes `.persp-teaser-card`. En cas de duplication, supprimer manuellement le bloc dupliqué.
+
+---
+
+## IndexNow — configuration et usage
+
+IndexNow notifie Bing et Yandex de toute mise à jour du site. La configuration est centralisée dans un seul fichier :
+
+```
+/indexnow-ping.sh   → script bash, ping Bing + Yandex pour toutes les URLs du site (42 URLs)
+/{KEY}.txt          → fichier de vérification hébergé sur le site (requis par le protocole)
+```
+
+**Clé IndexNow** : `A8A911547D7C17BDDBE856B293F83A46`
+
+**Lancer après chaque `git push`** (depuis Git Bash ou le terminal Bash) :
+```bash
+bash indexnow-ping.sh
+```
+
+Réponses attendues : Bing `HTTP 200`, Yandex `HTTP 202` (ou `{"success":true}`).
+
+Le script envoie toutes les URLs en une seule requête POST — pas besoin de cibler des pages spécifiques. Quand une page est modifiée, relancer le script complet : les moteurs ne réindexent que ce qui a changé.
+
+**Quand le lancer manuellement** : pour les modifications de pages non-article (CSS, UI, pages statiques). Pour les articles, les skills `/publish-article` et `/sync-admin` s'occupent déjà du ping IndexNow — ne pas le relancer en double.
+
+**Note** : Google ne supporte pas IndexNow — il est notifié via Google Search Console (sitemap) et Discovery naturelle.
 
 ---
 
@@ -379,8 +548,6 @@ Vérifier que l'ordre est cohérent (du plus ancien au plus récent). Ce tableau
 <li><a href="/en/perspectives/[slug-en].html">[titre EN]</a></li>
 ```
 Si ce fallback est absent ou incomplet, Bing peut ne pas découvrir les nouveaux articles lors du premier crawl.
-
----
 
 ### hreflang x-default — obligatoire sur toutes les pages
 
