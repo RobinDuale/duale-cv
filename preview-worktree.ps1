@@ -1,9 +1,9 @@
 # preview-worktree.ps1
-# Lance un serveur local sur http://localhost:3457 depuis le worktree Claude le plus recent
+# Lance un serveur local sur http://localhost:8765 depuis le worktree Claude le plus recent
 # Usage : .\preview-worktree.ps1
 # Arret : Ctrl+C
 
-$PORT = 3457
+$PORT = 8765
 $worktreesRoot = Join-Path $PSScriptRoot ".claude\worktrees"
 
 if (-not (Test-Path $worktreesRoot)) {
@@ -12,13 +12,12 @@ if (-not (Test-Path $worktreesRoot)) {
 }
 
 # Libere le port si un process l'occupe encore
-$existing = netstat -ano | Select-String ":$PORT\s" | ForEach-Object {
-    ($_ -split '\s+')[-1]
-} | Select-Object -Unique
-foreach ($pid in $existing) {
-    if ($pid -match '^\d+$') {
-        Stop-Process -Id $pid -Force -ErrorAction SilentlyContinue
-        Write-Host "Process $pid libere sur le port $PORT"
+$connections = Get-NetTCPConnection -LocalPort $PORT -ErrorAction SilentlyContinue
+foreach ($conn in $connections) {
+    $procId = $conn.OwningProcess
+    if ($procId -gt 0) {
+        Stop-Process -Id $procId -Force -ErrorAction SilentlyContinue
+        Write-Host "Process $procId libere sur le port $PORT"
     }
 }
 
