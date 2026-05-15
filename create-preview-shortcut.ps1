@@ -7,11 +7,11 @@ $shortcutPath = Join-Path ([Environment]::GetFolderPath("Desktop")) "Preview Sit
 
 $shell = New-Object -ComObject WScript.Shell
 $shortcut = $shell.CreateShortcut($shortcutPath)
-$shortcut.TargetPath = "powershell.exe"
+$shortcut.TargetPath = "pwsh.exe"
 $shortcut.Arguments = "-NoExit -ExecutionPolicy Bypass -File `"$scriptPath`""
 $shortcut.WorkingDirectory = $PSScriptRoot
 $shortcut.WindowStyle = 1
-$shortcut.IconLocation = "powershell.exe,0"
+$shortcut.IconLocation = "pwsh.exe,0"
 $shortcut.Description = "Lance le serveur de preview local du site Robin Duale"
 $shortcut.Save()
 
