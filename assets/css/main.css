@@ -276,7 +276,7 @@ body {
 .body-text strong { font-weight: 600; color: var(--ink); }
 .divider { border: none; border-top: 0.5px solid var(--gold-border); margin: 32px 0; }
 .section-title { font-family: var(--sans); font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
-.section-subtitle { font-family: var(--sans); font-size: 13px; color: var(--ink); opacity: 0.55; margin-bottom: 16px; }
+.section-subtitle { font-family: var(--sans); font-size: 15px; color: var(--ink); opacity: 0.65; margin-bottom: 16px; }
 .criteria-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .criteria-item { padding: 16px 18px; border: 0.5px solid var(--gold-border); border-radius: 1px; background: var(--gold-light); }
 .criteria-label { font-family: var(--sans); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(154,114,40,0.88); margin-bottom: 6px; }
@@ -493,7 +493,7 @@ body {
   display: flex; justify-content: space-between; align-items: flex-end;
   margin-bottom: 32px;
 }
-.persp-section-title { font-family: var(--sans); font-size: 22px; font-weight: 600; color: var(--ink); margin-bottom: 6px; line-height: 1.2; }
+.persp-section-title { font-family: var(--sans); font-size: 28px; font-weight: 600; color: var(--gold); margin-bottom: 8px; line-height: 1.2; }
 .persp-teaser-grid {
   display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px;
 }
