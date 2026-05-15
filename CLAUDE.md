@@ -72,19 +72,20 @@ npx serve . -p 3456 --no-clipboard
 
 Lancer le skill `/unlock-rd` — il ajoute `Bash(*)` et `PowerShell(*)` dans `.claude/settings.json` du worktree, ce qui permet à Claude d'exécuter des commandes sans demander confirmation à chaque fois. Sans ce step, toutes les commandes shell nécessitent une approbation manuelle.
 
-### 2. Synchroniser avec main
+### 2. Synchroniser avec main — reset hard (obligatoire)
 
-L'admin panel peut avoir commité directement sur GitHub entre deux sessions :
+Le worktree tourne sur une branche séparée qui accumule au fil des sessions des vieux commits de résolution de conflits. Si on fait `git pull --rebase`, git rejoue ces vieux commits sur main et génère des conflits à répétition.
+
+**Toujours utiliser `reset --hard` au lieu de `pull` :**
 
 ```powershell
 git fetch origin
-git pull origin main
+git reset --hard origin/main
 ```
 
-Si divergence (commits locaux non pushés + commits distants) :
-```powershell
-git stash && git pull --rebase && git stash pop
-```
+Cela aligne le worktree exactement sur main, efface les vieux commits locaux, et garantit que le prochain push est toujours un fast-forward sans conflit.
+
+**Ne jamais utiliser** `git pull origin main` ou `git pull --rebase` dans le worktree — c'est la cause des conflits récurrents sur CLAUDE.md.
 
 ## Worktree — synchronisation après chaque commit
 
