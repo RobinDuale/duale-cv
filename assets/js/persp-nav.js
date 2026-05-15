@@ -112,8 +112,8 @@
         + '<div style="display:flex;flex-direction:column;gap:14px;margin-top:4px">';
       for (var j = 0; j < related.length; j++) {
         var a = related[j];
-        html += '<div>'
-          + '<div class="persp-card-tag" style="margin-bottom:10px">' + a[tagsKey] + '</div>'
+        html += '<div style="display:flex;flex-direction:column;gap:8px;">'
+          + '<div class="persp-card-tag">' + a[tagsKey] + '</div>'
           + '<a class="persp-card-link" href="/' + lang + '/perspectives/' + a[slugKey] + '.html">' + a[titleKey] + '</a>'
           + '</div>';
       }
