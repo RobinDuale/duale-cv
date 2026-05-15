@@ -490,9 +490,10 @@ body {
 }
 .persp-teaser-inner { max-width: 1100px; }
 .persp-teaser-header {
-  display: flex; justify-content: space-between; align-items: baseline;
+  display: flex; justify-content: space-between; align-items: flex-end;
   margin-bottom: 32px;
 }
+.persp-section-title { font-family: var(--sans); font-size: 22px; font-weight: 600; color: var(--ink); margin-bottom: 6px; line-height: 1.2; }
 .persp-teaser-grid {
   display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px;
 }
