@@ -76,16 +76,22 @@ Lancer le skill `/unlock-rd` — il ajoute `Bash(*)` et `PowerShell(*)` dans `.c
 
 Le worktree tourne sur une branche séparée qui accumule au fil des sessions des vieux commits de résolution de conflits. Si on fait `git pull --rebase`, git rejoue ces vieux commits sur main et génère des conflits à répétition.
 
-**Toujours utiliser `reset --hard` au lieu de `pull` :**
+**Toujours utiliser `reset --hard` au lieu de `pull` — s'applique à deux cas :**
 
 ```powershell
 git fetch origin
 git reset --hard origin/main
 ```
 
+- **Nouvelle session** : à faire avant toute modification
+- **Reprise d'une ancienne conversation** : si une autre session a pushé entre-temps, faire ce reset avant de continuer — sinon le prochain push sera rejeté (non-fast-forward)
+
 Cela aligne le worktree exactement sur main, efface les vieux commits locaux, et garantit que le prochain push est toujours un fast-forward sans conflit.
 
 **Ne jamais utiliser** `git pull origin main` ou `git pull --rebase` dans le worktree — c'est la cause des conflits récurrents sur CLAUDE.md.
+
+**Instruction à donner à une ancienne conversation avant de reprendre le travail :**
+> "Fais `git fetch origin && git reset --hard origin/main` avant de continuer."
 
 ## Worktree — synchronisation après chaque commit
 
