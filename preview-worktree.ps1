@@ -1,6 +1,7 @@
 # preview-worktree.ps1
 # Lance un serveur local sur http://localhost:3457 depuis le worktree Claude le plus recent
 # Usage : .\preview-worktree.ps1
+# Arret : Ctrl+C
 
 $worktreesRoot = Join-Path $PSScriptRoot ".claude\worktrees"
 
@@ -17,9 +18,10 @@ $worktreePath = Get-ChildItem -Path $worktreesRoot -Directory |
 if ($worktreePath) {
     Write-Host "Worktree : $worktreePath"
     Write-Host "Preview  : http://localhost:3457/fr/"
+    Write-Host "Arret    : Ctrl+C"
     Write-Host ""
     Set-Location $worktreePath
-    npx serve . -p 3457 --no-clipboard
+    python -m http.server 3457
 } else {
     Write-Host "Aucun worktree actif trouve. Lance d'abord une session Claude Code."
 }
