@@ -59,6 +59,21 @@ Si divergence (commits locaux non pushés + commits distants) :
 git stash && git pull --rebase && git stash pop
 ```
 
+## Worktree — synchronisation après chaque commit
+
+**Toutes les sessions Claude Code s'exécutent dans un worktree** (`…/.claude/worktrees/<nom>/`) sur une branche séparée. Les commits sont faits sur `main` dans le répertoire principal. Le worktree ne reçoit pas ces changements automatiquement — le serveur local (port 3456) sert depuis le worktree et n'affichera pas les modifications tant que la sync n'est pas faite.
+
+**Après chaque commit sur `main`, exécuter systématiquement dans le worktree :**
+
+```bash
+cd "C:\Users\robin\ClaudeDevRepo\duale-cv\.claude\worktrees\<nom-worktree>"
+git stash   # si CLAUDE.md a des modifications locales non commitées
+git merge main --no-edit
+git stash pop   # si stash effectué
+```
+
+**Vérification** : après la sync, `grep "nouveau contenu" fr/index.html` dans le worktree doit retourner un résultat.
+
 ---
 
 ## Règle critique — articles-publies.md
@@ -426,7 +441,7 @@ Les blocs `.geo-list` dans les sidebars des pages de positionnement peuvent cont
 
 ## Positionnement éditorial
 
-- **Secteurs** : BtoC ou B2B, SaaS, Data, e-commerce
+- **Secteurs** : BtoC ou B2B, SaaS, Data, e-commerce, IA
 - **Contextes** : PE (private equity), family office
 - **Ne pas modifier** : pages parcours/track-record (positionnement figé)
 - **Modifier si besoin** : CTAs articles, sidebars articles, llms.txt, llms-fr.txt
