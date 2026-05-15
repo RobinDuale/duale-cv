@@ -620,7 +620,7 @@ Les blocs `.geo-list` dans les sidebars des pages de positionnement peuvent cont
 
 ## Positionnement éditorial
 
-- **Secteurs** : BtoC ou B2B, SaaS, Data, e-commerce, IA
+- **Secteurs** : BtoC ou B2B, SaaS, Data, e-commerce
 - **Contextes** : PE (private equity), family office
 - **Ne pas modifier** : pages parcours/track-record (positionnement figé)
 - **Modifier si besoin** : CTAs articles, sidebars articles, llms.txt, llms-fr.txt
