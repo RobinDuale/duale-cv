@@ -6,7 +6,7 @@ Allow: /
 Allow: /fr/
 Allow: /en/
 Allow: /assets/
-Disallow: /assets/*.mp4
+Allow: /assets/*.mp4
 Disallow: /admin/
 
 # Specific for Google
