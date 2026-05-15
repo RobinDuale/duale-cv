@@ -45,7 +45,19 @@ PAYLOAD="{
       \"https://${HOST}/fr/perspectives/autorite-dans-les-llms.html\",
       \"https://${HOST}/en/perspectives/llm-authority.html\",
       \"https://${HOST}/fr/perspectives/haut-de-bilan-ceo-investisseur.html\",
-      \"https://${HOST}/en/perspectives/ceo-capital-structure-guide.html\"
+      \"https://${HOST}/en/perspectives/ceo-capital-structure-guide.html\",
+      \"https://${HOST}/fr/ceo-transformation-croissance-b2b-saas-data.html\",
+      \"https://${HOST}/en/transformation-growth-b2b-saas-data-ceo.html\",
+      \"https://${HOST}/fr/filiale-francaise-groupe-europeen-global.html\",
+      \"https://${HOST}/en/french-subsidiary-european-global-group.html\",
+      \"https://${HOST}/fr/transformation-abonnement-saas.html\",
+      \"https://${HOST}/en/saas-subscription-transformation.html\",
+      \"https://${HOST}/fr/ceo-saas-lbo.html\",
+      \"https://${HOST}/en/saas-ceo-lbo.html\",
+      \"https://${HOST}/fr/actionnariat-actif-transformation-croissance.html\",
+      \"https://${HOST}/en/active-ownership-transformation-growth.html\",
+      \"https://${HOST}/fr/build-up-croissance-externe.html\",
+      \"https://${HOST}/en/build-up-external-growth.html\"
     ]
   }"
 
