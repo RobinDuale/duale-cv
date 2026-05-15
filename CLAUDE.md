@@ -61,18 +61,22 @@ git stash && git pull --rebase && git stash pop
 
 ## Worktree — synchronisation après chaque commit
 
-**Toutes les sessions Claude Code s'exécutent dans un worktree** (`…/.claude/worktrees/<nom>/`) sur une branche séparée. Les commits sont faits sur `main` dans le répertoire principal. Le worktree ne reçoit pas ces changements automatiquement — le serveur local (port 3456) sert depuis le worktree et n'affichera pas les modifications tant que la sync n'est pas faite.
+**Toutes les sessions Claude Code s'exécutent dans un worktree** (`…/.claude/worktrees/<nom>/`) sur une branche séparée. Les commits sont faits sur `main` dans le répertoire principal. Le worktree ne reçoit pas ces changements automatiquement — le serveur local sert depuis le worktree et n'affichera pas les modifications tant que la sync n'est pas faite.
 
-**Après chaque commit sur `main`, exécuter systématiquement dans le worktree :**
+**Worktree du serveur de preview actif :**
+- Chemin : `C:\Users\robin\ClaudeDevRepo\duale-cv\.claude\worktrees\vigilant-beaver-fa8714`
+- URL : `http://localhost:8765/fr/`
+
+**Après chaque commit sur `main`, exécuter systématiquement :**
 
 ```bash
-cd "C:\Users\robin\ClaudeDevRepo\duale-cv\.claude\worktrees\<nom-worktree>"
+cd "C:\Users\robin\ClaudeDevRepo\duale-cv\.claude\worktrees\vigilant-beaver-fa8714"
 git stash   # si CLAUDE.md a des modifications locales non commitées
 git merge main --no-edit
 git stash pop   # si stash effectué
 ```
 
-**Vérification** : après la sync, `grep "nouveau contenu" fr/index.html` dans le worktree doit retourner un résultat.
+**Vérification** : après la sync, `grep "Mieux me connaître" fr/index.html` dans le worktree doit retourner un résultat.
 
 ---
 
