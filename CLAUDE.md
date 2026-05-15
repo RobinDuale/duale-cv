@@ -310,6 +310,44 @@ La sidebar "À lire aussi" est 100% JS-rendered. Pour les crawlers sans JS, ajou
 ```
 Le JS remplace le contenu du div quand il s'exécute — le noscript n'interfère pas avec le rendu normal.
 
+### `isPartOf` Blog + `publisher` enrichi — obligatoires dans chaque BlogPosting
+
+Chaque article (FR et EN) doit avoir dans son schema `BlogPosting` :
+
+```json
+"publisher": {"@type": "Person", "name": "Robin Dualé", "url": "https://cv-robin.duale.fr/fr/", "sameAs": "https://www.linkedin.com/in/robinduale/"},
+"isPartOf": {"@type": "Blog", "url": "https://cv-robin.duale.fr/fr/perspectives/"}
+```
+
+Pour les articles EN, adapter les URLs :
+```json
+"publisher": {"@type": "Person", "name": "Robin Dualé", "url": "https://cv-robin.duale.fr/en/", "sameAs": "https://www.linkedin.com/in/robinduale/?locale=en-US"},
+"isPartOf": {"@type": "Blog", "url": "https://cv-robin.duale.fr/en/perspectives/"}
+```
+
+- `new_article.py` génère déjà ces deux champs correctement pour le FR.
+- Lors de la création manuelle de l'article EN (dans le workflow `/publish-article`), inclure ces champs EN.
+- **Cause historique** : les articles n'avaient pas `isPartOf` et le `publisher` était trop pauvre — corrigés en mai 2026.
+
+### `subjectOf` Blog dans le schema Person des home pages — à maintenir
+
+Les fichiers `fr/index.html` et `en/index.html` ont un champ `"subjectOf"` dans le schema `Person` (dans `mainEntity`) qui lie le profil au Blog Perspectives. Ne pas supprimer ce champ lors de modifications du schema.
+
+### `blogPost` array dans le schema Blog des index Perspectives — à maintenir à jour
+
+Les fichiers `fr/perspectives/index.html` et `en/perspectives/index.html` ont un schema `Blog` avec un tableau `blogPost` listant tous les articles. **À chaque publication d'un nouvel article**, ajouter l'entrée dans les deux fichiers :
+
+```json
+{"@type": "BlogPosting", "headline": "[titre article]", "url": "https://cv-robin.duale.fr/fr/perspectives/[slug-fr].html"}
+```
+
+Et en EN :
+```json
+{"@type": "BlogPosting", "headline": "[title EN]", "url": "https://cv-robin.duale.fr/en/perspectives/[slug-en].html"}
+```
+
+Vérifier que l'ordre est cohérent (du plus ancien au plus récent). Ce tableau est le signal principal pour que Bing/Copilot comprenne que Robin Dualé est l'auteur d'un corpus d'articles structuré.
+
 ### Fallback statique `<ul>` dans les index Perspectives — à maintenir à jour
 
 `persp-nav.js` génère la grille d'articles en JS. Pour que Bing puisse découvrir les articles sans exécuter JS, les fichiers `fr/perspectives/index.html` et `en/perspectives/index.html` contiennent une liste statique `<ul>` à l'intérieur de `#persp-grid`.
