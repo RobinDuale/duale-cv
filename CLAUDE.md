@@ -588,11 +588,12 @@ Google tronque les meta descriptions au-delà de ~155 caractères dans les SERPs
 - **S'applique à** : toutes les pages, articles et pages de positionnement, FR et EN.
 - **Cause historique** : les pages Home FR (186 car.) et EN (184 car.) dépassaient la limite — corrigées en mai 2026.
 
-### Title tag — longueur maximale 65 caractères
+### Title tag — longueur maximale 60 caractères
 
-Google tronque les title tags au-delà de ~65 caractères dans les SERPs (environ 600px de large).
+Google tronque les title tags au-delà de ~65 caractères (600px). Bing avertit dès 60-62 caractères.
 
-- **Règle** : tout title tag doit faire entre 50 et 65 caractères.
+- **Règle** : tout title tag doit faire entre 50 et 60 caractères (safe pour Google ET Bing).
+- **Préférer les titres descriptifs avec le mot-clé principal** plutôt que les titres accrocheurs/teasers — Google réécrit les titres non descriptifs dans les SERPs, et les titres avec keyword en tête performent mieux sur les deux moteurs.
 - **Vérification** : compter les caractères avant de valider.
 - **S'applique à** : toutes les pages, articles et pages de positionnement, FR et EN.
 - **Cause historique** : `fr/ceo-transformation-croissance-b2b-saas-data.html` avait un title à 74 caractères — corrigé en mai 2026.
