@@ -30,7 +30,7 @@ Production : https://cv-robin.duale.fr
 
 ## Règles absolues
 
-- **Mise à jour de CLAUDE.md après chaque problème rencontré** — si un bug, une erreur de contenu ou un problème SEO/GEO est détecté et corrigé en session, ajouter immédiatement dans CLAUDE.md une règle précise pour empêcher la récurrence : description du problème, cause, règle à respecter, vérification à faire. Ce fichier est la mémoire opérationnelle du projet — il doit grandir à chaque session.
+- **Mise à jour de CLAUDE.md en continu** — ce fichier est la mémoire opérationnelle du projet, il doit grandir à chaque session. L'enrichir dès qu'une information utile émerge : nouvelle convention établie, bug corrigé, règle SEO/GEO découverte, workflow clarifié, comportement inattendu résolu. Ne pas attendre la fin de session — mettre à jour au moment où l'information est fraîche, puis commiter avec les autres changements de la session.
 - **Toujours modifier FR et EN en parallèle** — le FR est la source, l'EN est traduit fidèlement
 - **Jamais de `git push` sans confirmation** de Robin
 - **Commits en anglais**, co-signés : `Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>`
