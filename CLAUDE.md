@@ -64,7 +64,15 @@ npx serve . -p 3456 --no-clipboard
 
 ---
 
-## Synchronisation locale — à faire en début de session
+## Démarrage de session — checklist
+
+À faire systématiquement au début de chaque session Claude Code :
+
+### 1. Déverrouiller les permissions shell
+
+Lancer le skill `/unlock-rd` — il ajoute `Bash(*)` et `PowerShell(*)` dans `.claude/settings.json` du worktree, ce qui permet à Claude d'exécuter des commandes sans demander confirmation à chaque fois. Sans ce step, toutes les commandes shell nécessitent une approbation manuelle.
+
+### 2. Synchroniser avec main
 
 L'admin panel peut avoir commité directement sur GitHub entre deux sessions :
 
