@@ -27,6 +27,7 @@ Production : https://cv-robin.duale.fr
 
 ## Règles absolues
 
+- **Mise à jour de CLAUDE.md après chaque problème rencontré** — si un bug, une erreur de contenu ou un problème SEO/GEO est détecté et corrigé en session, ajouter immédiatement dans CLAUDE.md une règle précise pour empêcher la récurrence : description du problème, cause, règle à respecter, vérification à faire. Ce fichier est la mémoire opérationnelle du projet — il doit grandir à chaque session.
 - **Toujours modifier FR et EN en parallèle** — le FR est la source, l'EN est traduit fidèlement
 - **Jamais de `git push` sans confirmation** de Robin
 - **Commits en anglais**, co-signés : `Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>`
@@ -345,6 +346,43 @@ Chaque page bilingue (FR + EN) doit avoir un `hreflang="x-default"` pointant ver
 Les scripts `new_article.py` et `publish_article.py` doivent générer ces trois liens. Vérifier systématiquement lors de tout nouvel article ou nouvelle page.
 
 Note : `robots.txt` doit autoriser explicitement — à vérifier une fois par trimestre : `GPTBot`, `ClaudeBot`, `PerplexityBot`, `Google-Extended`, `Amazonbot`, `cohere-ai`
+
+### Meta description — longueur maximale 155 caractères
+
+Google tronque les meta descriptions au-delà de ~155 caractères dans les SERPs. Au-delà de 160 c'est systématiquement coupé.
+
+- **Règle** : toute meta description doit faire entre 130 et 155 caractères.
+- **Vérification** : compter les caractères avant de valider. En Python : `len("texte")`.
+- **S'applique à** : toutes les pages, articles et pages de positionnement, FR et EN.
+- **Cause historique** : les pages Home FR (186 car.) et EN (184 car.) dépassaient la limite — corrigées en mai 2026.
+
+### Title tag — longueur maximale 65 caractères
+
+Google tronque les title tags au-delà de ~65 caractères dans les SERPs (environ 600px de large).
+
+- **Règle** : tout title tag doit faire entre 50 et 65 caractères.
+- **Vérification** : compter les caractères avant de valider.
+- **S'applique à** : toutes les pages, articles et pages de positionnement, FR et EN.
+- **Cause historique** : `fr/ceo-transformation-croissance-b2b-saas-data.html` avait un title à 74 caractères — corrigé en mai 2026.
+- **Rappel** : quand le title change, mettre à jour `og:title` en conséquence sur la même page.
+
+### robots.txt — ne jamais bloquer `/assets/*.mp4`
+
+Le fichier `robots.txt` ne doit pas contenir `Disallow: /assets/*.mp4`. Les vidéos `presentation-fr.mp4` et `presentation-en.mp4` sont référencées dans les schémas `VideoObject` — si Google/Bing ne peut pas les crawler, les schémas ne peuvent jamais être validés.
+
+- **Règle** : `Allow: /assets/*.mp4` (ou absence de règle spécifique sur les mp4).
+- **Vérification** : après toute modification de `robots.txt`, contrôler qu'aucune règle ne bloque `/assets/`.
+- **Cause historique** : `Disallow: /assets/*.mp4` avait été ajouté par erreur — corrigé en mai 2026.
+
+### Liens de sidebar — pas de lien mort, pas de doublon
+
+Les blocs `.geo-list` dans les sidebars des pages de positionnement peuvent contenir des liens morts (vers des pages supprimées ou jamais créées) ou des doublons (même href répété deux fois).
+
+- **Règle** : après toute création, renommage ou suppression de page, grep le slug concerné dans tous les fichiers HTML et corriger les références cassées.
+- **Vérification** : `grep -r "slug-supprime" fr/ en/` — toute occurrence dans un `href` doit être remplacée.
+- **Pas de doublon** : dans un `.geo-list`, chaque lien doit pointer vers une URL unique. Vérifier visuellement les sidebars lors de tout ajout de lien.
+- **FR et EN indépendants** : un lien mort en FR n'implique pas forcément le même problème en EN (les slugs sont différents). Vérifier les deux versions séparément.
+- **Cause historique** : `ia-strategie-saas-b2b.html` (page jamais créée) était référencée dans 2 sidebars FR ; un doublon existait dans `fr/ceo-saas-lbo.html` — corrigés en mai 2026.
 
 ---
 
