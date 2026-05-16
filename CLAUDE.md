@@ -66,6 +66,8 @@ npx serve . -p 3456 --no-clipboard
 
 ## Démarrage de session — checklist
 
+**RÈGLE ABSOLUE : aucun fichier ne doit être lu ou modifié, aucune demande technique ne doit être traitée, avant que les deux étapes ci-dessous soient complétées. Même si l'utilisateur enchaîne directement sur une tâche après /unlock-rd, s'arrêter et faire le sync d'abord.**
+
 À faire systématiquement au début de chaque session Claude Code :
 
 ### 1. Déverrouiller les permissions shell
