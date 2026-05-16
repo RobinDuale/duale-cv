@@ -593,7 +593,8 @@ Google tronque les meta descriptions au-delà de ~155 caractères dans les SERPs
 - **Règle** : toute meta description doit faire entre 130 et 155 caractères.
 - **Vérification** : compter les caractères avant de valider. En Python : `len("texte")`.
 - **S'applique à** : toutes les pages, articles et pages de positionnement, FR et EN.
-- **Cause historique** : les pages Home FR (186 car.) et EN (184 car.) dépassaient la limite — corrigées en mai 2026.
+- **og:description et twitter:description doivent être synchronisés** avec la meta description (même valeur). Si un article a ces trois balises, les mettre à jour ensemble — sinon les anciennes valeurs restent hors-limite et incohérentes.
+- **Cause historique** : pages Home FR (186 car.) et EN (184 car.) corrigées en mai 2026 ; 13 articles sur 18 hors-limite corrigés en mai 2026 (og:description et twitter:description également resynchronisés).
 
 ### Title tag — longueur maximale 60 caractères
 
