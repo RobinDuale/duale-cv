@@ -1,0 +1,77 @@
+name: Daily SEO/GEO Audit
+
+on:
+  schedule:
+    # 7h00 heure de Paris (CEST = UTC+2) → 05:00 UTC
+    - cron: '0 5 * * *'
+  workflow_dispatch:
+    # Permet de lancer l'audit manuellement depuis GitHub Actions
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run SEO/GEO audit
+        id: audit
+        run: python .github/scripts/seo_audit.py
+        continue-on-error: true
+
+      - name: Read audit report
+        id: report
+        run: |
+          if [ -f /tmp/seo_audit_report.html ]; then
+            echo "report_exists=true" >> $GITHUB_OUTPUT
+            # Convert HTML to plain text for email body fallback
+            python3 -c "
+import re
+with open('/tmp/seo_audit_report.html') as f:
+    html = f.read()
+text = re.sub(r'<[^>]+>', '', html)
+text = re.sub(r'\n{3,}', '\n\n', text)
+print(text[:8000])
+" > /tmp/report_text.txt
+          fi
+
+      - name: Send audit report by email
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          secure: false
+          username: ${{ secrets.GMAIL_USERNAME }}
+          password: ${{ secrets.GMAIL_APP_PASSWORD }}
+          subject: "[${{ steps.audit.outputs.avail == 'down' && '🔴 SITE DOWN' || steps.audit.outputs.n_critical > 0 && '🟠 Alerte SEO' || '✅ RAS' }}] Audit SEO cv-robin.duale.fr — ${{ env.AUDIT_DATE }}"
+          to: robin@duale.fr
+          from: Audit SEO CV Robin <${{ secrets.GMAIL_USERNAME }}>
+          html_body: file:///tmp/seo_audit_report.html
+          body: file:///tmp/report_text.txt
+        env:
+          AUDIT_DATE: ${{ steps.get_date.outputs.date }}
+
+      - name: Get date
+        id: get_date
+        run: echo "date=$(TZ='Europe/Paris' date +'%d/%m/%Y')" >> $GITHUB_OUTPUT
+
+      - name: Create GitHub issue if site is down
+        if: steps.audit.outputs.avail == 'down'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: '🔴 Site inaccessible — ' + new Date().toLocaleDateString('fr-FR'),
+              body: 'Le monitoring quotidien a détecté que **https://cv-robin.duale.fr** ne répond pas correctement.\n\nVérifier GitHub Pages et le DNS.\n\n_Créé automatiquement par le workflow Daily SEO Audit._',
+              labels: ['bug', 'urgent']
+            })
