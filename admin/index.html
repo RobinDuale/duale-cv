@@ -359,11 +359,14 @@ function login() {
   if (!t) { err.textContent = 'Entrez votre token GitHub.'; err.style.display = 'block'; return; }
   err.style.display = 'none';
   localStorage.setItem('gh_token', t);
+  // Cookie partagé .duale.fr -> débloque aussi ia.duale.fr
+  document.cookie = 'admin_duale=1; domain=.duale.fr; path=/; max-age=86400; SameSite=Lax';
   showList();
 }
 
 function logout() {
   localStorage.removeItem('gh_token');
+  document.cookie = 'admin_duale=; domain=.duale.fr; path=/; max-age=0';
   show('screen-login');
   document.getElementById('token-github').value = '';
 }
