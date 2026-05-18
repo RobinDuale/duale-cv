@@ -433,6 +433,8 @@ body {
   .nav-links.open { display: flex; }
   .nav-divider { display: none; }
   .lang-switcher { margin-top: 4px; }
+  .page-header { flex-wrap: wrap !important; }
+  .page-header-cta { width: 100% !important; margin-right: 0 !important; margin-top: 20px; }
 }
 
 @media (max-width: 480px) {
