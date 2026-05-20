@@ -137,6 +137,14 @@
     .loading   { color:#999; font-size:14px; padding:24px 0; }
     .msg-error { color:#c0392b; font-size:14px; padding:24px 0; }
     [hidden]   { display:none !important; }
+
+    /* ── NAV BUTTONS ── */
+    .btn-home { display:flex; align-items:center; justify-content:center; background:none; border:none; color:#888; padding:6px 8px; cursor:pointer; text-decoration:none; border-radius:3px; flex-shrink:0; }
+    .btn-home:hover { color:#fff; background:#2e2a24; }
+    .btn-home svg { display:block; }
+    .btn-prod-link { display:inline-flex; align-items:center; color:#666; text-decoration:none; padding:3px 5px; border-radius:3px; flex-shrink:0; }
+    .btn-prod-link:hover { color:#9a7228; }
+    .editor-header-right { display:flex; align-items:center; flex:1; min-width:0; gap:4px; }
   </style>
 </head>
 <body>
@@ -169,6 +177,9 @@
 ══════════════════════════════════════ -->
 <div id="screen-list" hidden>
   <div class="admin-header">
+    <a class="btn-home" href="https://cv-robin.duale.fr/fr/" target="_blank" title="Site principal">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    </a>
     <span class="admin-brand">Robin Dualé · Admin</span>
     <button class="btn-logout" onclick="logout()">Déconnexion</button>
   </div>
@@ -243,8 +254,16 @@
 ══════════════════════════════════════ -->
 <div id="screen-editor" hidden>
   <div class="admin-header">
+    <a class="btn-home" href="https://cv-robin.duale.fr/fr/" target="_blank" title="Site principal">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    </a>
     <button class="btn-back" onclick="showList()">← Articles</button>
-    <span class="editor-header-title" id="editor-header-title"></span>
+    <div class="editor-header-right">
+      <span class="editor-header-title" id="editor-header-title"></span>
+      <a class="btn-prod-link" id="editor-prod-link" href="#" target="_blank" title="Voir en production" hidden>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+    </div>
     <button class="btn-draft" id="btn-draft" onclick="saveDraft()">Enregistrer</button>
     <button class="btn-save" id="btn-push" onclick="pushArticle()" hidden>Pousser FR</button>
     <button class="btn-save" id="btn-save" onclick="publishArticle()">Publier FR</button>
@@ -477,6 +496,9 @@ async function editArticle(idx) {
   currentArticleSlug  = a.slug_fr;
   currentArticleDraft = !!a.draft;
   document.getElementById('editor-header-title').textContent = a.title_fr;
+  const prodLink = document.getElementById('editor-prod-link');
+  prodLink.href = `https://cv-robin.duale.fr/fr/perspectives/${a.slug_fr}.html`;
+  prodLink.hidden = !!a.draft;
   document.getElementById('editor-body').innerHTML = '<em style="color:#aaa">Chargement…</em>';
   document.getElementById('field-title').value    = '';
   document.getElementById('field-subtitle').value = '';
