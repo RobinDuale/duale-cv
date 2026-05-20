@@ -93,7 +93,7 @@ Utiliser `class="nav-link active"` sur le lien Perspectives pour tous les nouvea
 ### Le haut de bilan expliqué aux CEOs -- Financement, gouvernance, management package, sortie : les mécanismes qui structurent la relation avec un investisseur
 
 - **Date publiee :** 19 mai 2026
-- **dateModified :** 2026-05-19T00:00:00+02:00 (titre et sous-titre H1 modifies via admin ; derniere section condensee/reecrite ; artefacts data-start/data-end nettoyes ; p-ul invalide corriges ; b->strong ; traduction EN synchronisee ; perspectives.json mis a jour)
+- **dateModified :** 2026-05-20T00:00:00+02:00 (illustration mise a jour illus-haut-de-bilan-ceo.png ; chapô : virgule apres "oui" ; 4 balises p converties en h3 pour les couches dette senior/mezzanine/equity/management package ; traduction EN synchronisee)
 - **Slug FR :** `fr/perspectives/haut-de-bilan-ceo-investisseur.html`
 - **Slug EN :** `en/perspectives/ceo-capital-structure-guide.html`
 - **Title EN :** Capital structure explained to CEOs -- Financing, governance, management package, exit: the mechanics that structure the relationship with an investor
