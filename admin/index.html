@@ -104,6 +104,7 @@
     .editor-body { background:#fff; border:1px solid #d0c9bc; border-top:none; border-radius:0 0 3px 3px; padding:24px 28px; min-height:400px; outline:none; line-height:1.78; font-size:15px; color:#1a1712; }
     .editor-body:focus { border-color:#9a7228; }
     .editor-body h2 { font-size:18px; font-weight:600; margin:28px 0 12px; }
+    .editor-body h3 { font-size:16px; font-weight:600; margin:20px 0 8px; color:#4a4030; }
     .editor-body p { margin-bottom:14px; }
     .editor-body p:last-child { margin-bottom:0; }
     .editor-body a { color:#9a7228; }
@@ -313,6 +314,7 @@
           <button onclick="fmt('italic')"><em>I</em></button>
           <div class="toolbar-sep"></div>
           <button onclick="fmt('formatBlock','h2')">H2</button>
+          <button onclick="fmt('formatBlock','h3')">H3</button>
           <button onclick="fmt('formatBlock','p')">¶ Para</button>
           <div class="toolbar-sep"></div>
           <button onclick="insertLink()">Lien</button>
@@ -736,7 +738,7 @@ function indentPara() {
   if (!sel.rangeCount) return;
   let node = sel.anchorNode;
   while (node && node !== editor) {
-    if (node.nodeType === 1 && /^(P|DIV|H2|BLOCKQUOTE)$/.test(node.tagName)) break;
+    if (node.nodeType === 1 && /^(P|DIV|H2|H3|BLOCKQUOTE)$/.test(node.tagName)) break;
     node = node.parentNode;
   }
   if (!node || node === editor) return;

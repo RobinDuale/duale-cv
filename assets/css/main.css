@@ -609,6 +609,10 @@ body.lightbox-open .hamburger { opacity: 0 !important; pointer-events: none; }
   font-family: var(--sans); font-size: 13px; letter-spacing: 0.18em;
   text-transform: uppercase; color: var(--gold); margin: 36px 0 16px;
 }
+.article-body h3 {
+  font-family: var(--sans); font-size: 15px; font-weight: 600;
+  color: var(--ink); margin: 24px 0 10px;
+}
 .article-back {
   font-family: var(--sans); font-size: 12px; letter-spacing: 0.12em;
   text-transform: uppercase; color: var(--ink-60); text-decoration: none;
