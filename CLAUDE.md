@@ -411,16 +411,18 @@ IndexNow notifie Bing et Yandex de toute mise à jour du site. La configuration 
 
 **Clé IndexNow** : `A8A911547D7C17BDDBE856B293F83A46`
 
-**Lancer après chaque `git push`** (depuis Git Bash ou le terminal Bash) :
+**Automatisé via hook PostToolUse** (depuis mai 2026) : un hook Claude Code dans `.claude/settings.json` lance automatiquement `bash indexnow-ping.sh` après chaque `git push origin`. Aucune action manuelle nécessaire.
+
+Réponses attendues : Bing `HTTP 200`, Yandex `HTTP 202` (ou `{"success":true}`).
+
+Le script envoie toutes les URLs en une seule requête POST — pas besoin de cibler des pages spécifiques.
+
+**Si besoin de relancer manuellement** (ex : hook inactif, nouvelle session) :
 ```bash
 bash indexnow-ping.sh
 ```
 
-Réponses attendues : Bing `HTTP 200`, Yandex `HTTP 202` (ou `{"success":true}`).
-
-Le script envoie toutes les URLs en une seule requête POST — pas besoin de cibler des pages spécifiques. Quand une page est modifiée, relancer le script complet : les moteurs ne réindexent que ce qui a changé.
-
-**Quand le lancer manuellement** : pour les modifications de pages non-article (CSS, UI, pages statiques). Pour les articles, les skills `/publish-article` et `/sync-admin` s'occupent déjà du ping IndexNow — ne pas le relancer en double.
+**Note** : ne pas lancer manuellement si le hook vient de s'exécuter — ce serait un double ping. Les skills `/publish-article` et `/sync-admin` déclenchent un `git push`, donc le hook s'en charge automatiquement.
 
 **Note** : Google ne supporte pas IndexNow — il est notifié via Google Search Console (sitemap) et Discovery naturelle.
 
