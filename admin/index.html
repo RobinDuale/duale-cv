@@ -471,7 +471,8 @@ async function showList() {
                 ${a.title_fr}${a.subtitle_fr ? ' <em style="color:#9a7228">' + a.subtitle_fr + '</em>' : ''}
                 <small>${a.title_en}</small>
               </td>
-              <td style="text-align:right">
+              <td style="text-align:right;white-space:nowrap;display:flex;align-items:center;justify-content:flex-end;gap:6px;">
+                ${!a.draft ? `<a href="https://cv-robin.duale.fr/fr/perspectives/${a.slug_fr}.html" target="_blank" class="btn-prod-link" title="Voir en production" style="padding:5px 7px;border:1px solid #d0c9bc;border-radius:3px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>` : ''}
                 <button class="btn-edit" onclick="editArticle(${i})">Modifier &rarr;</button>
               </td>
             </tr>
