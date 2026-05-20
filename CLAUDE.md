@@ -335,9 +335,35 @@ Le script filtre automatiquement les drafts (`draft: true`) et affiche les 3 der
 
 ---
 
-## Convention — alignement bouton dans le page-header (colonne droite)
+## Convention — bouton CTA dans le page-header des articles
 
-Le `page-header` a un `padding-right: 56px`. La colonne de droite du layout principal fait `320px`. Pour qu'un bouton placé dans le `page-header` s'aligne visuellement avec la colonne de droite, utiliser ce wrapper :
+### Approche `position:absolute` (articles — depuis mai 2026)
+
+Pour les **articles** (`fr/perspectives/*.html`, `en/perspectives/*.html`), le bouton CTA dans le `page-header` utilise `position:absolute` via la classe `.page-header-cta` :
+
+```html
+<div class="page-header">
+  <p class="page-eyebrow">...</p>
+  <h1 class="page-title">...</h1>
+  <div class="page-header-cta">
+    <a class="btn-outline" href="...">Libellé bouton</a>
+  </div>
+</div>
+```
+
+Le CSS correspondant (dans `main.css`) :
+```css
+.page-header { position: relative; }
+.page-header-cta { position: absolute; top: 56px; right: 56px; width: 320px; display: flex; justify-content: center; }
+```
+
+**Règle critique** : ne jamais ajouter `display:flex` en inline sur `.page-header`, et ne jamais utiliser `margin-right:-56px` sur le wrapper du CTA dans les articles. Ces deux patterns causaient un débordement horizontal à viewport intermédiaire (750-1150px). L'approche `position:absolute` résout le problème.
+
+Le `.page-header-cta` est masqué automatiquement via `@media (max-width: 1200px) { .page-header-cta { display: none !important; } }`.
+
+### Approche inline wrapper (autres pages)
+
+Pour les pages hors articles (À propos, Parcours, Témoignages, Perspectives index), le pattern inline avec `margin-right:-56px` reste utilisé (pas de problème responsive sur ces pages car elles n'ont pas le même layout two-col) :
 
 ```html
 <div style="margin-right:-56px;width:320px;display:flex;justify-content:center;flex-shrink:0;">
@@ -345,7 +371,15 @@ Le `page-header` a un `padding-right: 56px`. La colonne de droite du layout prin
 </div>
 ```
 
-Le `margin-right:-56px` absorbe le padding du parent et aligne le bord droit du wrapper avec le bord droit de la colonne de contenu. S'applique à toutes les pages avec un bouton en haut à droite du `page-header` (À propos, Parcours, Témoignages, Perspectives index, et tous les articles).
+---
+
+## Navigation responsive — breakpoint hamburger
+
+**Breakpoint hamburger : 1200px** (depuis mai 2026).
+
+En dessous de 1200px de largeur de viewport : le menu hamburger s'affiche, les `.nav-links` se replient en dropdown, le `.page-header-cta` est masqué. Au-dessus de 1200px : navigation complète visible.
+
+Ce breakpoint a été choisi pour éviter les conflits de layout entre la navigation complète et le `page-header` des articles sur tablettes et petits laptops. Ne pas revenir à 1024px ou 680px sans revalider le layout article.
 
 ---
 
