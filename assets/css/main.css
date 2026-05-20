@@ -627,7 +627,7 @@ body.lightbox-open .hamburger { opacity: 0 !important; pointer-events: none; }
 .article-body ul { list-style: disc; }
 .article-body ol { list-style: decimal; }
 .article-body li {
-  font-size: 15px; color: var(--ink); line-height: 1.7; margin-bottom: 6px;
+  font-family: var(--serif); font-size: 16px; color: var(--ink-60); line-height: 1.8; margin-bottom: 6px;
 }
 .article-body li:last-child { margin-bottom: 0; }
 .article-body p[style*="padding-left:"] { padding-left: 22px !important; margin-bottom: 14px; }
