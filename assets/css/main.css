@@ -272,7 +272,7 @@ body {
 
 /* ── MISC ── */
 .lead { font-family: var(--serif); font-size: 18px; font-weight: 400; line-height: 1.75; color: var(--ink); font-style: italic; border-left: 2px solid var(--gold); padding-left: 22px; margin-bottom: 32px; }
-.body-text { font-family: var(--serif); font-size: 17px; color: var(--ink-60); line-height: 1.85; margin-bottom: 24px; }
+.body-text { font-family: var(--serif); font-size: 17px; color: var(--ink-60); line-height: 1.85; margin-bottom: 16px; }
 .body-text strong { font-weight: 600; color: var(--ink); }
 .divider { border: none; border-top: 0.5px solid var(--gold-border); margin: 32px 0; }
 .section-title { font-family: var(--sans); font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
