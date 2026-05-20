@@ -94,13 +94,14 @@
     .takeaways-inputs textarea:focus { border-color:#9a7228; }
 
     /* ── TOOLBAR ── */
-    .editor-toolbar { display:flex; gap:4px; padding:6px 8px; background:#faf9f6; border:1px solid #d0c9bc; border-bottom:none; border-radius:3px 3px 0 0; flex-wrap:wrap; }
+    .editor-toolbar { display:flex; gap:4px; padding:6px 8px; background:#faf9f6; border:1px solid #d0c9bc; border-radius:3px 3px 0 0; flex-wrap:wrap; position:sticky; top:52px; z-index:50; }
+    .editor-toolbar.stuck { box-shadow:0 3px 10px rgba(0,0,0,.13); border-radius:3px; }
     .editor-toolbar button { padding:4px 10px; border:1px solid transparent; border-radius:2px; background:none; font-family:'Jost',sans-serif; font-size:13px; cursor:pointer; color:#444; }
     .editor-toolbar button:hover { background:#e8e2d6; border-color:#c8c0b0; }
     .toolbar-sep { width:1px; background:#d0c9bc; margin:2px 4px; }
 
     /* ── EDITOR BODY ── */
-    .editor-body { background:#fff; border:1px solid #d0c9bc; border-radius:0 0 3px 3px; padding:24px 28px; min-height:400px; outline:none; line-height:1.78; font-size:15px; color:#1a1712; }
+    .editor-body { background:#fff; border:1px solid #d0c9bc; border-top:none; border-radius:0 0 3px 3px; padding:24px 28px; min-height:400px; outline:none; line-height:1.78; font-size:15px; color:#1a1712; }
     .editor-body:focus { border-color:#9a7228; }
     .editor-body h2 { font-size:18px; font-weight:600; margin:28px 0 12px; }
     .editor-body p { margin-bottom:14px; }
@@ -737,6 +738,17 @@ function setStatus(msg, type) {
     el.classList.remove('visible');
   }
 }
+
+// ─────────────────────────────────────────────
+// STICKY TOOLBAR
+// ─────────────────────────────────────────────
+(function() {
+  const toolbar = document.querySelector('.editor-toolbar');
+  if (!toolbar) return;
+  window.addEventListener('scroll', function() {
+    toolbar.classList.toggle('stuck', toolbar.getBoundingClientRect().top <= 52);
+  }, { passive: true });
+})();
 
 // ─────────────────────────────────────────────
 // INIT
