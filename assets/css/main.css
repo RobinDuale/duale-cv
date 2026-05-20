@@ -401,7 +401,7 @@ body {
   justify-content: center;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .page-header-cta { display: none !important; }
 }
 
@@ -428,7 +428,7 @@ body {
   .hero-left { padding: 40px 24px; }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .hamburger { display: flex; }
   .nav { position: relative; }
   .nav-links {
