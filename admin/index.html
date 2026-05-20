@@ -245,6 +245,7 @@
     <button class="btn-back" onclick="showList()">← Articles</button>
     <span class="editor-header-title" id="editor-header-title"></span>
     <button class="btn-draft" id="btn-draft" onclick="saveDraft()">Enregistrer</button>
+    <button class="btn-save" id="btn-push" onclick="pushArticle()" hidden>Pousser FR</button>
     <button class="btn-save" id="btn-save" onclick="publishArticle()">Publier FR</button>
   </div>
   <div class="page-body">
@@ -482,6 +483,7 @@ async function editArticle(idx) {
   document.getElementById('progress-note').hidden = true;
   document.getElementById('step-json').hidden     = true;
   document.getElementById('btn-save').hidden      = !currentArticleDraft;
+  document.getElementById('btn-push').hidden      = currentArticleDraft;
   setStatus('');
   setStep('fr', '');
 
@@ -554,6 +556,39 @@ async function saveDraft() {
     setStatus(`Erreur : ${e.message}`, 'error');
   } finally {
     draftBtn.disabled = saveBtn.disabled = false;
+  }
+}
+
+// ─────────────────────────────────────────────
+// PUSH — commit HTML seulement (article déjà publié, modif légère)
+// ─────────────────────────────────────────────
+async function pushArticle() {
+  const pushBtn = document.getElementById('btn-push');
+  const draftBtn = document.getElementById('btn-draft');
+  const title    = document.getElementById('field-title').value.trim();
+  const subtitle = document.getElementById('field-subtitle').value.trim();
+  const meta     = document.getElementById('field-meta').value.trim();
+  const body     = document.getElementById('editor-body').innerHTML;
+  const _now = new Date();
+  const _tz = _now.getTimezoneOffset() === -120 ? '+02:00' : '+01:00';
+  const today = _now.toISOString().slice(0,10) + 'T00:00:00' + _tz;
+  const takeaways = ['tk-1','tk-2','tk-3','tk-4'].map(id => document.getElementById(id).value.trim());
+  const ctaTitle  = document.getElementById('field-cta-title').value.trim();
+  const ctaText   = document.getElementById('field-cta').value.trim();
+
+  pushBtn.disabled = draftBtn.disabled = true;
+  setStatus('');
+
+  try {
+    const newHtml = buildUpdatedHtml(currentFr.html, title, subtitle, meta, body, today, takeaways, ctaTitle, ctaText);
+    const res     = await ghPut(currentFr.path, newHtml, currentFr.sha, `Update FR: ${title}`);
+    currentFr.sha  = res.content.sha;
+    currentFr.html = newHtml;
+    setStatus('Poussé sur GitHub. Pensez à /sync-admin pour la version EN.', 'success');
+  } catch(e) {
+    setStatus(`Erreur : ${e.message}`, 'error');
+  } finally {
+    pushBtn.disabled = draftBtn.disabled = false;
   }
 }
 
