@@ -428,7 +428,7 @@ body {
   .hero-left { padding: 40px 24px; }
 }
 
-@media (max-width: 680px) {
+@media (max-width: 1024px) {
   .hamburger { display: flex; }
   .nav { position: relative; }
   .nav-links {
@@ -448,7 +448,6 @@ body {
   .nav-links.open { display: flex; }
   .nav-divider { display: none; }
   .lang-switcher { margin-top: 4px; }
-  .page-header-cta { width: 100% !important; margin-top: 20px; }
 }
 
 @media (max-width: 480px) {
