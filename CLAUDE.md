@@ -266,6 +266,39 @@ Les pages EN ont des noms différents des pages FR. Utiliser **exactement** ces 
 
 ---
 
+## Barre de partage et impression (articles Perspectives)
+
+Tous les articles `fr/perspectives/*.html` et `en/perspectives/*.html` disposent d'une barre de partage en deux emplacements :
+
+1. **Barre compacte (icônes seules)** — entre `.article-meta` et `.article-body`
+2. **Bloc "partager" étendu** — à l'intérieur de `.article-body`, juste avant `.article-cta`
+
+### Actions disponibles
+
+LinkedIn, X/Twitter, Facebook, WhatsApp, Email (`mailto:`), Copier le lien (Clipboard API), Imprimer (`window.print()`)
+
+### Fonctionnement technique
+
+- Le HTML est identique sur tous les articles (les `href` sont `#` à la source)
+- `main.js` initialise les URLs au chargement depuis les balises `og:url` et `og:title` déjà présentes
+- Classes JS : `js-share-linkedin`, `js-share-x`, `js-share-facebook`, `js-share-whatsapp`, `js-share-email`, `js-share-copy`, `js-share-print`
+- Bouton "Copier le lien" : utilise `navigator.clipboard`, affiche un tooltip CSS via `.copied` + `data-copied="Lien copié !"` (FR) ou `"Link copied!"` (EN) pendant 2s
+- CSS d'impression : `.nav`, `.page-header-cta`, `.side-col`, `.article-share`, `.article-cta`, `#cookie-banner`, `.footer` masqués via `@media print`
+
+### Templates `new_article.py`
+
+`new_article.py` génère automatiquement les deux barres (FR) via les constantes `SHARE_TOP_FR` et `SHARE_BOTTOM_FR` définies en tête du script.
+
+### Articles EN (création manuelle)
+
+Lors de la création d'un article EN (workflow `/publish-article`), inclure les deux barres EN — copier depuis n'importe quel article EN existant. Différences FR/EN :
+- Label : `"Partager"` (FR) vs `"Share"` (EN)
+- `aria-label` : en français vs en anglais
+- `data-copied="Lien copié !"` (FR) vs `data-copied="Link copied!"` (EN)
+- Titre bloc bas : `"Cet article vous a plu ? Partagez-le."` (FR) vs `"Found this useful? Share it."` (EN)
+
+---
+
 ## Lightbox — images et carousel
 
 Le site dispose d'un système lightbox implémenté dans `assets/js/main.js` (IIFE en bas de fichier) et `assets/css/main.css`.

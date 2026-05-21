@@ -718,3 +718,59 @@ body.lightbox-open .hamburger { opacity: 0 !important; pointer-events: none; }
 .nav-edu-logos { display: flex; align-items: center; gap: 12px; padding-left: 16px; border-left: 0.5px solid var(--gold-border); }
 .nav-edu-logo { max-height: 22px; width: auto; max-width: 68px; object-fit: contain; }
 @media (max-width: 900px) { .nav-edu-logos { display: none; } }
+
+/* ── ARTICLE SHARE BAR ── */
+.article-share {
+  display: flex; align-items: center; gap: 16px;
+  padding: 11px 0;
+  border-top: 0.5px solid var(--gold-border);
+  border-bottom: 0.5px solid var(--gold-border);
+  margin: 0 0 32px;
+}
+.article-share-label {
+  font-family: var(--sans); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); flex-shrink: 0;
+}
+.article-share-title {
+  font-family: var(--sans); font-size: 15px; font-weight: 500; color: var(--ink); margin: 0;
+}
+.article-share-actions { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+.article-share-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  height: 34px; padding: 0 8px; border-radius: 4px; color: var(--ink-60);
+  background: transparent; border: none; cursor: pointer;
+  transition: color 0.15s, background 0.15s; text-decoration: none;
+  font-family: var(--sans); font-size: 12px; letter-spacing: 0.04em;
+  white-space: nowrap; position: relative;
+}
+.article-share-btn:hover { color: var(--gold); background: var(--cream-dark); }
+.article-share-btn.copied { color: var(--gold); }
+.article-share:not(.article-share--bottom) .article-share-btn span { display: none; }
+.article-share:not(.article-share--bottom) .article-share-btn { padding: 0 7px; }
+.article-share--bottom {
+  flex-direction: column; align-items: flex-start; gap: 14px;
+  padding: 22px 28px; background: var(--cream-dark); border-radius: 4px;
+  margin: 32px 0 0; border-top: none; border-bottom: none;
+}
+.article-share--bottom .article-share-actions { gap: 8px; }
+.article-share--bottom .article-share-btn {
+  border: 0.5px solid var(--gold-border); padding: 0 14px; color: var(--ink-60);
+}
+.article-share--bottom .article-share-btn:hover {
+  background: var(--cream); color: var(--gold); border-color: var(--gold-mid);
+}
+.article-share-btn.js-share-copy.copied::after {
+  content: attr(data-copied); position: absolute; bottom: calc(100% + 5px);
+  left: 50%; transform: translateX(-50%); background: var(--ink); color: var(--cream);
+  font-size: 11px; letter-spacing: 0.06em; padding: 3px 8px; border-radius: 3px;
+  white-space: nowrap; pointer-events: none; z-index: 10;
+}
+
+/* ── PRINT STYLES ── */
+@media print {
+  .nav, .page-header-cta, .side-col, .article-share, .article-cta,
+  #cookie-banner, .footer { display: none !important; }
+  .two-col { display: block; }
+  .main-col { padding: 24px 0; border: none; }
+  body { max-width: none; box-shadow: none; }
+}

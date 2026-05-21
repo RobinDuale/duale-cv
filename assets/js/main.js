@@ -131,6 +131,42 @@ function refuseCookies() {
   });
 })();
 
+// ── SHARE BAR ──
+document.addEventListener('DOMContentLoaded', () => {
+  const ogUrl = document.querySelector('meta[property="og:url"]');
+  if (!ogUrl) return;
+  const url = encodeURIComponent(ogUrl.content);
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+  const title = encodeURIComponent((ogTitle ? ogTitle.content : document.title).replace(/\s*·\s*Robin Dualé\s*$/, ''));
+
+  document.querySelectorAll('.js-share-linkedin').forEach(el => {
+    el.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + url;
+  });
+  document.querySelectorAll('.js-share-x').forEach(el => {
+    el.href = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + title;
+  });
+  document.querySelectorAll('.js-share-facebook').forEach(el => {
+    el.href = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
+  });
+  document.querySelectorAll('.js-share-whatsapp').forEach(el => {
+    el.href = 'https://api.whatsapp.com/send?text=' + title + '%20' + url;
+  });
+  document.querySelectorAll('.js-share-email').forEach(el => {
+    el.href = 'mailto:?subject=' + title + '&body=' + url;
+  });
+  document.querySelectorAll('.js-share-copy').forEach(btn => {
+    btn.addEventListener('click', () => {
+      navigator.clipboard.writeText(ogUrl.content).then(() => {
+        btn.classList.add('copied');
+        setTimeout(() => btn.classList.remove('copied'), 2000);
+      }).catch(() => {});
+    });
+  });
+  document.querySelectorAll('.js-share-print').forEach(btn => {
+    btn.addEventListener('click', () => window.print());
+  });
+});
+
 // ── HAMBURGER MENU ──
 document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.getElementById('hamburger');
