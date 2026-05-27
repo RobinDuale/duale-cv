@@ -601,7 +601,6 @@ Pour les articles EN, adapter les URLs :
 
 - `new_article.py` génère déjà ces deux champs correctement pour le FR.
 - Lors de la création manuelle de l'article EN (dans le workflow `/publish-article`), inclure ces champs EN.
-- **Cause historique** : les articles n'avaient pas `isPartOf` et le `publisher` était trop pauvre — corrigés en mai 2026.
 
 ### `subjectOf` Blog dans le schema Person des home pages — à maintenir
 
@@ -665,7 +664,6 @@ Google tronque les meta descriptions au-delà de ~155 caractères dans les SERPs
 - **Vérification** : compter les caractères avant de valider. En Python : `len("texte")`.
 - **S'applique à** : toutes les pages, articles et pages de positionnement, FR et EN.
 - **og:description et twitter:description doivent être synchronisés** avec la meta description (même valeur). Si un article a ces trois balises, les mettre à jour ensemble — sinon les anciennes valeurs restent hors-limite et incohérentes.
-- **Cause historique** : pages Home FR (186 car.) et EN (184 car.) corrigées en mai 2026 ; 13 articles sur 18 hors-limite corrigés en mai 2026 (og:description et twitter:description également resynchronisés).
 
 ### Title tag — longueur maximale 60 caractères
 
@@ -675,7 +673,6 @@ Google tronque les title tags au-delà de ~65 caractères (600px). Bing avertit 
 - **Préférer les titres descriptifs avec le mot-clé principal** plutôt que les titres accrocheurs/teasers — Google réécrit les titres non descriptifs dans les SERPs, et les titres avec keyword en tête performent mieux sur les deux moteurs.
 - **Vérification** : compter les caractères avant de valider.
 - **S'applique à** : toutes les pages, articles et pages de positionnement, FR et EN.
-- **Cause historique** : `fr/ceo-transformation-croissance-b2b-saas-data.html` avait un title à 74 caractères — corrigé en mai 2026.
 - **Rappel** : quand le title change, mettre à jour `og:title` en conséquence sur la même page.
 
 ### robots.txt — ne jamais bloquer `/assets/*.mp4`
@@ -684,7 +681,6 @@ Le fichier `robots.txt` ne doit pas contenir `Disallow: /assets/*.mp4`. Les vid�
 
 - **Règle** : `Allow: /assets/*.mp4` (ou absence de règle spécifique sur les mp4).
 - **Vérification** : après toute modification de `robots.txt`, contrôler qu'aucune règle ne bloque `/assets/`.
-- **Cause historique** : `Disallow: /assets/*.mp4` avait été ajouté par erreur — corrigé en mai 2026.
 
 ### Liens de sidebar — pas de lien mort, pas de doublon
 
@@ -694,7 +690,29 @@ Les blocs `.geo-list` dans les sidebars des pages de positionnement peuvent cont
 - **Vérification** : `grep -r "slug-supprime" fr/ en/` — toute occurrence dans un `href` doit être remplacée.
 - **Pas de doublon** : dans un `.geo-list`, chaque lien doit pointer vers une URL unique. Vérifier visuellement les sidebars lors de tout ajout de lien.
 - **FR et EN indépendants** : un lien mort en FR n'implique pas forcément le même problème en EN (les slugs sont différents). Vérifier les deux versions séparément.
-- **Cause historique** : `ia-strategie-saas-b2b.html` (page jamais créée) était référencée dans 2 sidebars FR ; un doublon existait dans `fr/ceo-saas-lbo.html` — corrigés en mai 2026.
+
+---
+
+## Style éditorial — principes fondamentaux
+
+**S'applique à tout contenu produit pour cv-robin.duale.fr.** Le guide complet (interdictions rhétoriques, formulations interdites, interdictions LLM) est embarqué dans le skill `/new-article`.
+
+**Audience** : dirigeants, investisseurs, membres de board. Lecteur supposé expérimenté — pas de vulgarisation ni de sur-explication.
+
+**Registre** : note stratégique, mémo de réflexion, analyse issue de l'expérience. Jamais un contenu marketing, une publication LinkedIn, un article de cabinet de conseil.
+
+**Style** : analytique, calme, direct, sobre. Phrases courtes à moyennes, verbes concrets, logique explicite. Aucune phrase destinée à devenir une citation.
+
+**Interdictions strictes :**
+- Structures rhétoriques : « ce n'est pas..., c'est... », « la vraie question n'est pas... », « plus que », « davantage que »
+- Formulations interdites : « plus que jamais », « a l'heure ou », « creer de la valeur », « scalable », « agile », « resilient », « mutation », « rupture », « vision », « repenser », « reinventer »
+- Anthropomorphismes : « le marche veut », « la donnee raconte », « la technologie permet de rever »
+- Questions rhétoriques, storytelling visible, pédagogie artificielle, emphase émotionnelle
+- Triades automatiques, symétries de phrase, abstractions vagues, généralisations définitives
+
+**Densité** : chaque paragraphe apporte une idée réelle. Supprimer les phrases de remplissage, les transitions vides, les banalités managériales.
+
+**Référence** : le texte doit sembler écrit par un dirigeant après plusieurs années d'expérience, avec recul, sans volonté de démonstration.
 
 ---
 
