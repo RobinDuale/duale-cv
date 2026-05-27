@@ -160,6 +160,81 @@ Si un article est ajouté ou si une date est modifiée, vérifier que l'ordre ch
 
 ---
 
+## Modes de conversation éditoriaux — IDÉATION et RÉDACTION
+
+Ce projet opère en deux modes distincts selon le contexte de conversation.
+Les conversations IDÉATION et RÉDACTION se déroulent dans **claude.ai (projet)**,
+pas dans Claude Code — Claude Code prend le relais pour les étapes de déploiement.
+
+---
+
+### Conversation IDÉATION
+
+**Déclencheur** : message sans plan structuré, idée brute, demande de propositions,
+ou mots-clés "nouveau sujet", "nouvelle idée", "idée d'article".
+
+**Ce que produit une conversation IDÉATION :**
+
+1. Proposer 3 à 5 idées d'articles (ou travailler l'idée apportée) — pour chaque idée :
+   titre provisoire, angle, catégorie, complémentarité avec les articles existants
+2. Une fois le sujet retenu, affiner l'angle si nécessaire
+3. Valider le plan complet : H1 + sous-titre, chapô, liste des H2 avec intention par section,
+   CTA envisagé, tags, longueur cible, description de l'illustration
+4. [VALIDATION] — attendre avant de continuer
+5. Générer le prompt de lancement formaté pour la conversation RÉDACTION
+
+**Format du prompt de lancement :**
+
+```
+Nouvel article — [Titre H1]
+Angle : [résumé en 2 phrases]
+Catégorie / Tags : [ex: M&A · Intégration]
+Chapô envisagé : [2-3 phrases]
+Plan validé :
+- H2 1 : [titre + intention en une phrase]
+- H2 2 : [titre + intention en une phrase]
+- H2 3 : [titre + intention en une phrase]
+Longueur cible : [X min de lecture / ~X mots]
+CTA contextuel : [titre envisagé]
+Illustration : [description pour commande DALL-E]
+Lance la rédaction en français en respectant la charte éditoriale du projet.
+```
+
+---
+
+### Conversation RÉDACTION
+
+**Déclencheur** : message contenant un plan structuré validé (H1, H2, angle, chapô)
+— généralement le prompt de lancement produit en IDÉATION.
+
+**Workflow en 10 étapes — jalons de validation aux étapes 1 à 5 :**
+
+| # | Étape | Validation requise |
+|---|-------|--------------------|
+| 1 | Rédiger l'article complet en français | [VALIDATION] |
+| 2 | Produire la traduction anglaise (ton légèrement plus direct, structure identique) | [VALIDATION] |
+| 3 | Générer les fichiers HTML (FR + EN) calqués sur l'article de référence | [VALIDATION] |
+| 4 | Générer les prompts d'illustration DALL-E (format cible 1792x1024, redimensionné à 800x420) — réutilisables comme visuels LinkedIn. Style de référence : fond sombre, typographie or/blanc, structure visuelle en marches empilées | [VALIDATION après génération et approbation de l'image] |
+| 5 | Rédiger la publication LinkedIn en français | [VALIDATION] |
+| 6 | Mettre à jour `articles-publies.md` (nouvelle entrée en tête, antéchronologique) | — |
+| 7 | Mettre à jour `assets/perspectives.json` (nouvelle entrée, ordre chronologique strict) | — |
+| 8 | Fournir le récapitulatif des fichiers à commiter — Robin exécute le push via Claude Code | — |
+| 9 | IndexNow se déclenche automatiquement via hook post-push | — |
+| 10 | Rappel de mettre à jour `articles-publies.md` dans la base de connaissances du projet | — |
+
+**Spécifications LinkedIn (étape 5) :**
+- Hook fort en ouverture (1-2 phrases, ton direct, pas de question rhétorique)
+- 3 à 5 paragraphes courts
+- Phrases clés en gras
+- 5 hashtags maximum
+- Lien article en premier commentaire, pas dans le corps du post
+
+**Note** : les étapes 6-9 sont partiellement automatisées via les scripts
+`new_article.py`, `publish_article.py` et le hook IndexNow dans Claude Code.
+Les étapes manuelles résiduelles sont documentées dans le workflow "Ajouter un article" ci-dessous.
+
+---
+
 ## Workflow — nouvel article (4 étapes)
 
 ### Étape 1 — Préparer l'input et créer le draft FR
