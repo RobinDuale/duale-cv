@@ -90,6 +90,20 @@ Utiliser `class="nav-link active"` sur le lien Perspectives pour tous les nouvea
 
 ---
 
+### CEO et gouvernance IA : peu de dirigeants sont vraiment sereins Licences, portefeuille de modèles, coût par tâche : les mécanismes pour reprendre le contrôle
+
+- **Date publiee :** 27 mai 2026
+- **dateModified :** 2026-05-27T00:00:00+02:00
+- **Slug FR :** `fr/perspectives/gouvernance-ia-portefeuille-actifs.html`
+- **Slug EN :** `en/perspectives/ai-governance-asset-portfolio.html`
+- **Title EN :** CEO and AI governance: few leaders are truly at ease Licences, model portfolio, cost per task: the mechanisms to regain control
+- **Categorie (eyebrow) :** Perspectives · IA · Gouvernance
+- **Tags sidebar :** IA · Leadership · Gouvernance
+- **Keywords schema :** gouvernance IA, modèles IA, EBITDA, coût par tâche, shadow AI, AI Act, portefeuille de modèles, pilotage IA
+- **Illustration :** `/assets/illus-gouvernance-ia-actifs.jpg` / `-og.png`
+
+---
+
 ### Le haut de bilan expliqué aux CEOs -- Financement, gouvernance, management package, sortie : les mécanismes qui structurent la relation avec un investisseur
 
 - **Date publiee :** 19 mai 2026

@@ -414,4 +414,23 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/perspectives/ceo-capital-structure-guide.html" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/perspectives/haut-de-bilan-ceo-investisseur.html" />
   </url>
+
+  <url>
+    <loc>https://cv-robin.duale.fr/fr/perspectives/gouvernance-ia-portefeuille-actifs.html</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/perspectives/ai-governance-asset-portfolio.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/perspectives/gouvernance-ia-portefeuille-actifs.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/perspectives/ai-governance-asset-portfolio.html" />
+  </url>
+  <url>
+    <loc>https://cv-robin.duale.fr/en/perspectives/ai-governance-asset-portfolio.html</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/perspectives/ai-governance-asset-portfolio.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/perspectives/ai-governance-asset-portfolio.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/perspectives/gouvernance-ia-portefeuille-actifs.html" />
+  </url>
 </urlset>
