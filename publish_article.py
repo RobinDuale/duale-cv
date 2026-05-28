@@ -49,6 +49,76 @@ def remove_noindex(slug_fr):
 
 
 # ---------------------------------------------------------------------------
+# 2. Corrige les corruptions HTML introduites par l'admin panel
+# ---------------------------------------------------------------------------
+
+def fix_admin_html_corruption(slug_fr):
+    """
+    Detecte et corrige les patterns HTML corrompus introduits par l'admin panel :
+    - <p class="body-text"><span style="font-size: 18px; font-weight: 600;">Titre</span></p>
+      → <h2>Titre</h2>
+    - <p class="body-text"></p>  → supprime les balises vides
+    - <ul></ul>                  → supprime les listes vides
+    - <b>...</b>                 → <strong>...</strong>
+
+    S'applique uniquement au fichier FR (la version EN est creee apres correction).
+    """
+    import re
+
+    path = ROOT / "fr" / "perspectives" / f"{slug_fr}.html"
+    if not path.exists():
+        return
+
+    content = path.read_text(encoding="utf-8")
+    original = content
+    fixes = []
+
+    # 1. <p class="body-text"><span style="font-size: 18px; font-weight: 600;">Titre</span></p>
+    #    → <h2>Titre</h2>
+    span_h2_pattern = re.compile(
+        r'<p class="body-text">\s*<span[^>]*font-size:\s*18px[^>]*font-weight:\s*600[^>]*>(.*?)</span>\s*</p>',
+        re.DOTALL | re.IGNORECASE,
+    )
+    matches = span_h2_pattern.findall(content)
+    if matches:
+        content = span_h2_pattern.sub(lambda m: f'<h2>{m.group(1).strip()}</h2>', content)
+        fixes.append(f"{len(matches)} H2 restaure(s) depuis span corrompu(s)")
+
+    # 2. Balises <p class="body-text"></p> vides
+    empty_p = re.compile(r'<p class="body-text">\s*</p>\n?')
+    count = len(empty_p.findall(content))
+    if count:
+        content = empty_p.sub('', content)
+        fixes.append(f"{count} balise(s) <p> vide(s) supprimee(s)")
+
+    # 3. Balises <ul></ul> vides
+    empty_ul = re.compile(r'<ul>\s*</ul>\n?')
+    count = len(empty_ul.findall(content))
+    if count:
+        content = empty_ul.sub('', content)
+        fixes.append(f"{count} balise(s) <ul> vide(s) supprimee(s)")
+
+    # 4. <b>...</b> -> <strong>...</strong>  (dans article-body uniquement)
+    body_start = content.find('<div class="article-body">')
+    body_end   = content.find('</div>', content.find('<div class="article-body">'))
+    if body_start != -1:
+        body = content[body_start:body_end]
+        b_count = body.count('<b>') + body.count('</b>')
+        if b_count:
+            body = body.replace('<b>', '<strong>').replace('</b>', '</strong>')
+            content = content[:body_start] + body + content[body_end:]
+            fixes.append(f"{b_count // 2} balise(s) <b> converties en <strong>")
+
+    if content != original:
+        path.write_text(content, encoding="utf-8")
+        for msg in fixes:
+            print(f"  [fix-admin] {msg}")
+        print(f"  [fix-admin] {path.name} corrige ({len(fixes)} correction(s))")
+    else:
+        print(f"  [fix-admin] Aucune corruption detectee dans {path.name}")
+
+
+# ---------------------------------------------------------------------------
 # Helper : detecte l'extension reelle de l'image (jpg ou png)
 # ---------------------------------------------------------------------------
 
@@ -132,22 +202,28 @@ def update_sitemap(d):
         print(f"  sitemap.xml : URLs deja presentes, ignorees")
         return
 
+    base = "https://cv-robin.duale.fr"
+    url_fr = f"{base}/fr/perspectives/{slug_fr}.html"
+    url_en = f"{base}/en/perspectives/{slug_en}.html"
+
     fr_block = (
         f'  <url>\n'
-        f'    <loc>https://cv-robin.duale.fr/fr/perspectives/{slug_fr}.html</loc>\n'
+        f'    <loc>{url_fr}</loc>\n'
         f'    <lastmod>{TODAY}</lastmod>\n'
         f'    <changefreq>monthly</changefreq>\n'
         f'    <priority>0.80</priority>\n'
-        f'    <xhtml:link rel="alternate" hreflang="en" '
-        f'href="https://cv-robin.duale.fr/en/perspectives/{slug_en}.html" />\n'
+        f'    <xhtml:link rel="alternate" hreflang="x-default" href="{url_en}" />\n'
+        f'    <xhtml:link rel="alternate" hreflang="fr" href="{url_fr}" />\n'
+        f'    <xhtml:link rel="alternate" hreflang="en" href="{url_en}" />\n'
         f'  </url>\n'
         f'  <url>\n'
-        f'    <loc>https://cv-robin.duale.fr/en/perspectives/{slug_en}.html</loc>\n'
+        f'    <loc>{url_en}</loc>\n'
         f'    <lastmod>{TODAY}</lastmod>\n'
         f'    <changefreq>monthly</changefreq>\n'
         f'    <priority>0.80</priority>\n'
-        f'    <xhtml:link rel="alternate" hreflang="fr" '
-        f'href="https://cv-robin.duale.fr/fr/perspectives/{slug_fr}.html" />\n'
+        f'    <xhtml:link rel="alternate" hreflang="x-default" href="{url_en}" />\n'
+        f'    <xhtml:link rel="alternate" hreflang="en" href="{url_en}" />\n'
+        f'    <xhtml:link rel="alternate" hreflang="fr" href="{url_fr}" />\n'
         f'  </url>\n'
     )
 
@@ -303,6 +379,7 @@ def main():
     print(f"\nPublication de : {slug_fr}\n")
 
     remove_noindex(slug_fr)
+    fix_admin_html_corruption(slug_fr)
     update_perspectives_json(d)
     run_update_home()
     update_sitemap(d)
