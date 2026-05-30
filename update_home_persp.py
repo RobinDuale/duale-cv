@@ -66,9 +66,11 @@ def build_card_en(article):
 
 def update_home(html_path, cards_html):
     content = html_path.read_text(encoding="utf-8")
-    pattern = r'(<div class="persp-teaser-grid">)(.*?)(    </div>)'
-    replacement = f'\\1\n{cards_html}\n    \\3'
-    new_content, n = re.subn(pattern, replacement, content, flags=re.DOTALL)
+    # Ancrer la fermeture en debut de ligne (^) pour eviter de matcher
+    # "    </div>" a l'interieur d'une ligne avec plus d'espaces (ex: "        </div>")
+    pattern = r'(<div class="persp-teaser-grid">)(.*?)(^    </div>)'
+    replacement = f'\\1\n{cards_html}\n\\3'
+    new_content, n = re.subn(pattern, replacement, content, flags=re.DOTALL | re.MULTILINE)
     if n == 0:
         print(f"  [!] Bloc persp-teaser-grid introuvable dans {html_path.name} — aucune modification.")
     elif new_content == content:
