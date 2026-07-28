@@ -420,16 +420,16 @@ Comportement : chaque article affiche sa date ~15 jours après publication, puis
 
 **Contexte** : la mise à jour Google « June 2026 Spam Update » (24-26 juin 2026) a désindexé le site quasi entièrement (« Explorée, actuellement non indexée » sur ~43 pages, 4 restées indexées). Diagnostic : rétrogradation **algorithmique** au niveau du domaine (aucune action manuelle en GSC), amplifiée par un sous-domaine perso à faible autorité + un paquet de pages en mots-clés exacts lisibles comme un « réseau de pages SEO ».
 
-**Décision (agressive, réversible)** : les 12 pages de positionnement sont passées en `noindex,follow` et retirées du sitemap, pour envoyer un signal fort de dé-optimisation. Elles restent **en ligne** (linkables en direct), juste retirées de l'index Google.
+**Décision (agressive, réversible, ciblée Google uniquement)** : les 12 pages de positionnement portent un `<meta name="googlebot" content="noindex,follow"/>` (directive **spécifique à Google**, pas le `robots` générique) et sont retirées du sitemap. Objectif : envoyer un signal fort de dé-optimisation **à Google seulement**, car c'est Google (spam update) qui a pénalisé le site. **Bing continue d'indexer normalement** (Bing ignore la directive `googlebot`), ce qui préserve le référencement Bing qui, lui, fonctionnait très bien sur ces pages. Elles restent en ligne et linkables ; seulement retirées de l'index Google.
 
 Les 12 pages concernées :
 - FR : `actionnariat-actif-transformation-croissance`, `build-up-croissance-externe`, `ceo-saas-lbo`, `ceo-transformation-croissance-b2b-saas-data`, `filiale-francaise-groupe-europeen-global`, `transformation-abonnement-saas`
 - EN : `active-ownership-transformation-growth`, `build-up-external-growth`, `saas-ceo-lbo`, `transformation-growth-b2b-saas-data-ceo`, `french-subsidiary-european-global-group`, `saas-subscription-transformation`
 
 **Règles à respecter (ne pas défaire par erreur)** :
-- **Ne pas retirer** le `<meta name="robots" content="noindex,follow"/>` de ces pages sans décision explicite de Robin.
-- **Ne pas les remettre dans `sitemap.xml`** (une page noindex ne doit jamais être au sitemap — sinon warning GSC « URL envoyée marquée noindex »).
-- Réversibilité : si le site remonte à un futur update Google, ré-indexer **à la carte** en commençant par les 2 plus stratégiques (`ceo-transformation-croissance-b2b-saas-data`, `ceo-saas-lbo`) — retirer leur meta robots ET les remettre au sitemap.
+- **Ne pas retirer** le `<meta name="googlebot" content="noindex,follow"/>` de ces pages sans décision explicite de Robin. **Ne surtout pas le remplacer par un `robots` générique** : ça désindexerait aussi Bing, qu'on veut garder.
+- **Ne pas les remettre dans `sitemap.xml`** (une page noindex-Google ne doit pas être au sitemap — sinon warning GSC « URL envoyée marquée noindex »). Bing conserve ces pages via le maillage interne (`geo-list`), pas besoin du sitemap.
+- Réversibilité : si le site remonte à un futur update Google, ré-indexer côté Google **à la carte** en commençant par les 2 plus stratégiques (`ceo-transformation-croissance-b2b-saas-data`, `ceo-saas-lbo`) — retirer leur meta `googlebot` ET les remettre au sitemap.
 - Les metas des **pages cœur** (home, à propos, parcours, témoignages, FAQ) sont propres (phrases naturelles) — ne pas y réintroduire de listes de mots-clés.
 
 ## Images — ratios et dimensions
@@ -539,6 +539,10 @@ Fichiers présents dans le repo :
 **Lors de la création d'une nouvelle page HTML**, toujours utiliser ce bloc complet (5 lignes).
 
 ---
+
+## Sitemap — ne jamais inclure la racine `/`
+
+La racine `/` (fichier `index.html` à la racine) **redirige** vers `/fr/` (`window.location.replace` + meta-refresh) et déclare `canonical → /fr/`. Une URL qui redirige et canonicalise ailleurs **ne doit jamais figurer dans `sitemap.xml`**. Sa présence créait un conflit « Page en double : Google n'a pas choisi la même URL canonique que l'utilisateur » sur `/fr/` (Google préférait `/` à `/fr/`). Retiré du sitemap le 2026-07-28. Le sitemap ne liste que `/fr/` et `/en/` pour les home. **Ne pas ré-ajouter `/`.**
 
 ## Sitemap — hreflang self-reference (critique Bing)
 
