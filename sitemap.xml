@@ -57,115 +57,19 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/contact.html" />
   </url>
   <!-- French Positioning Pages -->
-  <url>
-    <loc>https://cv-robin.duale.fr/fr/ceo-transformation-croissance-b2b-saas-data.html</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/transformation-growth-b2b-saas-data-ceo.html" />
-    <lastmod>2026-05-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.86</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/ceo-transformation-croissance-b2b-saas-data.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/transformation-growth-b2b-saas-data-ceo.html" />
-  </url>
-  <url>
-    <loc>https://cv-robin.duale.fr/fr/actionnariat-actif-transformation-croissance.html</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/active-ownership-transformation-growth.html" />
-    <lastmod>2026-05-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.84</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/actionnariat-actif-transformation-croissance.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/active-ownership-transformation-growth.html" />
-  </url>
-  <url>
-    <loc>https://cv-robin.duale.fr/fr/filiale-francaise-groupe-europeen-global.html</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/french-subsidiary-european-global-group.html" />
-    <lastmod>2026-05-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.84</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/filiale-francaise-groupe-europeen-global.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/french-subsidiary-european-global-group.html" />
-  </url>
-  <url>
-    <loc>https://cv-robin.duale.fr/fr/build-up-croissance-externe.html</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/build-up-external-growth.html" />
-    <lastmod>2026-05-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.84</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/build-up-croissance-externe.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/build-up-external-growth.html" />
-  </url>
-  <url>
-    <loc>https://cv-robin.duale.fr/fr/transformation-abonnement-saas.html</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/saas-subscription-transformation.html" />
-    <lastmod>2026-05-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.84</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/transformation-abonnement-saas.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/saas-subscription-transformation.html" />
-  </url>
-  <url>
-    <loc>https://cv-robin.duale.fr/fr/ceo-saas-lbo.html</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/saas-ceo-lbo.html" />
-    <lastmod>2026-05-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.82</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/ceo-saas-lbo.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/saas-ceo-lbo.html" />
-  </url>
+  
+  
+  
+  
+  
+  
   <!-- English Positioning -->
-  <url>
-    <loc>https://cv-robin.duale.fr/en/transformation-growth-b2b-saas-data-ceo.html</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/transformation-growth-b2b-saas-data-ceo.html" />
-    <lastmod>2026-05-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/transformation-growth-b2b-saas-data-ceo.html" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/ceo-transformation-croissance-b2b-saas-data.html" />
-  </url>
-  <url>
-    <loc>https://cv-robin.duale.fr/en/active-ownership-transformation-growth.html</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/active-ownership-transformation-growth.html" />
-    <lastmod>2026-05-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.83</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/active-ownership-transformation-growth.html" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/actionnariat-actif-transformation-croissance.html" />
-  </url>
-  <url>
-    <loc>https://cv-robin.duale.fr/en/french-subsidiary-european-global-group.html</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/french-subsidiary-european-global-group.html" />
-    <lastmod>2026-05-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.82</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/french-subsidiary-european-global-group.html" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/filiale-francaise-groupe-europeen-global.html" />
-  </url>
-  <url>
-    <loc>https://cv-robin.duale.fr/en/build-up-external-growth.html</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/build-up-external-growth.html" />
-    <lastmod>2026-05-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.82</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/build-up-external-growth.html" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/build-up-croissance-externe.html" />
-  </url>
-  <url>
-    <loc>https://cv-robin.duale.fr/en/saas-subscription-transformation.html</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/saas-subscription-transformation.html" />
-    <lastmod>2026-05-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.82</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/saas-subscription-transformation.html" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/transformation-abonnement-saas.html" />
-  </url>
-  <url>
-    <loc>https://cv-robin.duale.fr/en/saas-ceo-lbo.html</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://cv-robin.duale.fr/en/saas-ceo-lbo.html" />
-    <lastmod>2026-05-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.82</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://cv-robin.duale.fr/en/saas-ceo-lbo.html" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://cv-robin.duale.fr/fr/ceo-saas-lbo.html" />
-  </url>
+  
+  
+  
+  
+  
+  
   <!-- French Perspectives -->
   <url>
     <loc>https://cv-robin.duale.fr/fr/perspectives/</loc>

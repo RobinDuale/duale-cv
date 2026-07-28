@@ -416,6 +416,22 @@ Les dates de publication sont **masquées visuellement** (jamais supprimées) d�
 
 Comportement : chaque article affiche sa date ~15 jours après publication, puis elle disparaît. Aujourd'hui tous les articles ayant > 15 jours, aucune date n'est visible tant qu'un nouvel article n'est pas publié.
 
+## Pages de positionnement — noindex volontaire (depuis 2026-07-28)
+
+**Contexte** : la mise à jour Google « June 2026 Spam Update » (24-26 juin 2026) a désindexé le site quasi entièrement (« Explorée, actuellement non indexée » sur ~43 pages, 4 restées indexées). Diagnostic : rétrogradation **algorithmique** au niveau du domaine (aucune action manuelle en GSC), amplifiée par un sous-domaine perso à faible autorité + un paquet de pages en mots-clés exacts lisibles comme un « réseau de pages SEO ».
+
+**Décision (agressive, réversible)** : les 12 pages de positionnement sont passées en `noindex,follow` et retirées du sitemap, pour envoyer un signal fort de dé-optimisation. Elles restent **en ligne** (linkables en direct), juste retirées de l'index Google.
+
+Les 12 pages concernées :
+- FR : `actionnariat-actif-transformation-croissance`, `build-up-croissance-externe`, `ceo-saas-lbo`, `ceo-transformation-croissance-b2b-saas-data`, `filiale-francaise-groupe-europeen-global`, `transformation-abonnement-saas`
+- EN : `active-ownership-transformation-growth`, `build-up-external-growth`, `saas-ceo-lbo`, `transformation-growth-b2b-saas-data-ceo`, `french-subsidiary-european-global-group`, `saas-subscription-transformation`
+
+**Règles à respecter (ne pas défaire par erreur)** :
+- **Ne pas retirer** le `<meta name="robots" content="noindex,follow"/>` de ces pages sans décision explicite de Robin.
+- **Ne pas les remettre dans `sitemap.xml`** (une page noindex ne doit jamais être au sitemap — sinon warning GSC « URL envoyée marquée noindex »).
+- Réversibilité : si le site remonte à un futur update Google, ré-indexer **à la carte** en commençant par les 2 plus stratégiques (`ceo-transformation-croissance-b2b-saas-data`, `ceo-saas-lbo`) — retirer leur meta robots ET les remettre au sitemap.
+- Les metas des **pages cœur** (home, à propos, parcours, témoignages, FAQ) sont propres (phrases naturelles) — ne pas y réintroduire de listes de mots-clés.
+
 ## Images — ratios et dimensions
 
 ### Images principales d'articles (`.article-illus-img`)
