@@ -403,6 +403,19 @@ body.lightbox-open .hamburger { opacity: 0 !important; pointer-events: none; }
 
 ---
 
+## Masquage des dates anciennes (> 15 jours)
+
+Les dates de publication sont **masquées visuellement** (jamais supprimées) dès qu'elles dépassent **15 jours**, pour ne pas afficher de dates trop anciennes. Le calcul est fait **côté client dans `main.js`** (au chargement), car la fenêtre glisse avec le temps — une date figée au build ne pourrait pas s'effacer plus tard. La date reste dans le DOM, le JSON et le Schema.org `datePublished` (aucun impact SEO).
+
+**Mécanique (une seule source de vérité : `main.js`) :**
+- `main.js` expose `window.isDateStale(dateStr)` — accepte l'ISO (`2026-05-27`) ou le format EN (`May 27, 2026`), retourne `false` par sécurité si vide/invalide (la date reste affichée). Seuil = 15 jours, comparaison `> 15`.
+- **Pages articles** : `main.js` lit le `datePublished` ISO déjà présent dans le JSON-LD, et si ancien masque le 1er `<span>` de `.article-meta` (+ le séparateur `.article-meta-sep` qui suit) ainsi que `.sidebar-article-date`. Le temps de lecture reste affiché. **Aucune modification des fichiers articles nécessaire** — les futurs articles sont couverts automatiquement.
+- **Cartes home** (`fr/index.html`, `en/index.html`) : `update_home_persp.py` ajoute `data-pub-date="YYYY-MM-DD"` (ISO) sur chaque `.persp-card-date` ; `main.js` (`hideStaleTagged`) masque au chargement toute carte `[data-pub-date]` ancienne.
+- **Grille index Perspectives** (`persp-nav.js`) et **bloc « derniers articles »** (`persp-teaser.js`) : rendent la date avec l'attribut `hidden` si `window.isDateStale(a.date_en)` (on parse toujours `date_en`, fiable en JS même sur les pages FR).
+- CSS : règle de sécurité `[hidden] { display: none !important; }` dans `main.css` pour garantir le masquage quelles que soient les autres règles `display`.
+
+Comportement : chaque article affiche sa date ~15 jours après publication, puis elle disparaît. Aujourd'hui tous les articles ayant > 15 jours, aucune date n'est visible tant qu'un nouvel article n'est pas publié.
+
 ## Images — ratios et dimensions
 
 ### Images principales d'articles (`.article-illus-img`)

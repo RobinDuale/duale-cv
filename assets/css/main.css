@@ -587,6 +587,7 @@ body {
 body.lightbox-open .media-zoom-btn,
 body.lightbox-open .hamburger { opacity: 0 !important; pointer-events: none; }
 .media-zoom-btn svg { width: 100%; height: 100%; display: block; }
+[hidden] { display: none !important; }
 .persp-card-date {
   font-family: var(--sans); font-size: 12px; letter-spacing: 0.12em;
   text-transform: uppercase; color: var(--gold); padding-top: 4px;

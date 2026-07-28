@@ -167,6 +167,76 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// ── MASQUAGE DES DATES ANCIENNES (> 15 jours) ──
+// Masque VISUELLEMENT (sans supprimer du DOM / du Schema.org) la date de
+// publication au-delà de 15 jours. Calculé côté client car la fenêtre glisse
+// avec le temps : une date figée au build ne pourrait pas s'effacer plus tard.
+(function () {
+  var STALE_DAYS = 15;
+
+  function isStale(dateStr) {
+    if (!dateStr) return false;
+    // Accepte l'ISO (2026-05-27 ou 2026-05-27T..) ou le format EN "May 27, 2026".
+    var d = new Date(/^\d{4}-\d{2}-\d{2}$/.test(dateStr) ? dateStr + 'T00:00:00' : dateStr);
+    if (isNaN(d.getTime())) return false;
+    return (Date.now() - d.getTime()) / 86400000 > STALE_DAYS;
+  }
+  window.isDateStale = isStale;
+
+  // Masque les éléments statiques porteurs de data-pub-date (cartes home).
+  // Exposé pour être rappelé après injection JS (persp-teaser / persp-nav).
+  function hideStaleTagged(root) {
+    (root || document).querySelectorAll('[data-pub-date]').forEach(function (el) {
+      if (isStale(el.getAttribute('data-pub-date'))) el.hidden = true;
+    });
+  }
+  window.hideStaleTagged = hideStaleTagged;
+
+  function safeParse(txt) { try { return JSON.parse(txt); } catch (e) { return null; } }
+
+  function findDatePublished(obj) {
+    if (!obj || typeof obj !== 'object') return null;
+    if (typeof obj.datePublished === 'string') return obj.datePublished;
+    for (var k in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, k)) {
+        var r = findDatePublished(obj[k]);
+        if (r) return r;
+      }
+    }
+    return null;
+  }
+
+  function articlePublishedDate() {
+    var scripts = document.querySelectorAll('script[type="application/ld+json"]');
+    for (var i = 0; i < scripts.length; i++) {
+      var found = findDatePublished(safeParse(scripts[i].textContent));
+      if (found) return found;
+    }
+    return null;
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    hideStaleTagged(document);
+
+    // Page article : lire la date de publication ISO depuis le JSON-LD.
+    var pub = articlePublishedDate();
+    if (pub && isStale(pub)) {
+      // .article-meta : masquer la date (1er span) + le séparateur qui suit.
+      var meta = document.querySelector('.article-meta');
+      if (meta) {
+        var dateSpan = meta.querySelector('span');
+        if (dateSpan) {
+          dateSpan.hidden = true;
+          var sep = dateSpan.nextElementSibling;
+          if (sep && sep.classList.contains('article-meta-sep')) sep.hidden = true;
+        }
+      }
+      // Sidebar : masquer la date de l'article courant.
+      document.querySelectorAll('.sidebar-article-date').forEach(function (el) { el.hidden = true; });
+    }
+  });
+}());
+
 // ── HAMBURGER MENU ──
 document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.getElementById('hamburger');

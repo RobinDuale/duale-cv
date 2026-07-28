@@ -41,10 +41,11 @@
       var a = articles[i];
       var sub = a[subtitleKey] || '';
       var titleHtml = a[titleKey] + (sub ? '<br><em>' + sub + '</em>' : '');
+      var staleAttr = (window.isDateStale && window.isDateStale(a.date_en)) ? ' hidden' : '';
       html += '<div class="persp-card">'
         + '<a href="/' + lang + '/perspectives/' + a[slugKey] + '.html" tabindex="-1" aria-hidden="true"><img src="' + a[imageKey] + '" alt="' + a[altKey] + '" class="persp-card-img" width="800" height="420" loading="lazy"/></a>'
         + '<div class="persp-card-body">'
-        + '<div class="persp-card-date">' + a[dateKey] + '</div>'
+        + '<div class="persp-card-date"' + staleAttr + '>' + a[dateKey] + '</div>'
         + '<div>'
         + '<span class="persp-card-tag">' + a[tagsKey] + '</span>'
         + '<div class="persp-card-title">' + titleHtml + '</div>'

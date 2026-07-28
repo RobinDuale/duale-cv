@@ -28,6 +28,12 @@ def parse_date(article):
         return datetime.min
 
 
+def iso_date(article):
+    """Date ISO (YYYY-MM-DD) pour data-pub-date — lue par main.js (masquage > 15 j)."""
+    d = parse_date(article)
+    return "" if d == datetime.min else d.strftime("%Y-%m-%d")
+
+
 def build_card_fr(article):
     sub = article.get("subtitle_fr", "")
     title_html = article["title_fr"] + (f'<br><em>{sub}</em>' if sub else "")
@@ -38,7 +44,8 @@ def build_card_fr(article):
         f'      <a class="persp-teaser-card" href="/fr/perspectives/{article["slug_fr"]}.html">\n'
         f'{img_tag}'
         f'        <div class="persp-teaser-card-body">\n'
-        f'          <div class="persp-card-date">{article["date_fr"]}</div>\n'
+        f'          <div class="persp-card-date" data-pub-date="{iso_date(article)}">{article["date_fr"]}</div>\n'
+        f'          <span class="persp-card-tag">{article["tags_fr"]}</span>\n'
         f'          <div class="persp-card-title">{title_html}</div>\n'
         f'          <p class="persp-card-excerpt">{article["excerpt_fr"]}</p>\n'
         f'        </div>\n'
@@ -56,7 +63,8 @@ def build_card_en(article):
         f'      <a class="persp-teaser-card" href="/en/perspectives/{article["slug_en"]}.html">\n'
         f'{img_tag}'
         f'        <div class="persp-teaser-card-body">\n'
-        f'          <div class="persp-card-date">{article["date_en"]}</div>\n'
+        f'          <div class="persp-card-date" data-pub-date="{iso_date(article)}">{article["date_en"]}</div>\n'
+        f'          <span class="persp-card-tag">{article["tags_en"]}</span>\n'
         f'          <div class="persp-card-title">{title_html}</div>\n'
         f'          <p class="persp-card-excerpt">{article["excerpt_en"]}</p>\n'
         f'        </div>\n'
