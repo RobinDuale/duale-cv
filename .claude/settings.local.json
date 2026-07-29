@@ -6,7 +6,8 @@
       "Bash(git commit -m ' *)",
       "Bash(git push *)",
       "Bash(python -c ' *)",
-      "WebFetch(domain:cv-robin.duale.fr)"
+      "WebFetch(domain:cv-robin.duale.fr)",
+      "WebSearch"
     ]
   }
 }
