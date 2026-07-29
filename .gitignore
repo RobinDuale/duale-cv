@@ -15,3 +15,6 @@ en/perspectives/_draft-*.html
 
 # Archives locales
 archive/
+
+# Claude Code — worktrees de sessions locales
+.claude/worktrees/
