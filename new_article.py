@@ -83,7 +83,7 @@ def build_fr_html(d, draft=True):
     h1 = _h1(title_fr, subtitle_fr)
     tags = _tag_spans(d["tags_fr"])
     keywords_json = json.dumps(d["keywords_fr"], ensure_ascii=False)
-    cta_title = d.get("cta_title_fr") or "Vous cherchez un CEO disponible pour ce type de mandat ?"
+    cta_title = d.get("cta_title_fr") or "Ces sujets vous concernent ?"
     noindex = '  <meta name="robots" content="noindex"/>\n' if draft else ""
 
     head = (
@@ -221,7 +221,7 @@ def build_fr_html(d, draft=True):
         f'\n'
         f'      <div class="article-cta">\n'
         f'        <div class="article-cta-title">{cta_title}</div>\n'
-        f'        <p class="article-cta-text">Je suis disponible pour un mandat de CEO ou Directeur Général dans une entreprise B2B SaaS, BtoC, Data, IA ou e-commerce de 10 à 100 M€. Si vous conduisez une recherche ou souhaitez échanger sur ces enjeux, je suis joignable directement.</p>\n'
+        f'        <p class="article-cta-text">J\'accompagne les dirigeants de startups, PME et ETI comme executive coach et sparring partner chez VISCONTI Partners. Si ces enjeux se posent dans votre entreprise, échangeons directement.</p>\n'
         f'        <div class="article-cta-links">\n'
         f'          <a class="btn-gold" href="/fr/contact.html">Me contacter</a>\n'
         f'          <a class="btn-outline" href="https://linkedin.com/in/robinduale" target="_blank" rel="noopener noreferrer">LinkedIn</a>\n'
@@ -247,7 +247,7 @@ def build_fr_html(d, draft=True):
         f'    <div id="persp-nav"><noscript><a href="/fr/perspectives/">← Retour aux Perspectives</a></noscript></div>\n'
         f'    <div class="sidebar-section">\n'
         f'      <div class="sidebar-title">Robin Dualé</div>\n'
-        f'      <p class="sidebar-text">CEO et Directeur Général, 18 ans en B2B, BtoC, SaaS, Data et e-commerce. Disponible pour un nouveau mandat.</p>\n'
+        f'      <p class="sidebar-text">Executive coach et sparring partner chez VISCONTI Partners. 18 ans de direction générale, à la tête de neuf sociétés.</p>\n'
         f'      <a class="btn-outline" href="/fr/contact.html" style="margin-top:12px;display:inline-block">Me contacter</a>\n'
         f'      <a class="btn-outline" href="https://www.linkedin.com/in/robinduale/" target="_blank" rel="noopener noreferrer" style="margin-top:8px;display:inline-block">LinkedIn</a>\n'
         f'    </div>\n'
