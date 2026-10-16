@@ -824,12 +824,30 @@ Les blocs `.geo-list` dans les sidebars des pages de positionnement peuvent cont
 
 ---
 
-## Positionnement éditorial
+## Positionnement éditorial (depuis le 2026-10-16)
 
-- **Secteurs** : BtoC ou B2B, SaaS, Data, e-commerce
-- **Contextes** : PE (private equity), family office
-- **Ne pas modifier** : pages parcours/track-record (positionnement figé)
-- **Modifier si besoin** : CTAs articles, sidebars articles, llms.txt, llms-fr.txt
+Robin est **executive coach et sparring partner chez VISCONTI Partners** et accompagne les dirigeants de startups, PME et ETI. Ses 18 ans de direction générale servent de preuve de légitimité ; le site ne le présente plus comme un CEO en recherche de mandat. Le site suit son profil LinkedIn, mis à jour en octobre 2026 : en cas de doute sur un intitulé, une date ou un texte, LinkedIn fait foi.
+
+- **Cible** : dirigeants de startups, PME et ETI, dans des contextes entrepreneuriaux, familiaux, de groupe ou sous fonds d'investissement. Ancrage Savoie, Haute-Savoie, axe Lyon-Genève, Paris.
+- **Coloration** : digital et IA, jamais en offre autonome.
+- **Secteurs d'expérience** (ce sont des preuves, pas la cible) : BtoC ou B2B, SaaS, Data, e-commerce, information professionnelle.
+- **Registre** : les pages cœur (accueil, à propos) reprennent les textes validés de LinkedIn, accroche interrogative comprise. Les articles Perspectives gardent le registre de note stratégique décrit plus haut.
+
+## Repositionnement du 2026-10-16, règles à ne pas défaire
+
+- **Aucune mention de disponibilité pour un mandat**, nulle part : ni « disponible pour un mandat de CEO », ni « available for a new role », ni schéma `seeks` / `Demand`, ni titre d'appel à l'action adressé à un recruteur (« Vous recherchez un CEO… », « Vous pilotez une recherche de CEO ? »). La recherche de mandat de Robin est en veille.
+- **Appel à l'action standard des articles et pages de positionnement** (le titre peut rester contextuel s'il parle à un dirigeant, par exemple « Vous préparez ou intégrez une acquisition ? ») :
+  - FR : « J'accompagne les dirigeants de startups, PME et ETI comme executive coach et sparring partner chez VISCONTI Partners. Si ces enjeux se posent dans votre entreprise, échangeons directement. » Titre par défaut : « Ces sujets vous concernent ? »
+  - EN : « I support the leaders of startups, SMEs and mid-market companies as an executive coach and sparring partner at VISCONTI Partners. If these challenges are on your agenda, let's talk directly. » Titre par défaut : « Do these challenges resonate? »
+- **Bio auteur des articles** : « Executive coach et sparring partner chez VISCONTI Partners. 18 ans de direction générale, à la tête de neuf sociétés. » / « Executive coach and sparring partner at VISCONTI Partners. 18 years in general management, leading nine companies. » `new_article.py` génère déjà ces deux textes.
+- **Schéma.org** : `jobTitle` « Executive coach et sparring partner » / « Executive coach and sparring partner », `worksFor` VISCONTI Partners. Plus de bloc `LocalBusiness`.
+- **Parcours / track record** : modifiable désormais (l'ancienne règle « positionnement figé » est levée). Visconti en tête de frise avec le logo officiel (`assets/visconti-logo-horizontal.png`, ne pas le retoucher). Les périodes et les textes ne portent que des années, jamais de mois. Chaque société apparaît sous son propre nom, sans « · Groupe WEKA France » ni phrase de rattachement au groupe ; WEKA ne reste que dans l'entrée Groupe WEKA France et dans le regroupement des formations de Comundi, comme sur LinkedIn. Quick-FDS s'écrit « 3E France (ex Quick-FDS) ».
+- **Marque VISCONTI** : logo officiel sur le parcours seulement, pas sur l'accueil (décision de Robin). L'article 3 du contrat de partenariat encadre l'usage des Marques, et l'Annexe 4 soumet à la Practice Marketing de Visconti tout article ou post qui engage le collectif.
+- **Pages de positionnement** (CEO SaaS LBO, build-up…) : gardées en ligne et en noindex Google, seul l'appel à l'action a été réécrit.
+- **CV en téléchargement désactivé** : les 10 boutons « Télécharger mon CV » sont en commentaire HTML (`CV en telechargement desactive le 2026-10-16`). Les PDF `assets/CV ROBIN DUALE (FR|EN).pdf` datent d'avant Visconti : ne pas réactiver sans CV à jour.
+- **Photo de profil** : `assets/robin-duale.jpg` est la photo du profil LinkedIn, recadrée légèrement.
+- **Vidéo de l'accueil** : plus de lecture automatique ; `preload="metadata"` et `#t=0.3` sur la source pour afficher une image d'ouverture au lieu d'un cadre vide.
+- **Image d'aperçu des partages** (`preview.jpg` et `Prévisualisation.jpg`, 1200×630) : capture de l'accueil FR par Edge sans interface à 1440×860, recadrée sur 1440×756 (sans le bandeau cookies) puis réduite à 1200×630. Refaire la capture si l'accueil change.
 
 ---
 
